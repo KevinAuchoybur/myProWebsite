@@ -1,0 +1,6 @@
+# Config locale de l'éditeur / preview
+.claude/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
