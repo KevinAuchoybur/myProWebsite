@@ -755,6 +755,23 @@ section {
   gap: 8px;
 }
 
+.project-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple);
+  text-decoration: none;
+  transition: gap 0.2s ease, opacity 0.2s;
+}
+
+.project-card__link:hover {
+  gap: 9px;
+  opacity: 0.8;
+}
+
 /* ===== CV ===== */
 .cv {
   padding: 60px 60px 80px;
