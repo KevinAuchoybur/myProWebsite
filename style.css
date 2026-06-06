@@ -982,6 +982,19 @@ section {
   margin-bottom: 12px;
 }
 
+/* Barre d'accent violette sous les titres de section */
+.expertises__title::after,
+.cv__title::after,
+.contact__title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--purple);
+  border-radius: 2px;
+  margin: 14px auto 0;
+}
+
 .contact__subtitle {
   font-size: 14px;
   color: var(--text-muted);
