@@ -709,21 +709,22 @@ section {
 }
 
 .project-card__logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 16px;
-  background: var(--surface);
-  border: 1px solid var(--card-border);
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 130px;
+  height: 48px;
+  padding: 8px;
+  margin-bottom: 16px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .project-card__logo img {
-  width: 100%;
-  height: 100%;
+  height: 28px;
+  width: auto;
+  max-width: 100%;
   object-fit: contain;
   display: block;
 }
@@ -742,11 +743,39 @@ section {
   margin-bottom: 10px;
 }
 
+.project-card__client-sub {
+  font-style: italic;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.project-card__client-sub::before {
+  content: ' — ';
+  font-style: normal;
+}
+
 .project-card__desc {
   font-size: 13.5px;
   color: var(--text-muted);
   line-height: 1.6;
   margin-bottom: 16px;
+}
+
+.project-card__role {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 13.5px;
+  color: var(--text-dark);
+  font-weight: 500;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.project-card__arrow {
+  color: var(--purple);
+  flex-shrink: 0;
+  margin-top: 4px;
 }
 
 .project-card__tags {
