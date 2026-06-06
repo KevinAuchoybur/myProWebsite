@@ -39,11 +39,17 @@
   --footer-bg: #13131c;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
   color: var(--text-dark);
   min-height: 100vh;
+  overflow-x: hidden;
+  width: 100%;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
