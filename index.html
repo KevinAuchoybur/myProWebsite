@@ -565,12 +565,21 @@
     const modal = document.getElementById('contactModal');
     const closeBtn = document.getElementById('closeModal');
 
+    function openModal() {
+      modal.classList.add('is-open');
+      document.body.classList.add('modal-open');
+    }
+    function closeModal() {
+      modal.classList.remove('is-open');
+      document.body.classList.remove('modal-open');
+    }
+
     document.querySelectorAll('.btn-talk').forEach(btn => {
-      btn.addEventListener('click', (e) => { e.preventDefault(); modal.classList.add('is-open'); });
+      btn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
     });
-    closeBtn.addEventListener('click', () => modal.classList.remove('is-open'));
-    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('is-open'); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modal.classList.remove('is-open'); });
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
     const form = document.getElementById('contactForm');
     const success = document.getElementById('modalSuccess');
@@ -585,7 +594,7 @@
       document.querySelector('.modal__subtitle').style.display = 'none';
       success.classList.add('is-visible');
       setTimeout(() => {
-        modal.classList.remove('is-open');
+        closeModal();
         setTimeout(() => {
           form.style.display = '';
           document.querySelector('.modal__title').style.display = '';

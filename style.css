@@ -40,7 +40,7 @@
 }
 
 html {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -48,9 +48,13 @@ body {
   background: var(--bg);
   color: var(--text-dark);
   min-height: 100vh;
-  overflow-x: hidden;
-  width: 100%;
+  overflow-x: clip;
   transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Verrouille le défilement de fond quand la modale est ouverte */
+body.modal-open {
+  overflow: hidden;
 }
 
 /* ===== NAVBAR ===== */
