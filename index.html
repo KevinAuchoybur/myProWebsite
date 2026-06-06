@@ -283,15 +283,13 @@
     </div>
   </section>
 
-  <!-- ===== MODALE CONTACT ===== -->
-  <div class="modal-overlay" id="contactModal">
-    <div class="modal">
-      <button class="modal__close" id="closeModal" aria-label="Fermer">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
-      <h3 class="modal__title" data-i18n="modal.title"></h3>
-      <p class="modal__subtitle" data-i18n="modal.subtitle"></p>
-      <form class="modal__form" id="contactForm">
+  <!-- ===== CONTACT ===== -->
+  <section class="contact" id="contact">
+    <h2 class="contact__title" data-i18n="modal.title"></h2>
+    <p class="contact__subtitle" data-i18n="modal.subtitle"></p>
+
+    <div class="contact__card">
+      <form class="contact__form" id="contactForm">
         <input type="hidden" name="_subject" value="Nouveau message — Portfolio" />
         <input type="hidden" name="_autoresponse" value="Merci, je vous réponds bientôt." />
         <div class="form-group">
@@ -320,7 +318,7 @@
         <p class="modal__success-text" data-i18n="modal.successText"></p>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
@@ -561,49 +559,13 @@
       });
     });
 
-    // ===== MODAL =====
-    const modal = document.getElementById('contactModal');
-    const closeBtn = document.getElementById('closeModal');
-
-    function openModal() {
-      modal.classList.add('is-open');
-      document.body.classList.add('modal-open');
-    }
-    function closeModal() {
-      modal.classList.remove('is-open');
-      document.body.classList.remove('modal-open');
-    }
-
-    document.querySelectorAll('.btn-talk').forEach(btn => {
-      btn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
-    });
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
+    // ===== FORMULAIRE DE CONTACT (inline) =====
     const form = document.getElementById('contactForm');
     const success = document.getElementById('modalSuccess');
     const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xojzvrwj';
     const submitBtn = form.querySelector('.btn-submit');
     const submitLabel = submitBtn.querySelector('[data-i18n="modal.send"]');
     const errorBox = document.getElementById('modalError');
-
-    function showSuccessAndClose() {
-      form.style.display = 'none';
-      document.querySelector('.modal__title').style.display = 'none';
-      document.querySelector('.modal__subtitle').style.display = 'none';
-      success.classList.add('is-visible');
-      setTimeout(() => {
-        closeModal();
-        setTimeout(() => {
-          form.style.display = '';
-          document.querySelector('.modal__title').style.display = '';
-          document.querySelector('.modal__subtitle').style.display = '';
-          success.classList.remove('is-visible');
-          form.reset();
-        }, 400);
-      }, 3000);
-    }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -620,7 +582,9 @@
         });
 
         if (response.ok) {
-          showSuccessAndClose();
+          // Affiche le message de succès en place du formulaire
+          form.style.display = 'none';
+          success.classList.add('is-visible');
         } else {
           errorBox.textContent = translations[currentLang]['modal.error'];
           errorBox.classList.add('is-visible');
