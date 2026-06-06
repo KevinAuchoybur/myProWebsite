@@ -48,6 +48,7 @@
     <nav class="navbar__links">
       <a href="#about"    data-i18n="nav.about"></a>
       <a href="#expertises" data-i18n="nav.expertises"></a>
+      <a href="#projects" data-i18n="nav.projects"></a>
       <a href="#cv"       data-i18n="nav.cv"></a>
       <a href="#contact"  data-i18n="nav.contact"></a>
     </nav>
@@ -74,6 +75,7 @@
     <nav class="mobile-menu__links">
       <a href="#about"      class="mobile-menu__link" data-i18n="nav.about"></a>
       <a href="#expertises" class="mobile-menu__link" data-i18n="nav.expertises"></a>
+      <a href="#projects"   class="mobile-menu__link" data-i18n="nav.projects"></a>
       <a href="#cv"         class="mobile-menu__link" data-i18n="nav.cv"></a>
       <a href="#contact"    class="mobile-menu__link" data-i18n="nav.contact"></a>
     </nav>
@@ -135,6 +137,56 @@
         </div>
         <h4 class="expertise-card__name" data-i18n="exp.card3.title"></h4>
         <p class="expertise-card__desc"  data-i18n="exp.card3.desc"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== PROJETS ===== -->
+  <section class="projects" id="projects">
+    <h2 class="projects__title" data-i18n="proj.title"></h2>
+    <p class="projects__desc" data-i18n="proj.desc"></p>
+
+    <div class="projects__grid">
+
+      <div class="project-card">
+        <div class="project-card__logo">
+          <img src="assets/project-1-logo.svg" alt="MonGuichet.mc" />
+        </div>
+        <h4 class="project-card__name">MonGuichet.mc</h4>
+        <p class="project-card__client" data-i18n="proj.p1.client"></p>
+        <p class="project-card__desc" data-i18n="proj.p1.desc"></p>
+        <div class="project-card__tags">
+          <span class="cv__skill">Squash TM</span>
+          <span class="cv__skill">Selenium</span>
+          <span class="cv__skill">Jira</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__logo">
+          <img src="assets/project-2-logo.svg" alt="Projet 2" />
+        </div>
+        <h4 class="project-card__name" data-i18n="proj.p2.name"></h4>
+        <p class="project-card__client" data-i18n="proj.p2.client"></p>
+        <p class="project-card__desc" data-i18n="proj.p2.desc"></p>
+        <div class="project-card__tags">
+          <span class="cv__skill">Selenium</span>
+          <span class="cv__skill">Cypress</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-card__logo">
+          <img src="assets/project-3-logo.svg" alt="Projet 3" />
+        </div>
+        <h4 class="project-card__name" data-i18n="proj.p3.name"></h4>
+        <p class="project-card__client" data-i18n="proj.p3.client"></p>
+        <p class="project-card__desc" data-i18n="proj.p3.desc"></p>
+        <div class="project-card__tags">
+          <span class="cv__skill">Agile</span>
+          <span class="cv__skill">Squash TM</span>
+        </div>
       </div>
 
     </div>
@@ -338,6 +390,7 @@
       fr: {
         'nav.about':       'À propos',
         'nav.expertises':  'Mes expertises',
+        'nav.projects':    'Mes projets',
         'nav.cv':          'Mon CV',
         'nav.contact':     'Me contacter',
         'hero.greeting':   'Bonjour et bienvenue',
@@ -354,6 +407,16 @@
         'exp.card2.desc':  'J\'automatise les tests répétitifs pour raccourcir les phases de validation et permettre aux équipes de livrer plus vite, sans sacrifier la qualité.',
         'exp.card3.title': 'Faire le pont entre les équipes',
         'exp.card3.desc':  'Je traduis les besoins métier en cas de tests concrets et facilite la communication entre développeurs, métiers et utilisateurs.',
+        'proj.title':      'Mes projets',
+        'proj.desc':       'Quelques projets sur lesquels je suis intervenu en tant qu\'Analyste / Ingénieur QA.',
+        'proj.p1.client':  'Gouvernement Princier de Monaco',
+        'proj.p1.desc':    'Portail de démarches en ligne pour les usagers monégasques. En charge des plans de tests, de l\'automatisation et de la validation avant mise en production.',
+        'proj.p2.name':    'Nom du projet',
+        'proj.p2.client':  'Client / secteur',
+        'proj.p2.desc':    'Brève description du projet, de son objectif et de votre rôle QA.',
+        'proj.p3.name':    'Nom du projet',
+        'proj.p3.client':  'Client / secteur',
+        'proj.p3.desc':    'Brève description du projet, de son objectif et de votre rôle QA.',
         'cv.title':            'Mon CV',
         'cv.profile.title':    'Profil',
         'cv.profile.text':     'Analyste QA avec 7+ ans d\'expérience, du test fonctionnel à l\'automatisation. J\'ai accompagné des projets exigeants, du privé jusqu\'au Gouvernement Princier de Monaco, en fiabilisant des produits utilisés par des milliers d\'usagers. Mon obsession : qu\'aucune anomalie critique n\'atteigne la production.',
@@ -409,6 +472,7 @@
       en: {
         'nav.about':       'About',
         'nav.expertises':  'My expertise',
+        'nav.projects':    'My projects',
         'nav.cv':          'My CV',
         'nav.contact':     'Contact me',
         'hero.greeting':   'Hello and welcome',
@@ -425,6 +489,16 @@
         'exp.card2.desc':  'I automate repetitive tests to shorten validation phases and help teams ship faster, without sacrificing quality.',
         'exp.card3.title': 'Bridging teams together',
         'exp.card3.desc':  'I translate business needs into concrete test cases and ease communication between developers, business and users.',
+        'proj.title':      'My projects',
+        'proj.desc':       'A few projects I have worked on as a QA Analyst / Engineer.',
+        'proj.p1.client':  'Princely Government of Monaco',
+        'proj.p1.desc':    'Online services portal for Monaco residents. Responsible for test plans, automation and validation before production release.',
+        'proj.p2.name':    'Project name',
+        'proj.p2.client':  'Client / industry',
+        'proj.p2.desc':    'Short description of the project, its goal and your QA role.',
+        'proj.p3.name':    'Project name',
+        'proj.p3.client':  'Client / industry',
+        'proj.p3.desc':    'Short description of the project, its goal and your QA role.',
         'cv.title':            'My CV',
         'cv.profile.title':    'Profile',
         'cv.profile.text':     'QA Analyst with 7+ years of experience, from functional testing to automation. I have contributed to demanding projects, from the private sector to the Princely Government of Monaco, making products used by thousands of users more reliable. My obsession: ensuring no critical defect ever reaches production.',

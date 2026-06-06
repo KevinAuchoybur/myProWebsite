@@ -665,6 +665,96 @@ section {
   line-height: 1.6;
 }
 
+/* ===== PROJETS ===== */
+.projects {
+  padding: 60px 60px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects__title {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.projects__desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 auto 40px;
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  text-align: left;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  transition: box-shadow 0.2s, transform 0.15s;
+}
+
+.project-card:hover {
+  box-shadow: 0 6px 24px rgba(124, 110, 248, 0.13);
+  transform: translateY(-3px);
+}
+
+.project-card__logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: var(--surface);
+  border: 1px solid var(--card-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.project-card__name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 2px;
+}
+
+.project-card__client {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple);
+  margin-bottom: 10px;
+}
+
+.project-card__desc {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 /* ===== CV ===== */
 .cv {
   padding: 60px 60px 80px;
@@ -984,6 +1074,7 @@ section {
 
 /* Barre d'accent violette sous les titres de section */
 .expertises__title::after,
+.projects__title::after,
 .cv__title::after,
 .contact__title::after {
   content: '';
@@ -1327,6 +1418,14 @@ section {
   }
 
   .expertises__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects {
+    padding: 40px 20px 60px;
+  }
+
+  .projects__grid {
     grid-template-columns: 1fr;
   }
 }
