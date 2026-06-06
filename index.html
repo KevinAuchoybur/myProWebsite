@@ -585,6 +585,12 @@
           // Affiche le message de succès en place du formulaire
           form.style.display = 'none';
           success.classList.add('is-visible');
+          // Réinitialise le formulaire après 3 secondes
+          setTimeout(() => {
+            success.classList.remove('is-visible');
+            form.reset();
+            form.style.display = '';
+          }, 3000);
         } else {
           errorBox.textContent = translations[currentLang]['modal.error'];
           errorBox.classList.add('is-visible');
