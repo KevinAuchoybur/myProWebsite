@@ -296,7 +296,7 @@ body.modal-open {
 
 .hamburger.is-open span { border-radius: 0; }
 .hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hamburger.is-open span:nth-child(2) { opacity: 0; }
+.hamburger.is-open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
 .hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Menu mobile */
@@ -1782,6 +1782,24 @@ section {
   .about__stats {
     grid-template-columns: 1fr;
     gap: 12px;
+  }
+
+  /* Section contact compacte sur mobile (formulaire entierement visible) */
+  .contact {
+    padding: 32px 20px 48px;
+    scroll-margin-top: 64px;
+  }
+  .contact__title {
+    font-size: 26px;
+  }
+  .contact__subtitle {
+    margin-bottom: 22px;
+  }
+  .contact__card {
+    padding: 22px 20px;
+  }
+  .contact__form {
+    gap: 14px;
   }
   .stat {
     flex-direction: row;
