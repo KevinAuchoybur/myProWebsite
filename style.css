@@ -470,6 +470,47 @@ section {
   color: var(--purple);
 }
 
+/* Accès rapide (raccourcis discrets dans le hero) */
+.hero__quicklinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.hero__quicklinks-items {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.hero__quicklinks-label {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.hero__quicklinks a {
+  color: var(--text-dark);
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.hero__quicklinks a:hover {
+  color: var(--purple);
+  border-bottom-color: var(--purple);
+}
+
+.hero__quicklinks-sep {
+  color: var(--purple);
+  font-weight: 700;
+  opacity: 0.7;
+}
+
 /* Hero visual */
 .hero__visual {
   position: relative;
@@ -1655,6 +1696,11 @@ section {
   }
   .hero__social {
     justify-content: center;
+  }
+  .hero__quicklinks {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
   }
   .hero__visual {
     width: 240px;
