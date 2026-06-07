@@ -597,6 +597,116 @@ section {
   color: var(--purple);
 }
 
+/* ===== À PROPOS DE MOI ===== */
+.about {
+  padding: 60px 60px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about__title {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.about__title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--purple);
+  border-radius: 2px;
+  margin: 14px auto 0;
+}
+
+.about__intro {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 44px;
+}
+
+.about__text {
+  text-align: left;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.about__block {
+  margin-bottom: 28px;
+}
+
+.about__block:last-child {
+  margin-bottom: 0;
+}
+
+.about__block-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 10px;
+}
+
+.about__block-text {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.about__block-text--quote {
+  position: relative;
+  padding: 8px 0 0 40px;
+  font-style: italic;
+  color: var(--text-dark);
+}
+
+.about__block-text--quote::before {
+  content: '\201C';
+  position: absolute;
+  left: 0;
+  top: -6px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 52px;
+  line-height: 1;
+  color: var(--purple);
+  opacity: 0.5;
+}
+
+.about__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 600px;
+  margin: 40px auto 0;
+}
+
+.stat {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.stat__num {
+  display: block;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--purple);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat__label {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
 /* ===== EXPERTISES ===== */
 .expertises {
   padding: 60px 60px 80px;
@@ -1568,6 +1678,14 @@ section {
 
   .cv__qrcode {
     display: none;
+  }
+
+  .about {
+    padding: 40px 20px 60px;
+  }
+
+  .about__stats {
+    grid-template-columns: 1fr;
   }
 
   .expertises {
