@@ -93,11 +93,13 @@
         <span class="hero__tagline-motto" data-i18n="hero.motto"></span>
         <span class="hero__tagline-sub" data-i18n="hero.tagline"></span>
       </blockquote>
-      <div class="hero__social">
-        <span data-i18n="hero.follow"></span>
-        <a href="https://www.linkedin.com/in/kevin-auchoybur-17a15a42/" target="_blank" rel="noopener noreferrer" class="btn-linkedin">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
+      <div class="hero__actions">
+        <a id="heroDownloadCv" href="assets/cv-fr-KevinAuchoybur.pdf" download class="btn-hero-cv">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="hero.downloadCv"></span>
+        </a>
+        <a href="https://www.linkedin.com/in/kevin-auchoybur-17a15a42/" target="_blank" rel="noopener noreferrer" class="btn-linkedin-icon" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         </a>
       </div>
     </div>
@@ -163,15 +165,6 @@
           <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           <span data-i18n="proj.p1.role"></span>
         </p>
-        <div class="project-card__tags">
-          <span class="cv__skill">Squash TM</span>
-          <span class="cv__skill">Selenium</span>
-          <span class="cv__skill">Jira</span>
-        </div>
-        <a href="https://monguichet.mc" target="_blank" rel="noopener noreferrer" class="project-card__link">
-          <span data-i18n="proj.p1.link"></span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
       </div>
 
       <div class="project-card">
@@ -188,9 +181,6 @@
           <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           <span data-i18n="proj.p2.role"></span>
         </p>
-        <div class="project-card__tags">
-          <span class="cv__skill">Protractor</span>
-        </div>
       </div>
 
       <div class="project-card">
@@ -207,11 +197,24 @@
           <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
           <span data-i18n="proj.p3.role"></span>
         </p>
-        <div class="project-card__tags">
-          <span class="cv__skill">Squash TM</span>
-        </div>
       </div>
 
+    </div>
+
+    <div class="tools">
+      <h3 class="tools__title" data-i18n="tools.title"></h3>
+      <div class="tools__list">
+        <div class="tool">
+          <div class="tool__logo"><img src="assets/tool-squashtm-logo.png" alt="Squash TM" /></div>
+          <span class="tool__name">Squash TM</span>
+          <p class="tool__desc" data-i18n="tools.squashtm.desc"></p>
+        </div>
+        <div class="tool">
+          <div class="tool__logo"><img src="assets/tool-selenium-logo.png" alt="Selenium" /></div>
+          <span class="tool__name">Selenium</span>
+          <p class="tool__desc" data-i18n="tools.selenium.desc"></p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -326,7 +329,6 @@
           <div class="cv__skills">
             <span class="cv__skill">Squash TM</span>
             <span class="cv__skill">Selenium</span>
-            <span class="cv__skill">Cypress</span>
             <span class="cv__skill">Jira</span>
             <span class="cv__skill">Agile</span>
           </div>
@@ -348,13 +350,6 @@
         </div>
 
       </div>
-    </div>
-
-    <div class="cv__download">
-      <a id="downloadCv" href="assets/cv-fr-KevinAuchoybur.pdf" download class="btn-download">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        <span data-i18n="cv.download"></span>
-      </a>
     </div>
   </section>
 
@@ -422,6 +417,7 @@
         'hero.motto':      'Tester, c\'est anticiper.',
         'hero.tagline':    'Je détecte les anomalies avant qu\'elles n\'atteignent vos utilisateurs.',
         'hero.follow':     'Me suivre :',
+        'hero.downloadCv': 'Télécharger mon CV',
         'exp.title':       'Ce que je vous apporte',
         'exp.desc':        'Au-delà des tests, une valeur concrète pour vos équipes et vos produits.',
         'exp.card1.title': 'Fiabiliser avant la mise en production',
@@ -434,6 +430,9 @@
         'proj.desc':       'Quelques projets sur lesquels je suis intervenu en tant qu\'Analyste / Ingénieur QA.',
         'proj.view':       'Voir le projet',
         'proj.p1.link':    'Accéder au portail',
+        'tools.title':     'Les outils de test que j\'utilise habituellement',
+        'tools.squashtm.desc': 'Gestion des cas de tests, des campagnes et du suivi de la couverture.',
+        'tools.selenium.desc': 'Automatisation des tests fonctionnels sur l\'interface graphique.',
         'proj.p1.client':  'Gouvernement Princier de Monaco',
         'proj.p1.clientSub': 'Pour le compte d\'Asteria',
         'proj.p1.desc':    'Le portail de l\'Administration monégasque pour accéder aux services en ligne.',
@@ -479,7 +478,7 @@
         'cv.certifs.c2':       'ISTQB Extension Agile',
         'cv.certifs.c3':       'ISTQB Test Manager',
         'cv.certifs.c4':       'A4Q Selenium Tester Fondation',
-        'cv.skills.title':     'Compétences',
+        'cv.skills.title':     'Outils & méthodes',
         'cv.langs.title':      'Langues',
         'cv.langs.l1':         'Français',
         'cv.langs.l1level':    'Natif',
@@ -512,6 +511,7 @@
         'hero.motto':      'Testing means anticipating.',
         'hero.tagline':    'I catch defects before they reach your users.',
         'hero.follow':     'Follow me:',
+        'hero.downloadCv': 'Download my CV',
         'exp.title':       'What I bring you',
         'exp.desc':        'Beyond testing, concrete value for your teams and your products.',
         'exp.card1.title': 'Securing releases before production',
@@ -524,6 +524,9 @@
         'proj.desc':       'A few projects I have worked on as a QA Analyst / Engineer.',
         'proj.view':       'View project',
         'proj.p1.link':    'Go to the portal',
+        'tools.title':     'The testing tools I commonly use',
+        'tools.squashtm.desc': 'Test case management, campaigns and coverage tracking.',
+        'tools.selenium.desc': 'Automation of functional tests on the user interface.',
         'proj.p1.client':  'Princely Government of Monaco',
         'proj.p1.clientSub': 'on behalf of Asteria',
         'proj.p1.desc':    'The Monegasque Administration portal for accessing online services.',
@@ -569,7 +572,7 @@
         'cv.certifs.c2':       'ISTQB Agile Extension',
         'cv.certifs.c3':       'ISTQB Test Manager',
         'cv.certifs.c4':       'A4Q Selenium Tester Foundation',
-        'cv.skills.title':     'Skills',
+        'cv.skills.title':     'Tools & methods',
         'cv.langs.title':      'Languages',
         'cv.langs.l1':         'French',
         'cv.langs.l1level':    'Native',
@@ -613,13 +616,14 @@
         btn.classList.toggle('active', btn.dataset.lang === lang);
       });
 
-      // Lien de téléchargement du CV selon la langue
-      const cvLink = document.getElementById('downloadCv');
-      if (cvLink) {
-        cvLink.setAttribute('href', lang === 'en'
-          ? 'assets/cv-en-KevinAuchoybur.pdf'
-          : 'assets/cv-fr-KevinAuchoybur.pdf');
-      }
+      // Liens de téléchargement du CV selon la langue (section CV + hero)
+      const cvHref = lang === 'en'
+        ? 'assets/cv-en-KevinAuchoybur.pdf'
+        : 'assets/cv-fr-KevinAuchoybur.pdf';
+      ['downloadCv', 'heroDownloadCv'].forEach(id => {
+        const link = document.getElementById(id);
+        if (link) link.setAttribute('href', cvHref);
+      });
     }
 
     document.querySelectorAll('.lang-btn').forEach(btn => {

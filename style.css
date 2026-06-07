@@ -801,6 +801,75 @@ section {
   opacity: 0.8;
 }
 
+/* ===== BLOC OUTILS ===== */
+.tools {
+  text-align: center;
+  margin-top: 56px;
+}
+
+.tools__title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 28px;
+}
+
+.tools__title::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: var(--purple);
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+
+.tools__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+.tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.tool__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 130px;
+  height: 64px;
+  padding: 10px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.tool__logo img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.tool__name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.tool__desc {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 180px;
+}
+
 /* ===== CV ===== */
 .cv {
   padding: 60px 60px 80px;
@@ -982,6 +1051,48 @@ section {
   background: var(--purple);
   border-color: var(--purple);
   color: var(--white) !important;
+}
+
+/* Bouton principal "Télécharger mon CV" du hero */
+.btn-hero-cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--purple);
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btn-hero-cv:hover {
+  background: #6a5cf0;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(124, 110, 248, 0.3);
+}
+
+/* LinkedIn en icône seule */
+.btn-linkedin-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--border);
+  border-radius: 50%;
+  color: var(--text-dark);
+  background: var(--surface);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.btn-linkedin-icon:hover {
+  background: var(--purple);
+  border-color: var(--purple);
+  color: #ffffff;
 }
 
 .modal__success {
