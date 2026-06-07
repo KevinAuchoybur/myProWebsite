@@ -1780,17 +1780,30 @@ section {
   }
 
   .about__stats {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
   .stat {
-    padding: 16px 8px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    aspect-ratio: auto;
+    padding: 16px 20px;
+    text-align: left;
   }
-  .stat__num {
-    font-size: 30px;
+  .stat__icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0;
+    flex-shrink: 0;
   }
   .stat__label {
-    font-size: 12px;
+    flex: 1;
+    font-size: 13.5px;
+  }
+  .stat__num {
+    font-size: 28px;
   }
 
   .expertises {
