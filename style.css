@@ -9,7 +9,7 @@
   --purple-light: #ede9fe;
   --purple-blob: #c4b5fd;
   --text-dark: #1a1a2e;
-  --text-muted: #6b7280;
+  --text-muted: #4b5563;
   --white: #ffffff;           /* texte sur violet : toujours blanc */
   --bg: #ffffff;
   --surface: #ffffff;         /* surfaces élevées (navbar, cartes, modale) */
@@ -494,19 +494,23 @@ section {
 }
 
 .hero__quicklinks a {
-  color: var(--text-dark);
-  font-weight: 500;
+  color: var(--purple);
+  font-weight: 600;
   text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: color 0.2s, border-color 0.2s;
+  padding: 5px 13px;
+  background: var(--purple-light);
+  border-radius: 50px;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
 
 .hero__quicklinks a:hover {
-  color: var(--purple);
-  border-bottom-color: var(--purple);
+  background: var(--purple);
+  color: #ffffff;
+  transform: translateY(-2px);
 }
 
 .hero__quicklinks-sep {
+  display: none;
   color: var(--purple);
   font-weight: 700;
   opacity: 0.7;
