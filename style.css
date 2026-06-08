@@ -20,6 +20,7 @@
   --input-border: #e5e7eb;
   --placeholder: #b0b7c3;
   --footer-bg: #f9f9ff;
+  --card-divider: rgba(0, 0, 0, 0.1);   /* liseret discret titre/texte des cartes */
 }
 
 [data-theme="dark"] {
@@ -37,6 +38,7 @@
   --input-border: #2a2a3a;
   --placeholder: #6a6a80;
   --footer-bg: #13131c;
+  --card-divider: rgba(255, 255, 255, 0.12);   /* version sombre, visible sur fond foncé */
 }
 
 html {
@@ -860,7 +862,9 @@ section {
   font-size: 15px;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 8px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--card-divider);
 }
 
 .expertise-card__desc {
@@ -937,7 +941,9 @@ section {
   font-size: 16px;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 2px;
+  margin-bottom: 9px;
+  padding-bottom: 9px;
+  border-bottom: 1px solid var(--card-divider);
 }
 
 .project-card__client {
