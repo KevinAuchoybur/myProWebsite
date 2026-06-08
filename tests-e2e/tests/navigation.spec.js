@@ -30,4 +30,12 @@ test.describe('Navigation & ancres', () => {
       await expect(page.locator(cible)).toBeInViewport();
     });
   }
+
+  test('cliquer la tuile rapide "Me contacter" surligne le bon lien de navbar', async ({ page }) => {
+    // Tuile d'accès rapide du héro
+    await page.locator('.hero__quicklinks a[href="#contact"]').click();
+    // Le scrollspy doit surligner #contact (et pas #cv) une fois en bas de page
+    await expect(page.locator('.navbar__links a[href="#contact"]')).toHaveClass(/active/);
+    await expect(page.locator('.navbar__links a[href="#cv"]')).not.toHaveClass(/active/);
+  });
 });

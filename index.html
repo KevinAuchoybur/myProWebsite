@@ -751,6 +751,10 @@
         const top = section.getBoundingClientRect().top - navHeight - 10;
         if (top <= 0) current = section.id;
       });
+      // Si on est en bas de page, la dernière section (souvent courte) ne peut
+      // pas franchir le seuil : on la force comme active.
+      const enBasDePage = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
+      if (enBasDePage) current = sections[sections.length - 1].id;
       navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === '#' + current) link.classList.add('active');
