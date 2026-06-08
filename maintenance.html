@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Maintenance — Kevin Auchoybur</title>
+
+  <!-- Recharge la page automatiquement toutes les 30 s pour reprendre dès la fin du déploiement -->
+  <meta http-equiv="refresh" content="30" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --purple: #7C6EF8;
+      --purple-light: #ede9fe;
+      --text-dark: #1a1a2e;
+      --text-muted: #4b5563;
+      --bg: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      color: var(--text-dark);
+      background: radial-gradient(circle at 50% 0%, #f5f3ff 0%, #ffffff 60%);
+      overflow: hidden;
+    }
+
+    .maint {
+      position: relative;
+      z-index: 2;
+      max-width: 520px;
+    }
+
+    /* Blobs décoratifs */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(10px);
+      z-index: 1;
+      opacity: 0.5;
+    }
+    .blob--1 { width: 320px; height: 320px; top: -90px; right: -90px;
+      background: radial-gradient(circle at 30% 30%, #c4b5fd 0%, #7C6EF8 100%); }
+    .blob--2 { width: 240px; height: 240px; bottom: -80px; left: -70px;
+      background: var(--purple-light); }
+
+    .maint__logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--purple);
+      color: #fff;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: -1px;
+      margin-bottom: 28px;
+      box-shadow: 0 12px 30px rgba(124, 110, 248, 0.35);
+    }
+
+    /* Engrenage animé */
+    .maint__gear {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 22px;
+      color: var(--purple);
+      animation: spin 4s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .maint__gear { animation: none; }
+    }
+
+    .maint__title {
+      font-size: clamp(26px, 6vw, 36px);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .maint__text {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .maint__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 18px;
+      border-radius: 50px;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .maint__dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--purple);
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.7); } }
+
+    .maint__sub {
+      margin-top: 26px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .maint__sub a { color: var(--purple); font-weight: 600; text-decoration: none; }
+    .maint__sub a:hover { text-decoration: underline; }
+
+    /* Bouton de switch FR/EN */
+    .maint__lang {
+      position: fixed;
+      top: 20px;
+      right: 22px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .maint__lang button {
+      background: none; border: none; cursor: pointer;
+      color: var(--text-muted); font-weight: 600; font-size: 14px;
+      font-family: inherit; padding: 2px 4px;
+    }
+    .maint__lang button.active { color: var(--purple); }
+    .maint__lang span { color: #d1d5db; }
+  </style>
+</head>
+<body>
+  <div class="blob blob--1"></div>
+  <div class="blob blob--2"></div>
+
+  <div class="maint__lang">
+    <button id="fr" class="active" onclick="setLang('fr')">FR</button>
+    <span>|</span>
+    <button id="en" onclick="setLang('en')">EN</button>
+  </div>
+
+  <main class="maint">
+    <span class="maint__logo">KA</span>
+
+    <svg class="maint__gear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
+
+    <h1 class="maint__title" data-fr="Site en maintenance" data-en="Site under maintenance">Site en maintenance</h1>
+    <p class="maint__text"
+       data-fr="Le portfolio fait peau neuve. Je reviens dans quelques instants — merci de votre patience !"
+       data-en="The portfolio is getting an update. I'll be back in a few moments — thanks for your patience!">
+      Le portfolio fait peau neuve. Je reviens dans quelques instants — merci de votre patience !
+    </p>
+
+    <div class="maint__badge">
+      <span class="maint__dot"></span>
+      <span data-fr="Mise à jour en cours…" data-en="Update in progress…">Mise à jour en cours…</span>
+    </div>
+
+    <p class="maint__sub">
+      <span data-fr="Cette page se rafraîchit automatiquement. Une urgence ? "
+            data-en="This page refreshes automatically. Need to reach me? ">Cette page se rafraîchit automatiquement. Une urgence ? </span>
+      <a href="https://www.linkedin.com/in/kevin-auchoybur-17a15a42/" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </main>
+
+  <script>
+    function setLang(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
+      });
+      document.getElementById('fr').classList.toggle('active', lang === 'fr');
+      document.getElementById('en').classList.toggle('active', lang === 'en');
+    }
+    // Détection rapide de la langue du navigateur
+    if ((navigator.language || 'fr').slice(0, 2) === 'en') setLang('en');
+  </script>
+</body>
+</html>
