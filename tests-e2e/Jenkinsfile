@@ -1,0 +1,70 @@
+pipeline {
+  agent any
+
+  // ── Build quotidien à 06h00 (heure du serveur Jenkins) ──
+  triggers {
+    cron('H 6 * * *')
+  }
+
+  environment {
+    // URL testée : la prod par défaut. Surchargeable dans la config du job.
+    BASE_URL = 'https://kevinauchoybur.me'
+    CI       = 'true'
+  }
+
+  options {
+    timeout(time: 20, unit: 'MINUTES')
+    disableConcurrentBuilds()
+  }
+
+  stages {
+    stage('Checkout') {
+      steps {
+        checkout scm
+      }
+    }
+
+    stage('Install') {
+      steps {
+        dir('tests-e2e') {
+          sh 'npm ci || npm install'
+          sh 'npx playwright install --with-deps'
+        }
+      }
+    }
+
+    stage('Tests E2E') {
+      steps {
+        dir('tests-e2e') {
+          sh 'npx playwright test'
+        }
+      }
+    }
+  }
+
+  post {
+    always {
+      // Résultats JUnit → widget "Test Result Trend" de Jenkins
+      junit testResults: 'tests-e2e/results/junit.xml', allowEmptyResults: true
+
+      // Rapport HTML Playwright (nécessite le plugin "HTML Publisher")
+      publishHTML(target: [
+        reportName: 'Playwright Report',
+        reportDir: 'tests-e2e/playwright-report',
+        reportFiles: 'index.html',
+        keepAll: true,
+        alwaysLinkToLastBuild: true,
+        allowMissing: true
+      ])
+
+      // Artefacts (traces, captures d'écran d'échec)
+      archiveArtifacts artifacts: 'tests-e2e/test-results/**', allowEmptyArchive: true
+    }
+    failure {
+      echo '❌ Des tests ont échoué — voir le Playwright Report.'
+    }
+    success {
+      echo '✅ Tous les tests passent.'
+    }
+  }
+}
