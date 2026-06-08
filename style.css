@@ -1120,10 +1120,37 @@ section {
 }
 
 .cv__entry-company {
-  display: block;
   font-size: 13px;
   color: var(--text-muted);
+}
+
+/* Ligne "entreprise" : nom à gauche, logo à droite */
+.cv__entry-company-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
   margin-bottom: 6px;
+}
+
+/* Logo employeur : petit badge arrondi discret, lisible en clair comme en sombre */
+.cv__entry-logo {
+  height: 15px;
+  width: auto;
+  max-width: 88px;
+  object-fit: contain;
+  flex-shrink: 0;
+  padding: 5px 9px;
+  border-radius: 6px;
+  box-sizing: content-box;
+}
+.cv__entry-logo--dark {
+  background: #1a1a2e;   /* fond sombre pour le logo blanc (Asteria) */
+}
+.cv__entry-logo--light {
+  background: #ffffff;   /* fond blanc pour le logo foncé (Inetum) */
+  border: 1px solid #ececec;
 }
 
 .cv__entry-desc {
