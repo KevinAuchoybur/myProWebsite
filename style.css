@@ -1145,11 +1145,8 @@ section {
   border-radius: 6px;
   box-sizing: content-box;
 }
-.cv__entry-logo--dark {
-  background: #1a1a2e;   /* fond sombre pour le logo blanc (Asteria) */
-}
 .cv__entry-logo--light {
-  background: #ffffff;   /* fond blanc pour le logo foncé (Inetum) */
+  background: #ffffff;   /* fond blanc : logos foncés (Asteria, Inetum) lisibles en clair comme en sombre */
   border: 1px solid #ececec;
 }
 
