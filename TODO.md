@@ -1,0 +1,74 @@
+# 📋 TODO — Portfolio Kevin Auchoybur
+
+Feuille de route consolidée : ce qui reste à faire sur le site + les objectifs d'apprentissage.
+Dernière mise à jour : juin 2026.
+
+---
+
+## 🚀 CI/CD — Tests automatisés quotidiens
+
+> Tout le code (16 tests Playwright + pipeline) est **déjà prêt**. Reste à choisir l'hébergement.
+
+- [ ] **Décision** : Jenkins (payant, ~5-10€/mois de serveur) **ou** GitHub Actions (gratuit, sans serveur)
+  - 👉 Reco : **GitHub Actions** (gratuit, zéro maintenance) — sauf si tu veux t'exercer sur Jenkins pour le CV
+- [ ] **Si GitHub Actions** : créer `.github/workflows/e2e.yml` (réutilise les tests existants)
+  - [ ] Choisir la variante mail : **A** (alerte si échec seulement) ou **B** (rapport quotidien même au vert)
+  - [ ] Variante B → générer un mot de passe d'application Gmail + créer un secret GitHub
+- [ ] **Si Jenkins** : suivre `tests-e2e/JENKINS-TODO.md` (serveur, plugins, job, SMTP)
+
+---
+
+## 🎨 Améliorations Front (en vigilance)
+
+Classées par rapport impact/effort.
+
+### Gros impact
+- [ ] **Animations d'apparition au scroll** (fondu + glissement via IntersectionObserver) — effet premium
+- [ ] **Audit accessibilité (a11y)** — contrastes, aria-label, navigation clavier, focus visibles
+      → argument de vente direct pour un poste de QA
+- [ ] **Compression des images** — `og-share.png` fait 3,5 Mo 😅, à optimiser (+ autres PNG)
+
+### Soigné / discret
+- [ ] **Stats animées** dans le héro (compteur 0 → 7 ans, 0 → 4 certifs au scroll)
+- [ ] **Micro-interactions** sur les cartes projets (zoom léger + ombre colorée au survol)
+- [ ] **Barre de progression de lecture** (fine barre violette en haut qui se remplit au scroll)
+
+### Bonus différenciant
+- [ ] Audit **Lighthouse** complet (perf, SEO, best practices) et optimisations
+- [ ] Petite touche signature (easter egg, curseur custom…)
+
+---
+
+## 📚 Montée en compétences
+
+### Playwright (en cours)
+- [ ] Faire les **5 exercices** de `tests-e2e/EXERCICES.md` (+ le défi bonus)
+- [ ] Pratiquer avec `npm run test:ui` et `npx playwright codegen`
+- [ ] Niveau confirmé → explorer : Page Object Model, fixtures custom, intégration CI
+- [ ] **Quand maîtrisé** : ajouter **Playwright** dans la section « Outils & méthodes » du site
+      (logo `assets/tool-playwright-logo.png` + phrase perso à la première personne)
+
+### Astro.js (plus tard) 🆕
+- [ ] **Découvrir Astro.js** — framework moderne orienté contenu / sites statiques rapides
+  - Pourquoi c'est pertinent : idéal pour un portfolio, très performant, composants réutilisables,
+    et une compétence dev recherchée
+- [ ] **Idée concrète** : migrer (ou recréer) ce portfolio sous Astro comme projet d'apprentissage
+  - Bénéfice : composants, layouts, gestion i18n native, build optimisé
+  - Bonus : un superbe cas concret à présenter en entretien
+- [ ] **Quand maîtrisé** : l'ajouter aussi dans les outils du site
+
+---
+
+## ✅ Déjà fait (pour mémoire)
+
+- ✅ Site complet bilingue FR/EN, dark mode, responsive, déployé sur `kevinauchoybur.me` (HTTPS)
+- ✅ Formulaire de contact (Formspree) + page de maintenance + scripts on/off
+- ✅ Image de partage LinkedIn (og-image)
+- ✅ Fix scrollspy + test de non-régression
+- ✅ Logos employeurs (Asteria recoloré + Inetum) uniformisés sur le CV
+- ✅ Suite de 16 tests E2E Playwright (navigation, thème, langue, boutons, formulaire mocké)
+- ✅ Parcours d'exercices Playwright
+
+---
+
+> 💡 Pour reprendre un sujet : ouvre ce fichier, on attaque la case suivante ensemble.
