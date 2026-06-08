@@ -1138,7 +1138,7 @@ section {
 .cv__entry-logo {
   height: 15px;
   width: auto;
-  max-width: 88px;
+  max-width: 110px;   /* assez large pour qu'aucun logo ne soit bride en hauteur */
   object-fit: contain;
   flex-shrink: 0;
   padding: 5px 9px;
