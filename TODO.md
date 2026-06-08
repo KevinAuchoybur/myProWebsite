@@ -5,6 +5,24 @@ Dernière mise à jour : juin 2026.
 
 ---
 
+## 📆 Plan des prochains jours (proposition)
+
+Séquencé du plus rapide/à fort impact au plus long. ~30-60 min par jour suffisent.
+
+| Jour | Objectif | Pourquoi en premier |
+|------|----------|--------------------|
+| **J1** | ⚡ **Compression des images** (`og-share.png` 3,5 Mo + PNG logos) | Effort faible, gain de perf immédiat, améliore le score Lighthouse |
+| **J2** | 🎨 **Animations d'apparition au scroll** | Gros effet « waouh » pour peu de code (IntersectionObserver) |
+| **J3** | 🔢 **Stats animées** dans le héro (compteurs) | Met en valeur tes points forts, prolonge l'élan du J2 |
+| **J4** | ♿ **Audit accessibilité (a11y)** — partie 1 (contrastes, focus, aria) | Argument QA fort ; on corrige ce que Lighthouse remonte |
+| **J5** | 🚀 **CI/CD GitHub Actions** — workflow quotidien des tests | Tout est prêt, ~30 min ; tes tests tournent enfin chaque jour |
+| **J6+** | 📚 **Exercices Playwright** (`tests-e2e/EXERCICES.md`) | À ton rythme, en parallèle du reste |
+
+> 🎯 **Premier réflexe à la reprise** : J1 (compression images) — rapide et satisfaisant.
+> Tu peux bien sûr réordonner selon ton envie du moment.
+
+---
+
 ## 🚀 CI/CD — Tests automatisés quotidiens
 
 > Tout le code (16 tests Playwright + pipeline) est **déjà prêt**. Reste à choisir l'hébergement.
