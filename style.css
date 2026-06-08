@@ -1136,14 +1136,13 @@ section {
 
 /* Logo employeur : petit badge arrondi discret, lisible en clair comme en sombre */
 .cv__entry-logo {
-  height: 15px;
-  width: auto;
-  max-width: 110px;   /* assez large pour qu'aucun logo ne soit bride en hauteur */
-  object-fit: contain;
+  width: 104px;        /* tuile de taille FIXE et identique pour tous les logos */
+  height: 28px;
+  object-fit: contain; /* le logo est centre et mis a l'echelle dans la tuile */
   flex-shrink: 0;
-  padding: 5px 9px;
+  padding: 4px 10px;
   border-radius: 6px;
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 .cv__entry-logo--light {
   background: #ffffff;   /* fond blanc : logos foncés (Asteria, Inetum) lisibles en clair comme en sombre */
