@@ -10,6 +10,8 @@ pipeline {
     // URL testée : la prod par défaut. Surchargeable dans la config du job.
     BASE_URL = 'https://kevinauchoybur.me'
     CI       = 'true'
+    // Destinataire du rapport quotidien par e-mail
+    EMAIL_TO = 'kevin.auchoybur@example.com'   // ← remplace par ta vraie adresse
   }
 
   options {
@@ -59,6 +61,30 @@ pipeline {
 
       // Artefacts (traces, captures d'écran d'échec)
       archiveArtifacts artifacts: 'tests-e2e/test-results/**', allowEmptyArchive: true
+
+      // ── Rapport quotidien par e-mail (plugin "Email Extension" requis) ──
+      // Envoyé À CHAQUE build, qu'il soit vert ou rouge, avec le résultat JUnit en pièce jointe.
+      emailext(
+        to: "${EMAIL_TO}",
+        subject: "[Portfolio] Tests E2E ${currentBuild.currentResult} — build #${BUILD_NUMBER}",
+        mimeType: 'text/html',
+        attachLog: false,
+        attachmentsPattern: 'tests-e2e/results/junit.xml',
+        body: """
+          <h2>Rapport quotidien des tests E2E</h2>
+          <p>Site testé : <a href="${BASE_URL}">${BASE_URL}</a></p>
+          <table cellpadding="6" style="border-collapse:collapse;font-family:sans-serif">
+            <tr><td><b>Statut</b></td><td>${currentBuild.currentResult == 'SUCCESS' ? '✅ Tous les tests passent' : '❌ Des tests ont échoué'}</td></tr>
+            <tr><td><b>Build</b></td><td>#${BUILD_NUMBER}</td></tr>
+            <tr><td><b>Durée</b></td><td>${currentBuild.durationString.replace(' and counting', '')}</td></tr>
+          </table>
+          <p>
+            👉 <a href="${BUILD_URL}Playwright_20Report/">Voir le rapport Playwright détaillé</a><br>
+            👉 <a href="${BUILD_URL}testReport/">Voir le détail des tests (JUnit)</a>
+          </p>
+          <p style="color:#888;font-size:12px">E-mail automatique envoyé par Jenkins.</p>
+        """
+      )
     }
     failure {
       echo '❌ Des tests ont échoué — voir le Playwright Report.'
