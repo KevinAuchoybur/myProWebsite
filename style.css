@@ -42,7 +42,7 @@
   --footer-bg: #13131c;
   --card-divider: rgba(255, 255, 255, 0.12);   /* version sombre, visible sur fond foncé */
   --glass-bg: rgba(26, 26, 38, 0.55);          /* carte "verre depoli" en sombre */
-  --pattern-opacity: 0.40;                     /* motif moins fort en sombre (contraste plus eleve) */
+  --pattern-opacity: 0.35;                     /* motif moins fort en sombre (contraste plus eleve) */
 }
 
 html {
@@ -408,11 +408,22 @@ section {
 }
 
 .hero__greeting {
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-dark);
-  margin-bottom: 14px;
-  letter-spacing: 0.02em;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--purple);
+  background: var(--purple-light);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+}
+
+.hero__greeting::before {
+  content: "\01F44B";   /* main qui salue */
+  margin-right: 7px;
+  -webkit-text-transform: none;
 }
 
 .hero__title {
