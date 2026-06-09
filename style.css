@@ -21,6 +21,8 @@
   --placeholder: #b0b7c3;
   --footer-bg: #f9f9ff;
   --card-divider: rgba(0, 0, 0, 0.1);   /* liseret discret titre/texte des cartes */
+  --glass-bg: rgba(255, 255, 255, 0.62);  /* carte "verre depoli" (citation hero) */
+  --pattern-opacity: 0.52;                 /* motif geometrique hero (clair) */
 }
 
 [data-theme="dark"] {
@@ -39,6 +41,8 @@
   --placeholder: #6a6a80;
   --footer-bg: #13131c;
   --card-divider: rgba(255, 255, 255, 0.12);   /* version sombre, visible sur fond foncé */
+  --glass-bg: rgba(26, 26, 38, 0.55);          /* carte "verre depoli" en sombre */
+  --pattern-opacity: 0.40;                     /* motif moins fort en sombre (contraste plus eleve) */
 }
 
 html {
@@ -367,6 +371,29 @@ section {
   max-width: 1200px;
   margin: 0 auto;
   gap: 40px;
+  position: relative;
+}
+
+/* Motif "éclats géométriques" discret en fond du héro (palette violette) */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('assets/pattern-geo.svg') repeat;
+  background-size: 300px 300px;
+  opacity: var(--pattern-opacity);  /* 52% en clair, 40% en sombre */
+  /* Fond plus présent sur les bords, qui s'efface vers le centre/texte pour la lisibilite */
+  -webkit-mask-image: radial-gradient(ellipse at center, transparent 22%, #000 90%);
+          mask-image: radial-gradient(ellipse at center, transparent 22%, #000 90%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Le contenu du héro passe au-dessus du motif */
+.hero__text,
+.hero__visual {
+  position: relative;
+  z-index: 1;
 }
 
 .hero__text {
@@ -391,10 +418,30 @@ section {
 }
 
 .hero__tagline {
+  position: relative;
   margin: 0 0 28px;
-  padding: 4px 0 4px 16px;
-  border-left: 3px solid var(--purple);
+  padding: 16px 20px 16px 24px;
   max-width: 430px;
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  box-shadow: 0 6px 22px rgba(124, 110, 248, 0.10);
+}
+
+/* Guillemet decoratif en signature */
+.hero__tagline::before {
+  content: "\201C";
+  position: absolute;
+  top: -6px;
+  left: 12px;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 46px;
+  line-height: 1;
+  color: var(--purple);
+  opacity: 0.28;
+  pointer-events: none;
 }
 
 .hero__tagline-motto {
