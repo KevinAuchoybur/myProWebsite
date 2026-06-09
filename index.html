@@ -69,6 +69,8 @@
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
+    <!-- Barre de progression de lecture (sur le bord bas de la navbar) -->
+    <div id="readingProgress" class="reading-progress" aria-hidden="true"></div>
   </header>
 
   <!-- Menu mobile -->
@@ -750,14 +752,14 @@
     const navLinks = document.querySelectorAll('.navbar__links a');
 
     function setActiveLink() {
-      const navHeight = document.querySelector('.navbar').offsetHeight;
-      let current = '';
+      // Ligne de reference a 40% de la hauteur du viewport : une section devient
+      // active des qu'elle occupe l'ecran (robuste pour les sections hautes).
+      const ref = window.innerHeight * 0.4;
+      let current = sections[0].id;
       sections.forEach(section => {
-        const top = section.getBoundingClientRect().top - navHeight - 10;
-        if (top <= 0) current = section.id;
+        if (section.getBoundingClientRect().top <= ref) current = section.id;
       });
-      // Si on est en bas de page, la dernière section (souvent courte) ne peut
-      // pas franchir le seuil : on la force comme active.
+      // Si on est en bas de page, on force la derniere section comme active.
       const enBasDePage = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
       if (enBasDePage) current = sections[sections.length - 1].id;
       navLinks.forEach(link => {
@@ -767,6 +769,17 @@
     }
     window.addEventListener('scroll', setActiveLink, { passive: true });
     setActiveLink();
+
+    // ===== BARRE DE PROGRESSION DE LECTURE =====
+    const progressBar = document.getElementById('readingProgress');
+    function updateReadingProgress() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+      progressBar.style.transform = 'scaleX(' + ratio + ')';
+    }
+    window.addEventListener('scroll', updateReadingProgress, { passive: true });
+    window.addEventListener('resize', updateReadingProgress, { passive: true });
+    updateReadingProgress();
 
     navLinks.forEach(link => {
       link.addEventListener('click', () => {

@@ -77,6 +77,20 @@ body.modal-open {
   z-index: 100;
 }
 
+/* Barre de progression de lecture (sur le bord bas de la navbar, se remplit au scroll) */
+.reading-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;          /* recouvre la bordure basse de la navbar */
+  height: 3px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: linear-gradient(90deg, var(--purple-blob, #a89bfb), var(--purple));
+  z-index: 200;
+  will-change: transform;
+}
+
 .navbar__brand {
   display: flex;
   align-items: center;
@@ -153,7 +167,7 @@ body.modal-open {
 
 .navbar__links {
   display: flex;
-  gap: 36px;
+  gap: 22px;
 }
 
 .navbar__links a {
@@ -161,32 +175,24 @@ body.modal-open {
   font-size: 15px;
   font-weight: 500;
   color: var(--text-dark);
-  transition: color 0.2s;
+  padding: 7px 14px;
+  border-radius: 50px;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .navbar__links a:hover {
   color: var(--purple);
+  background: var(--purple-light);
 }
 
-.navbar__links a::after {
-  content: '';
-  display: block;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--purple);
-  transform: scaleX(0);
-  transition: transform 0.25s ease;
-  margin-top: 3px;
-}
-
-.navbar__links a:hover::after,
-.navbar__links a.active::after {
-  transform: scaleX(1);
-}
-
+/* Item actif : pastille violette (au lieu d'un souligne qui ferait doublon
+   avec la barre de progression de lecture sous la navbar) */
 .navbar__links a.active {
   color: var(--purple);
+  background: var(--purple-light);
+  font-weight: 600;
 }
+
 
 .btn-talk {
   display: inline-flex;
