@@ -18,6 +18,9 @@ Séquencé du plus rapide/à fort impact au plus long. ~30-60 min par jour suffi
 | **J5** | 🚀 **CI/CD GitHub Actions** — workflow quotidien des tests | Tout est prêt, ~30 min ; tes tests tournent enfin chaque jour |
 | **J6+** | 📚 **Exercices Playwright** (`tests-e2e/EXERCICES.md`) | À ton rythme, en parallèle du reste |
 
+> ℹ️ Note QA : penser à ajouter un **test de non-régression Playwright** pour le bug
+> scrollspy « section haute » (corrige récemment) — non couvert par les tests actuels.
+
 > 🎯 **Premier réflexe à la reprise** : J1 (compression images) — rapide et satisfaisant.
 > Tu peux bien sûr réordonner selon ton envie du moment.
 
@@ -49,7 +52,7 @@ Classées par rapport impact/effort.
 ### Soigné / discret
 - [ ] **Stats animées** dans le héro (compteur 0 → 7 ans, 0 → 4 certifs au scroll)
 - [ ] **Micro-interactions** sur les cartes projets (zoom léger + ombre colorée au survol)
-- [ ] **Barre de progression de lecture** (fine barre violette en haut qui se remplit au scroll)
+- [x] ~~**Barre de progression de lecture**~~ ✅ faite (sous la navbar)
 
 ### Bonus différenciant
 - [ ] Audit **Lighthouse** complet (perf, SEO, best practices) et optimisations
@@ -63,8 +66,7 @@ Classées par rapport impact/effort.
 - [ ] Faire les **5 exercices** de `tests-e2e/EXERCICES.md` (+ le défi bonus)
 - [ ] Pratiquer avec `npm run test:ui` et `npx playwright codegen`
 - [ ] Niveau confirmé → explorer : Page Object Model, fixtures custom, intégration CI
-- [ ] **Quand maîtrisé** : ajouter **Playwright** dans la section « Outils & méthodes » du site
-      (logo `assets/tool-playwright-logo.png` + phrase perso à la première personne)
+- [x] ~~Ajouter **Playwright** dans « Outils & méthodes » du CV~~ ✅ fait (en pastille)
 
 ### Astro.js (plus tard) 🆕
 - [ ] **Découvrir Astro.js** — framework moderne orienté contenu / sites statiques rapides
@@ -86,6 +88,11 @@ Classées par rapport impact/effort.
 - ✅ Logos employeurs (Asteria recoloré + Inetum) uniformisés sur le CV
 - ✅ Suite de 16 tests E2E Playwright (navigation, thème, langue, boutons, formulaire mocké)
 - ✅ Parcours d'exercices Playwright
+- ✅ **Identité visuelle géométrique** : motif « éclats » violet (héro + contact), inspiré d'un textile
+- ✅ Citation du héro sur carte « verre dépoli » + greeting en pilule
+- ✅ Indicateur de nav actif en pastille + barre de progression de lecture
+- ✅ Sous-titres de sections en violet italique (peps)
+- ✅ Sous-section « Outils de tests » retirée des Projets + nettoyage du code mort
 
 ---
 
