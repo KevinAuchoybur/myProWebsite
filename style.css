@@ -382,9 +382,15 @@ section {
   background: url('assets/pattern-geo.svg') repeat;
   background-size: 300px 300px;
   opacity: var(--pattern-opacity);  /* 52% en clair, 40% en sombre */
-  /* Fond plus présent sur les bords, qui s'efface vers le centre/texte pour la lisibilite */
-  -webkit-mask-image: radial-gradient(ellipse at center, transparent 22%, #000 90%);
-          mask-image: radial-gradient(ellipse at center, transparent 22%, #000 90%);
+  /* Efface le centre (lisibilite) ET fond le motif vers le bas pour une transition douce */
+  -webkit-mask-image:
+    radial-gradient(ellipse at center, transparent 22%, #000 90%),
+    linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(ellipse at center, transparent 22%, #000 90%),
+    linear-gradient(to bottom, #000 0%, #000 55%, transparent 100%);
+  mask-composite: intersect;
   pointer-events: none;
   z-index: 0;
 }
@@ -1463,6 +1469,40 @@ section {
   max-width: 600px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+}
+
+/* Meme motif geometrique qu'au hero, en echo (effet bookend haut/bas de page).
+   En desktop il s'etend sur toute la largeur de l'ecran (l'overflow-x:clip evite
+   tout scroll horizontal), centre degage pour le formulaire, fondu haut/bas. */
+.contact::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  bottom: -30px;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: url('assets/pattern-geo.svg') repeat;
+  background-size: 300px 300px;
+  opacity: var(--pattern-opacity);
+  -webkit-mask-image:
+    radial-gradient(ellipse 42% 55% at center, transparent 28%, #000 82%),
+    linear-gradient(to bottom, transparent 0%, #000 20%, #000 80%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(ellipse 42% 55% at center, transparent 28%, #000 82%),
+    linear-gradient(to bottom, transparent 0%, #000 20%, #000 80%, transparent 100%);
+  mask-composite: intersect;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact__title,
+.contact__subtitle,
+.contact__card {
+  position: relative;
+  z-index: 1;
 }
 
 .contact__title {
