@@ -1081,38 +1081,6 @@ section {
   opacity: 0.8;
 }
 
-/* ===== BLOC OUTILS ===== */
-.tools {
-  text-align: center;
-  margin-top: 56px;
-}
-
-.tools__title {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 28px;
-}
-
-.tools__title::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: var(--purple);
-  border-radius: 2px;
-  margin: 12px auto 0;
-}
-
-.tools__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 760px;
-  margin: 0 auto;
-  text-align: left;
-}
-
 /* ===== CV ===== */
 .cv {
   padding: 60px 60px 80px;
