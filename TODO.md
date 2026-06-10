@@ -1,7 +1,7 @@
 # 📋 TODO — Portfolio Kevin Auchoybur
 
 Feuille de route consolidée : ce qui reste à faire sur le site + les objectifs d'apprentissage.
-Dernière mise à jour : juin 2026.
+Dernière mise à jour : 10 juin 2026.
 
 ---
 
@@ -93,6 +93,9 @@ Classées par rapport impact/effort.
 - ✅ Indicateur de nav actif en pastille + barre de progression de lecture
 - ✅ Sous-titres de sections en violet italique (peps)
 - ✅ Sous-section « Outils de tests » retirée des Projets + nettoyage du code mort
+- ✅ **CV PDF reproductible** (`cv-pdf/generate-cv.js`, HTML→PDF via Playwright), aligné sur le site (Playwright au lieu de Cypress) + motif géométrique discret (en-tête + bas droite)
+- ✅ **Bouton WhatsApp** dans le héro (après LinkedIn), message pré-rempli bilingue
+- ✅ **Refonte mobile du héro** : bloc compacté (titre 2 lignes, avatar réduit), CV pleine largeur + icônes centrées, accroche réduite à la punchline, espacements resserrés
 
 ---
 
