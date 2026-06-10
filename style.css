@@ -1312,7 +1312,8 @@ section {
 }
 
 /* LinkedIn en icône seule */
-.btn-linkedin-icon {
+.btn-linkedin-icon,
+.btn-whatsapp-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1326,7 +1327,8 @@ section {
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
-.btn-linkedin-icon:hover {
+.btn-linkedin-icon:hover,
+.btn-whatsapp-icon:hover {
   background: var(--purple);
   border-color: var(--purple);
   color: #ffffff;
