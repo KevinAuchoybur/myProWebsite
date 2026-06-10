@@ -1833,16 +1833,28 @@ section {
     gap: 6px;
   }
   .hero__visual {
-    width: 240px;
-    height: 240px;
+    width: 190px;
+    height: 190px;
   }
   .hero__blob {
-    width: 220px;
-    height: 220px;
+    width: 180px;
+    height: 180px;
   }
   .hero__photo-ring {
-    width: 170px;
-    height: 170px;
+    width: 150px;
+    height: 150px;
+  }
+  /* Compactage du hero pour faire remonter le bouton CV au-dessus de la ligne de flottaison */
+  .hero__title {
+    font-size: 27px;
+    margin-bottom: 12px;
+  }
+  .hero__greeting {
+    margin-bottom: 12px;
+  }
+  .hero__tagline {
+    margin: 0 0 18px;
+    padding: 13px 16px;
   }
   .cv {
     padding: 40px 20px 60px;
