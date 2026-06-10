@@ -151,16 +151,23 @@ function html(d) {
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root { --purple:#7C6EF8; --purple-light:#ede9fe; --dark:#1a1a2e; --muted:#4b5563; }
   body { font-family:'Inter',sans-serif; color:var(--dark); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
-  .page { width:210mm; min-height:297mm; padding:16mm 14mm; }
+  .page { position:relative; width:210mm; min-height:297mm; padding:16mm 14mm; overflow:hidden; }
+  /* Rappel du motif en bas a droite (echo du bas de page du site) */
+  .page::after { content:""; position:absolute; right:0; bottom:0;
+    width:300px; height:300px;
+    background:url('${PATTERN_URI}') repeat; background-size:230px 230px;
+    opacity:0.14;
+    -webkit-mask-image:radial-gradient(ellipse at bottom right, #000 5%, transparent 70%);
+            mask-image:radial-gradient(ellipse at bottom right, #000 5%, transparent 70%); }
 
   .header { position:relative; overflow:hidden; text-align:center; padding:8px 0 14px;
     border-bottom:2px solid var(--purple); margin-bottom:20px; }
   /* Motif geometrique discret en fond de l'en-tete (echo du hero du site) */
   .header::before { content:""; position:absolute; inset:0;
-    background:url('${PATTERN_URI}') repeat; background-size:230px 230px;
-    opacity:0.10;
-    -webkit-mask-image:radial-gradient(ellipse at center, transparent 30%, #000 85%);
-            mask-image:radial-gradient(ellipse at center, transparent 30%, #000 85%); }
+    background:url('${PATTERN_URI}') repeat; background-size:215px 215px;
+    opacity:0.17;
+    -webkit-mask-image:radial-gradient(ellipse at center, transparent 26%, #000 82%);
+            mask-image:radial-gradient(ellipse at center, transparent 26%, #000 82%); }
   .header > * { position:relative; z-index:1; }
   .header h1 { font-size:27px; font-weight:800; }
   .header .role { font-size:14px; font-weight:700; color:var(--purple); margin:3px 0 4px; }
