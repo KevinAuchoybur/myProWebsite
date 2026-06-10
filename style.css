@@ -1816,6 +1816,12 @@ section {
   }
   .hero__actions {
     justify-content: center;
+    flex-wrap: wrap;
+  }
+  /* CV en pleine largeur, les 2 icones (LinkedIn/WhatsApp) centrees en dessous */
+  .hero__actions .btn-hero-cv {
+    flex: 1 1 100%;
+    justify-content: center;
   }
   .hero__social {
     justify-content: center;
