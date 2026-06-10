@@ -11,6 +11,10 @@ const { chromium } = require(path.resolve(__dirname, '../tests-e2e/node_modules/
 
 const OUT_DIR = path.resolve(__dirname, '../assets');
 
+// Motif geometrique du site, inline en data-URI (pas de serveur lors du rendu PDF)
+const PATTERN_SVG = fs.readFileSync(path.resolve(__dirname, '../assets/pattern-geo.svg'), 'utf8');
+const PATTERN_URI = 'data:image/svg+xml;base64,' + Buffer.from(PATTERN_SVG).toString('base64');
+
 // ---------- Donnees (alignees avec index.html) ----------
 const DATA = {
   fr: {
@@ -149,7 +153,15 @@ function html(d) {
   body { font-family:'Inter',sans-serif; color:var(--dark); -webkit-print-color-adjust:exact; print-color-adjust:exact; }
   .page { width:210mm; min-height:297mm; padding:16mm 14mm; }
 
-  .header { text-align:center; padding-bottom:14px; border-bottom:2px solid var(--purple); margin-bottom:20px; }
+  .header { position:relative; overflow:hidden; text-align:center; padding:8px 0 14px;
+    border-bottom:2px solid var(--purple); margin-bottom:20px; }
+  /* Motif geometrique discret en fond de l'en-tete (echo du hero du site) */
+  .header::before { content:""; position:absolute; inset:0;
+    background:url('${PATTERN_URI}') repeat; background-size:230px 230px;
+    opacity:0.10;
+    -webkit-mask-image:radial-gradient(ellipse at center, transparent 30%, #000 85%);
+            mask-image:radial-gradient(ellipse at center, transparent 30%, #000 85%); }
+  .header > * { position:relative; z-index:1; }
   .header h1 { font-size:27px; font-weight:800; }
   .header .role { font-size:14px; font-weight:700; color:var(--purple); margin:3px 0 4px; }
   .header .email { font-size:11.5px; color:var(--muted); }
