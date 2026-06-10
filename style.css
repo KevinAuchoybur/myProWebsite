@@ -1811,8 +1811,9 @@ section {
   }
   .hero {
     flex-direction: column-reverse;
-    padding: 40px 20px;
+    padding: 24px 20px 40px;
     text-align: center;
+    gap: 14px;
   }
   .hero__actions {
     justify-content: center;
