@@ -785,11 +785,22 @@ section {
 }
 
 .about__block {
-  margin-bottom: 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--purple);
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 .about__block:last-child {
   margin-bottom: 0;
+}
+
+.about__block:hover {
+  box-shadow: 0 10px 30px rgba(124, 110, 248, 0.12);
+  transform: translateY(-2px);
 }
 
 .about__block-title {
@@ -816,22 +827,20 @@ section {
 }
 
 .about__block-text--quote {
-  position: relative;
-  padding: 8px 0 0 40px;
-  font-style: italic;
   color: var(--text-dark);
+  font-size: 14.5px;
+  line-height: 1.75;
 }
 
-.about__block-text--quote::before {
-  content: '\201C';
-  position: absolute;
-  left: 0;
-  top: -6px;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 52px;
-  line-height: 1;
+/* Mots-cles mis en valeur dans la bio */
+.about__block-text strong {
+  font-weight: 700;
   color: var(--purple);
-  opacity: 0.5;
+}
+.about__block-text .hl {
+  font-weight: 700;
+  background: linear-gradient(transparent 58%, var(--purple-light) 58%);
+  padding: 0 3px;
 }
 
 .about__stats-intro {
@@ -858,7 +867,7 @@ section {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 52px;
 }
 
 .stat {

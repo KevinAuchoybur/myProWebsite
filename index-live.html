@@ -131,6 +131,25 @@
     <h2 class="about__title" data-i18n="about.title"></h2>
     <p class="about__intro" data-i18n="about.intro"></p>
 
+    <p class="about__stats-intro" data-i18n="about.statsIntro"></p>
+    <div class="about__stats">
+      <div class="stat">
+        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
+        <span class="stat__label" data-i18n="about.stat1"></span>
+        <span class="stat__num">7+</span>
+      </div>
+      <div class="stat">
+        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.7L16.5 22 15 14.5"/></svg>
+        <span class="stat__label" data-i18n="about.stat2"></span>
+        <span class="stat__num">4</span>
+      </div>
+      <div class="stat">
+        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
+        <span class="stat__label" data-i18n="about.stat3"></span>
+        <span class="stat__num">3</span>
+      </div>
+    </div>
+
     <div class="about__text">
       <div class="about__block">
         <h3 class="about__block-title" data-i18n="about.who.title"></h3>
@@ -146,25 +165,6 @@
       <span class="about__motto-label" data-i18n="about.mottoLabel"></span>
       <span class="about__motto-text" data-i18n="about.motto"></span>
     </blockquote>
-
-    <p class="about__stats-intro" data-i18n="about.statsIntro"></p>
-    <div class="about__stats">
-      <div class="stat">
-        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
-        <span class="stat__label" data-i18n="about.stat1"></span>
-        <span class="stat__num">7+</span>
-      </div>
-      <div class="stat">
-        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.7L16.5 22 15 14.5"/></svg>
-        <span class="stat__label" data-i18n="about.stat2"></span>
-        <span class="stat__num">3</span>
-      </div>
-      <div class="stat">
-        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
-        <span class="stat__label" data-i18n="about.stat3"></span>
-        <span class="stat__num">3</span>
-      </div>
-    </div>
   </section>
 
   <!-- ===== EXPERTISES ===== -->
@@ -471,14 +471,14 @@
         'about.title':     'À propos de moi',
         'about.intro':     'Mon parcours en quelques mots.',
         'about.who.title': 'Qui suis-je ?',
-        'about.who.text':  'J\'ai trouvé dans l\'assurance qualité le terrain idéal pour allier rigueur technique et esprit critique.<br />Au cours de mes expériences professionnelles, du privé au secteur public, j\'ai appris qu\'un bon test ne se contente pas de vérifier — il anticipe.<br />Ce qui me motive ? Garantir que chaque produit livré inspire confiance à ceux qui l\'utilisent.',
+        'about.who.text':  'J\'ai trouvé dans l\'assurance qualité le terrain idéal pour allier rigueur technique et esprit critique.<br /><br />Au fil de mes expériences, du secteur privé au secteur public, j\'ai appris qu\'un bon test ne se contente pas de vérifier : il <strong>anticipe les risques</strong>, les usages et les défaillances possibles.<br /><br />Mon objectif est simple : sécuriser des systèmes <strong>fiables et robustes</strong>, en particulier dans des <span class="hl">environnements critiques</span> où la qualité ne peut pas être laissée au hasard.',
         'about.vision.title': 'Ma vision du métier',
         'about.vision.text':  'Être QA est autant un état d\'esprit qu\'une personnalité : un mélange de rigueur, de curiosité et d\'exigence.<br />La qualité ne se contrôle pas en fin de chaîne — elle se construit à chaque étape, avec toutes les parties prenantes.<br />Mon rôle : être force de proposition et insuffler cette exigence de qualité pour livrer des produits fiables et durables.',
         'about.mottoLabel': 'Ma devise',
         'about.motto':     'Tester, c\'est anticiper.',
         'about.statsIntro': 'Mes chiffres clés',
         'about.stat1':     'Années d\'expérience',
-        'about.stat2':     'Certifications ISTQB',
+        'about.stat2':     'Certifications',
         'about.stat3':     'Projets majeurs',
         'about.stat4':     'langues',
         'hero.iam':        'Je suis',
@@ -576,14 +576,14 @@
         'about.title':     'About me',
         'about.intro':     'My background in a few words.',
         'about.who.title': 'Who am I?',
-        'about.who.text':  'In quality assurance, I found the ideal field to combine technical rigour with critical thinking.<br />Throughout my professional experiences, from the private to the public sector, I learned that good testing doesn\'t just verify — it anticipates.<br />What drives me? Making sure every delivered product earns the trust of those who use it.',
+        'about.who.text':  'In quality assurance, I found the ideal field to combine technical rigour with critical thinking.<br /><br />Throughout my experiences, from the private to the public sector, I learned that good testing doesn\'t just verify: it <strong>anticipates risks</strong>, use cases and potential failures.<br /><br />My goal is simple: to secure <strong>reliable, robust</strong> systems — especially in <span class="hl">critical environments</span> where quality cannot be left to chance.',
         'about.vision.title': 'My vision of the job',
         'about.vision.text':  'Being a QA is as much a mindset as a personality: a blend of rigour, curiosity and high standards.<br />Quality isn\'t checked at the end of the line — it\'s built at every step, with all stakeholders.<br />My role: being proactive and instilling this quality mindset to deliver reliable, lasting products.',
         'about.mottoLabel': 'My motto',
         'about.motto':     'Testing means anticipating.',
         'about.statsIntro': 'My key figures',
         'about.stat1':     'Years of experience',
-        'about.stat2':     'ISTQB certifications',
+        'about.stat2':     'Certifications',
         'about.stat3':     'Major projects',
         'about.stat4':     'languages',
         'hero.iam':        'I am',
@@ -780,6 +780,35 @@
         link.classList.add('active');
       });
     });
+
+    // ===== COMPTEURS ANIMES (chiffres clés) =====
+    function animateCount(el) {
+      const m = el.textContent.trim().match(/^(\d+)(.*)$/);
+      if (!m) return;
+      const target = parseInt(m[1], 10);
+      const suffix = m[2] || '';
+      const duration = 1300;
+      const start = performance.now();
+      function tick(now) {
+        const p = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+        el.textContent = Math.round(eased * target) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+    const statsContainer = document.querySelector('.about__stats');
+    if (statsContainer && 'IntersectionObserver' in window) {
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.stat__num').forEach(animateCount);
+            statsObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.4 });
+      statsObserver.observe(statsContainer);
+    }
 
     // ===== FORMULAIRE DE CONTACT (inline) =====
     const form = document.getElementById('contactForm');
