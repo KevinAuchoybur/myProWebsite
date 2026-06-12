@@ -498,13 +498,37 @@ section {
 }
 .about__motto-text {
   display: block;
+  position: relative;
   font-size: clamp(23px, 4.2vw, 31px);
   font-weight: 800;
   font-style: italic;
   color: var(--text-dark);
   line-height: 1.3;
 }
+/* Guillemet d'ouverture juste avant le texte : effet citation */
+.about__motto-text::before {
+  content: '\201C';
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 44px;
+  line-height: 0;
+  vertical-align: -0.38em;
+  margin-right: 4px;
+  color: var(--purple);
+  opacity: 0.32;
+}
+/* Guillemet fermant juste apres le texte */
 .about__motto-text::after {
+  content: '\201D';
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 44px;
+  line-height: 0;
+  vertical-align: -0.38em;
+  margin-left: 3px;
+  color: var(--purple);
+  opacity: 0.32;
+}
+/* Trait d'accent sous la devise (deplace sur le conteneur) */
+.about__motto::after {
   content: '';
   display: block;
   width: 44px;
@@ -830,6 +854,24 @@ section {
   color: var(--text-dark);
   font-size: 14.5px;
   line-height: 1.75;
+}
+/* Guillemets d'ouverture et de fermeture en ligne : effet citation */
+.about__block-text--quote::before,
+.about__block-text--quote::after {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 36px;
+  line-height: 0;
+  vertical-align: -0.34em;
+  color: var(--purple);
+  opacity: 0.3;
+}
+.about__block-text--quote::before {
+  content: '\201C';
+  margin-right: 3px;
+}
+.about__block-text--quote::after {
+  content: '\201D';
+  margin-left: 2px;
 }
 
 /* Mots-cles mis en valeur dans la bio */
