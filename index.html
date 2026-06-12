@@ -91,9 +91,11 @@
         <span data-i18n="hero.iam"></span> Kevin Auchoybur<br />
         <span style="color: var(--purple);" data-i18n="hero.role"></span>
       </h1>
-      <blockquote class="hero__tagline">
-        <span class="hero__tagline-motto" data-i18n="hero.motto"></span>
-      </blockquote>
+      <p class="hero__pitch" data-i18n-html="hero.pitch"></p>
+      <p class="hero__subrole">
+        <svg class="hero__subrole-check" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <span data-i18n-html="hero.subrole"></span>
+      </p>
       <div class="hero__actions">
         <a id="heroDownloadCv" href="assets/cv-fr-KevinAuchoybur.pdf" download class="btn-hero-cv">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -139,6 +141,11 @@
         <p class="about__block-text about__block-text--quote" data-i18n-html="about.vision.text"></p>
       </div>
     </div>
+
+    <blockquote class="about__motto">
+      <span class="about__motto-label" data-i18n="about.mottoLabel"></span>
+      <span class="about__motto-text" data-i18n="about.motto"></span>
+    </blockquote>
 
     <p class="about__stats-intro" data-i18n="about.statsIntro"></p>
     <div class="about__stats">
@@ -467,6 +474,8 @@
         'about.who.text':  'J\'ai trouvé dans l\'assurance qualité le terrain idéal pour allier rigueur technique et esprit critique.<br />Au cours de mes expériences professionnelles, du privé au secteur public, j\'ai appris qu\'un bon test ne se contente pas de vérifier — il anticipe.<br />Ce qui me motive ? Garantir que chaque produit livré inspire confiance à ceux qui l\'utilisent.',
         'about.vision.title': 'Ma vision du métier',
         'about.vision.text':  'Être QA est autant un état d\'esprit qu\'une personnalité : un mélange de rigueur, de curiosité et d\'exigence.<br />La qualité ne se contrôle pas en fin de chaîne — elle se construit à chaque étape, avec toutes les parties prenantes.<br />Mon rôle : être force de proposition et insuffler cette exigence de qualité pour livrer des produits fiables et durables.',
+        'about.mottoLabel': 'Ma devise',
+        'about.motto':     'Tester, c\'est anticiper.',
         'about.statsIntro': 'Mes chiffres clés',
         'about.stat1':     'Années d\'expérience',
         'about.stat2':     'Certifications ISTQB',
@@ -474,7 +483,8 @@
         'about.stat4':     'langues',
         'hero.iam':        'Je suis',
         'hero.role':       'Analyste QA',
-        'hero.motto':      'Tester, c\'est anticiper.',
+        'hero.pitch':      'Je sécurise la qualité des <span class="hl">systèmes critiques</span> grâce aux tests <strong>fonctionnels et automatisés</strong>.',
+        'hero.subrole':    '<strong>Certifié ISTQB</strong>',
         'hero.follow':     'Me suivre :',
         'hero.downloadCv': 'Télécharger mon CV',
         'hero.quickaccess': 'Accès rapide :',
@@ -569,6 +579,8 @@
         'about.who.text':  'In quality assurance, I found the ideal field to combine technical rigour with critical thinking.<br />Throughout my professional experiences, from the private to the public sector, I learned that good testing doesn\'t just verify — it anticipates.<br />What drives me? Making sure every delivered product earns the trust of those who use it.',
         'about.vision.title': 'My vision of the job',
         'about.vision.text':  'Being a QA is as much a mindset as a personality: a blend of rigour, curiosity and high standards.<br />Quality isn\'t checked at the end of the line — it\'s built at every step, with all stakeholders.<br />My role: being proactive and instilling this quality mindset to deliver reliable, lasting products.',
+        'about.mottoLabel': 'My motto',
+        'about.motto':     'Testing means anticipating.',
         'about.statsIntro': 'My key figures',
         'about.stat1':     'Years of experience',
         'about.stat2':     'ISTQB certifications',
@@ -576,7 +588,8 @@
         'about.stat4':     'languages',
         'hero.iam':        'I am',
         'hero.role':       'Quality Analyst',
-        'hero.motto':      'Testing means anticipating.',
+        'hero.pitch':      'I secure the quality of <span class="hl">critical systems</span> through <strong>functional and automated</strong> testing.',
+        'hero.subrole':    '<strong>ISTQB-certified</strong>',
         'hero.follow':     'Follow me:',
         'hero.downloadCv': 'Download my CV',
         'hero.quickaccess': 'Quick access:',

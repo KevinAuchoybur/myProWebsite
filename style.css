@@ -437,42 +437,81 @@ section {
   font-weight: 800;
   line-height: 1.2;
   color: var(--text-dark);
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
-.hero__tagline {
-  position: relative;
-  margin: 0 0 28px;
-  padding: 16px 20px 16px 24px;
-  max-width: 430px;
-  background: var(--glass-bg);
-  -webkit-backdrop-filter: blur(6px);
-          backdrop-filter: blur(6px);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  box-shadow: 0 6px 22px rgba(124, 110, 248, 0.10);
-}
-
-/* Guillemet decoratif en signature */
-.hero__tagline::before {
-  content: "\201C";
-  position: absolute;
-  top: -6px;
-  left: 12px;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 46px;
-  line-height: 1;
-  color: var(--purple);
-  opacity: 0.28;
-  pointer-events: none;
-}
-
-.hero__tagline-motto {
-  display: block;
+/* Ligne de pitch : ce que tu apportes, en une phrase */
+.hero__pitch {
   font-size: 17px;
+  font-weight: 500;
+  line-height: 1.55;
+  color: var(--text-dark);
+  max-width: 470px;
+  margin: 0 0 14px;
+}
+/* Mot-cle fort : effet surligneur violet */
+.hero__pitch .hl {
   font-weight: 700;
+  background: linear-gradient(transparent 58%, var(--purple-light) 58%);
+  padding: 0 3px;
+}
+/* Termes techniques : violet gras */
+.hero__pitch strong {
+  font-weight: 700;
+  color: var(--purple);
+}
+
+/* Sous-ligne de positionnement : certification (badge credibilite) */
+.hero__subrole {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0 0 22px;
+}
+.hero__subrole strong {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+.hero__subrole-check {
+  color: var(--purple);
+  flex-shrink: 0;
+}
+
+/* Devise / leitmotiv dans la section À propos */
+.about__motto {
+  text-align: center;
+  max-width: 640px;
+  margin: 24px auto 0;
+  padding: 0 20px;
+}
+.about__motto-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--purple);
+  margin-bottom: 12px;
+}
+.about__motto-text {
+  display: block;
+  font-size: clamp(23px, 4.2vw, 31px);
+  font-weight: 800;
   font-style: italic;
   color: var(--text-dark);
+  line-height: 1.3;
+}
+.about__motto-text::after {
+  content: '';
+  display: block;
+  width: 44px;
+  height: 3px;
+  background: var(--purple);
+  border-radius: 2px;
+  margin: 18px auto 0;
 }
 
 .hero__actions {
@@ -1844,10 +1883,6 @@ section {
   }
   .hero__greeting {
     margin-bottom: 12px;
-  }
-  .hero__tagline {
-    margin: 0 0 18px;
-    padding: 13px 16px;
   }
   .cv {
     padding: 40px 20px 60px;
