@@ -1192,6 +1192,35 @@ section {
   transform: rotate(-45deg);
 }
 
+/* Encadré "Résultat" : met en évidence l'impact du projet */
+.project-card__result {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: var(--purple-light);
+  border-radius: 10px;
+}
+.project-card__result-icon {
+  color: var(--purple);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.project-card__result-text {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-dark);
+}
+.project-card__result-label {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--purple);
+  margin-right: 3px;
+}
+
 .project-card__tags {
   display: flex;
   flex-wrap: wrap;
