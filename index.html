@@ -3,939 +3,196 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kevin Auchoybur – Analyste QA</title>
+  <meta name="robots" content="noindex" />
+  <title>Maintenance — Kevin Auchoybur</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Kevin Auchoybur, Analyste QA. Je détecte les anomalies avant qu'elles n'atteignent vos utilisateurs : tests fonctionnels, automatisation et fiabilisation de vos livraisons logicielles." />
-  <meta name="author" content="Kevin Auchoybur" />
-
-  <!-- Open Graph (LinkedIn, Facebook…) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Kevin Auchoybur – Analyste QA" />
-  <meta property="og:description" content="Tester, c'est anticiper. Je détecte les anomalies avant qu'elles n'atteignent vos utilisateurs." />
-  <meta property="og:image" content="https://kevinauchoybur.me/assets/og-share.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="627" />
-  <meta property="og:url" content="https://kevinauchoybur.me/" />
-  <meta property="og:locale" content="fr_FR" />
-  <meta property="og:locale:alternate" content="en_US" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Kevin Auchoybur – Analyste QA" />
-  <meta name="twitter:description" content="Tester, c'est anticiper. Je détecte les anomalies avant qu'elles n'atteignent vos utilisateurs." />
-  <meta name="twitter:image" content="https://kevinauchoybur.me/assets/og-share.png" />
+  <!-- Recharge la page automatiquement toutes les 30 s pour reprendre dès la fin du déploiement -->
+  <meta http-equiv="refresh" content="30" />
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    :root {
+      --purple: #7C6EF8;
+      --purple-light: #ede9fe;
+      --text-dark: #1a1a2e;
+      --text-muted: #4b5563;
+      --bg: #ffffff;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 24px;
+      color: var(--text-dark);
+      background: radial-gradient(circle at 50% 0%, #f5f3ff 0%, #ffffff 60%);
+      overflow: hidden;
+    }
+
+    .maint {
+      position: relative;
+      z-index: 2;
+      max-width: 520px;
+    }
+
+    /* Blobs décoratifs */
+    .blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(10px);
+      z-index: 1;
+      opacity: 0.5;
+    }
+    .blob--1 { width: 320px; height: 320px; top: -90px; right: -90px;
+      background: radial-gradient(circle at 30% 30%, #c4b5fd 0%, #7C6EF8 100%); }
+    .blob--2 { width: 240px; height: 240px; bottom: -80px; left: -70px;
+      background: var(--purple-light); }
+
+    .maint__logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--purple);
+      color: #fff;
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: -1px;
+      margin-bottom: 28px;
+      box-shadow: 0 12px 30px rgba(124, 110, 248, 0.35);
+    }
+
+    /* Engrenage animé */
+    .maint__gear {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 22px;
+      color: var(--purple);
+      animation: spin 4s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) {
+      .maint__gear { animation: none; }
+    }
+
+    .maint__title {
+      font-size: clamp(26px, 6vw, 36px);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .maint__text {
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .maint__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 18px;
+      border-radius: 50px;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .maint__dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--purple);
+      animation: pulse 1.4s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .4; transform: scale(.7); } }
+
+    .maint__sub {
+      margin-top: 26px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .maint__sub a { color: var(--purple); font-weight: 600; text-decoration: none; }
+    .maint__sub a:hover { text-decoration: underline; }
+
+    /* Bouton de switch FR/EN */
+    .maint__lang {
+      position: fixed;
+      top: 20px;
+      right: 22px;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .maint__lang button {
+      background: none; border: none; cursor: pointer;
+      color: var(--text-muted); font-weight: 600; font-size: 14px;
+      font-family: inherit; padding: 2px 4px;
+    }
+    .maint__lang button.active { color: var(--purple); }
+    .maint__lang span { color: #d1d5db; }
+  </style>
 </head>
 <body>
+  <div class="blob blob--1"></div>
+  <div class="blob blob--2"></div>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar">
-    <a href="#home" class="navbar__brand">
-      <span class="navbar__logo" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="40" height="40">
-          <circle class="logo-bg" cx="32" cy="32" r="31"/>
-          <text class="logo-text" x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="26" letter-spacing="-1">KA</text>
-        </svg>
-      </span>
-      <div class="navbar__name">
-        <span class="navbar__fullname">Kevin Auchoybur</span>
-      </div>
-    </a>
-    <nav class="navbar__links">
-      <a href="#projects" data-i18n="nav.projects"></a>
-      <a href="#expertises" data-i18n="nav.expertises"></a>
-      <a href="#cv"       data-i18n="nav.cv"></a>
-      <a href="#contact"  data-i18n="nav.contact"></a>
-    </nav>
-    <div class="navbar__right">
-      <!-- Switch langue -->
-      <div class="lang-switch" id="langSwitch">
-        <button class="lang-btn active" data-lang="fr">FR</button>
-        <span class="lang-sep">|</span>
-        <button class="lang-btn" data-lang="en">EN</button>
-      </div>
-      <!-- Toggle thème -->
-      <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
-        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-      </button>
-    </div>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-    <!-- Barre de progression de lecture (sur le bord bas de la navbar) -->
-    <div id="readingProgress" class="reading-progress" aria-hidden="true"></div>
-  </header>
-
-  <!-- Menu mobile -->
-  <div class="mobile-menu" id="mobileMenu">
-    <nav class="mobile-menu__links">
-      <a href="#projects"   class="mobile-menu__link" data-i18n="nav.projects"></a>
-      <a href="#expertises" class="mobile-menu__link" data-i18n="nav.expertises"></a>
-      <a href="#cv"         class="mobile-menu__link" data-i18n="nav.cv"></a>
-      <a href="#contact"    class="mobile-menu__link" data-i18n="nav.contact"></a>
-    </nav>
+  <div class="maint__lang">
+    <button id="fr" class="active" onclick="setLang('fr')">FR</button>
+    <span>|</span>
+    <button id="en" onclick="setLang('en')">EN</button>
   </div>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="home">
-    <div class="hero__text">
-      <p class="hero__greeting" data-i18n="hero.greeting"></p>
-      <h1 class="hero__title">
-        <span data-i18n="hero.iam"></span> Kevin Auchoybur<br />
-        <span style="color: var(--purple);" data-i18n="hero.role"></span>
-      </h1>
-      <p class="hero__pitch" data-i18n-html="hero.pitch"></p>
-      <p class="hero__subrole">
-        <svg class="hero__subrole-check" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        <span data-i18n-html="hero.subrole"></span>
-      </p>
-      <div class="hero__actions">
-        <a id="heroDownloadCv" href="assets/cv-fr-KevinAuchoybur.pdf" download class="btn-hero-cv">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          <span data-i18n="hero.downloadCv"></span>
-        </a>
-        <a href="https://www.linkedin.com/in/kevin-auchoybur-17a15a42/" target="_blank" rel="noopener noreferrer" class="btn-linkedin-icon" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </a>
-        <a id="heroWhatsapp" href="https://wa.me/33641931342" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-icon" aria-label="WhatsApp">
-          <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.98 11.98 0 0 0 5.734 1.46h.005c6.581 0 11.945-5.334 11.948-11.893a11.821 11.821 0 0 0-3.467-8.464"/></svg>
-        </a>
-      </div>
-      <p class="hero__quicklinks">
-        <span class="hero__quicklinks-label" data-i18n="hero.quickaccess"></span>
-        <span class="hero__quicklinks-items">
-          <a href="#projects" data-i18n="nav.projects"></a>
-          <span class="hero__quicklinks-sep">·</span>
-          <a href="#expertises" data-i18n="nav.expertises"></a>
-          <span class="hero__quicklinks-sep">·</span>
-          <a href="#contact" data-i18n="nav.contact"></a>
-        </span>
-      </p>
-    </div>
-    <div class="hero__visual">
-      <div class="hero__photo-ring">
-        <img src="assets/photo.png" alt="Kevin Auchoybur" class="hero__photo" />
-      </div>
-    </div>
-  </section>
+  <main class="maint">
+    <span class="maint__logo">KA</span>
 
-  <!-- ===== À PROPOS DE MOI ===== -->
-  <section class="about" id="about">
-    <h2 class="about__title" data-i18n="about.title"></h2>
-    <p class="about__intro" data-i18n="about.intro"></p>
+    <svg class="maint__gear" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="3"/>
+      <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+    </svg>
 
-    <p class="about__stats-intro" data-i18n="about.statsIntro"></p>
-    <div class="about__stats">
-      <div class="stat">
-        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
-        <span class="stat__label" data-i18n="about.stat1"></span>
-        <span class="stat__num">7+</span>
-      </div>
-      <div class="stat">
-        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.7L16.5 22 15 14.5"/></svg>
-        <span class="stat__label" data-i18n="about.stat2"></span>
-        <span class="stat__num">4</span>
-      </div>
-      <div class="stat">
-        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg>
-        <span class="stat__label" data-i18n="about.stat3"></span>
-        <span class="stat__num">3</span>
-      </div>
+    <h1 class="maint__title" data-fr="Site en maintenance" data-en="Site under maintenance">Site en maintenance</h1>
+    <p class="maint__text"
+       data-fr="Le portfolio fait peau neuve. Je reviens dans quelques instants — merci de votre patience !"
+       data-en="The portfolio is getting an update. I'll be back in a few moments — thanks for your patience!">
+      Le portfolio fait peau neuve. Je reviens dans quelques instants — merci de votre patience !
+    </p>
+
+    <div class="maint__badge">
+      <span class="maint__dot"></span>
+      <span data-fr="Mise à jour en cours…" data-en="Update in progress…">Mise à jour en cours…</span>
     </div>
 
-    <div class="about__text">
-      <div class="about__block">
-        <h3 class="about__block-title" data-i18n="about.who.title"></h3>
-        <p class="about__block-text about__block-text--quote" data-i18n-html="about.who.text"></p>
-      </div>
-      <div class="about__block">
-        <h3 class="about__block-title" data-i18n="about.vision.title"></h3>
-        <p class="about__block-text about__block-text--quote" data-i18n-html="about.vision.text"></p>
-      </div>
-    </div>
-
-    <blockquote class="about__motto">
-      <span class="about__motto-label" data-i18n="about.mottoLabel"></span>
-      <span class="about__motto-text" data-i18n="about.motto"></span>
-    </blockquote>
-  </section>
-
-  <!-- ===== PROJETS ===== -->
-  <section class="projects" id="projects">
-    <h2 class="projects__title" data-i18n="proj.title"></h2>
-    <p class="projects__desc" data-i18n="proj.desc"></p>
-
-    <div class="projects__grid">
-
-      <div class="project-card">
-        <div class="project-card__logo">
-          <img src="assets/project-1-logo.png" alt="MonGuichet.mc" />
-        </div>
-        <h4 class="project-card__name">MonGuichet.mc</h4>
-        <p class="project-card__client">
-          <span data-i18n="proj.p1.client"></span>
-          <em class="project-card__client-sub" data-i18n="proj.p1.clientSub"></em>
-        </p>
-        <p class="project-card__desc" data-i18n="proj.p1.desc"></p>
-        <p class="project-card__activities-label" data-i18n="proj.activitiesLabel"></p>
-        <ul class="project-card__activities">
-          <li data-i18n="proj.p1.act1"></li>
-          <li data-i18n="proj.p1.act2"></li>
-          <li data-i18n="proj.p1.act3"></li>
-        </ul>
-      </div>
-
-      <div class="project-card">
-        <div class="project-card__logo">
-          <img src="assets/project-2-logo.png" alt="Powercard" />
-        </div>
-        <h4 class="project-card__name" data-i18n="proj.p2.name"></h4>
-        <p class="project-card__client">
-          <span data-i18n="proj.p2.client"></span>
-          <em class="project-card__client-sub" data-i18n="proj.p2.clientSub"></em>
-        </p>
-        <p class="project-card__desc" data-i18n="proj.p2.desc"></p>
-        <p class="project-card__activities-label" data-i18n="proj.activitiesLabel"></p>
-        <ul class="project-card__activities">
-          <li data-i18n="proj.p2.act1"></li>
-          <li data-i18n="proj.p2.act2"></li>
-          <li data-i18n="proj.p2.act3"></li>
-        </ul>
-      </div>
-
-      <div class="project-card">
-        <div class="project-card__logo">
-          <img src="assets/project-3-logo.png" alt="SYRCA — Carsat" />
-        </div>
-        <h4 class="project-card__name" data-i18n="proj.p3.name"></h4>
-        <p class="project-card__client">
-          <span data-i18n="proj.p3.client"></span>
-          <em class="project-card__client-sub" data-i18n="proj.p3.clientSub"></em>
-        </p>
-        <p class="project-card__desc" data-i18n="proj.p3.desc"></p>
-        <p class="project-card__activities-label" data-i18n="proj.activitiesLabel"></p>
-        <ul class="project-card__activities">
-          <li data-i18n="proj.p3.act1"></li>
-          <li data-i18n="proj.p3.act2"></li>
-          <li data-i18n="proj.p3.act3"></li>
-        </ul>
-      </div>
-
-    </div>
-
-    <div class="tools">
-      <h3 class="tools__title" data-i18n="tools.title"></h3>
-
-      <div class="tools__cat">
-        <span class="tools__cat-label" data-i18n="tools.cat.func"></span>
-        <div class="tools__cat-items">
-          <div class="tool"><img src="assets/tool-squashtm.svg" alt="Squash TM" /></div>
-        </div>
-      </div>
-
-      <div class="tools__cat">
-        <span class="tools__cat-label" data-i18n="tools.cat.auto"></span>
-        <div class="tools__cat-items">
-          <div class="tool"><img src="assets/tool-selenium.svg" alt="Selenium" /></div>
-          <div class="tool"><img src="assets/tool-playwright.svg" alt="Playwright" /></div>
-        </div>
-      </div>
-
-      <div class="tools__cat">
-        <span class="tools__cat-label" data-i18n="tools.cat.api"></span>
-        <div class="tools__cat-items">
-          <div class="tool"><img src="assets/tool-postman.svg" alt="Postman" /></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== EXPERTISES ===== -->
-  <section class="expertises" id="expertises">
-    <h2 class="expertises__title" data-i18n="exp.title"></h2>
-    <p class="expertises__desc" data-i18n="exp.desc"></p>
-    <div class="expertises__grid">
-
-      <div class="expertise-card">
-        <div class="expertise-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-        </div>
-        <h4 class="expertise-card__name" data-i18n="exp.card1.title"></h4>
-        <p class="project-card__role">
-          <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          <span data-i18n="exp.card1.desc"></span>
-        </p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="expertise-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        </div>
-        <h4 class="expertise-card__name" data-i18n="exp.card2.title"></h4>
-        <p class="project-card__role">
-          <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          <span data-i18n="exp.card2.desc"></span>
-        </p>
-      </div>
-
-      <div class="expertise-card">
-        <div class="expertise-card__icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M21 3l-7 7"/><path d="M3 3l7 7"/><path d="M12 12v9"/><path d="M8 17h8"/></svg>
-        </div>
-        <h4 class="expertise-card__name" data-i18n="exp.card3.title"></h4>
-        <p class="project-card__role">
-          <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          <span data-i18n="exp.card3.desc"></span>
-        </p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== CV ===== -->
-  <section class="cv" id="cv">
-    <h2 class="cv__title" data-i18n="cv.title"></h2>
-
-    <!-- En-tête visible uniquement à l'impression -->
-    <div class="cv__print-header">
-      <h1 class="cv__print-name">Kevin Auchoybur</h1>
-      <p class="cv__print-role" data-i18n="hero.role"></p>
-      <p class="cv__print-contact">
-        <span>kevin.auchoybur@gmail.com</span>
-      </p>
-    </div>
-
-    <div class="cv__grid">
-      <!-- Colonne gauche -->
-      <div class="cv__col">
-
-        <div class="cv__block">
-          <h3 class="cv__block-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-            <span data-i18n="cv.profile.title"></span>
-          </h3>
-          <p class="cv__text" data-i18n="cv.profile.text"></p>
-        </div>
-
-        <div class="cv__block">
-          <h3 class="cv__block-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><path d="M8 7V5a2 2 0 0 0-4 0v2"/></svg>
-            <span data-i18n="cv.exp.title"></span>
-          </h3>
-
-          <div class="cv__entry">
-            <span class="cv__entry-date" data-i18n="cv.exp.e1.date"></span>
-            <strong class="cv__entry-title" data-i18n="cv.exp.e1.role"></strong>
-            <span class="cv__entry-company-row">
-              <span class="cv__entry-company" data-i18n="cv.exp.e1.company"></span>
-              <img class="cv__entry-logo cv__entry-logo--light" src="assets/company-asteria.png" alt="Asteria" loading="lazy" />
-            </span>
-            <span class="cv__entry-context" data-i18n="cv.exp.e1.context"></span>
-            <ul class="cv__entry-list">
-              <li data-i18n="cv.exp.e1.t1"></li>
-              <li data-i18n="cv.exp.e1.t2"></li>
-              <li data-i18n="cv.exp.e1.t3"></li>
-              <li data-i18n="cv.exp.e1.t4"></li>
-              <li data-i18n="cv.exp.e1.t5"></li>
-            </ul>
-          </div>
-
-          <div class="cv__entry">
-            <span class="cv__entry-date">2017 – 2022</span>
-            <strong class="cv__entry-title" data-i18n="cv.exp.e2.role"></strong>
-            <span class="cv__entry-company-row">
-              <span class="cv__entry-company">Inetum — Aix-en-Provence/Marseille</span>
-              <img class="cv__entry-logo cv__entry-logo--light" src="assets/company-inetum.png" alt="Inetum" loading="lazy" />
-            </span>
-            <span class="cv__entry-context" data-i18n="cv.exp.e2.context"></span>
-            <ul class="cv__entry-list">
-              <li data-i18n="cv.exp.e2.t1"></li>
-              <li data-i18n="cv.exp.e2.t2"></li>
-              <li data-i18n="cv.exp.e2.t3"></li>
-              <li data-i18n="cv.exp.e2.t4"></li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Colonne droite -->
-      <div class="cv__col">
-
-        <div class="cv__block">
-          <h3 class="cv__block-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"/></svg>
-            <span data-i18n="cv.edu.title"></span>
-          </h3>
-
-          <div class="cv__entry">
-            <span class="cv__entry-date">2016</span>
-            <strong class="cv__entry-title" data-i18n="cv.edu.e1.degree"></strong>
-            <span class="cv__entry-company" data-i18n="cv.edu.e1.school"></span>
-          </div>
-
-          <div class="cv__entry">
-            <span class="cv__entry-date">2011</span>
-            <strong class="cv__entry-title" data-i18n="cv.edu.e2.degree"></strong>
-            <span class="cv__entry-company" data-i18n="cv.edu.e2.school"></span>
-          </div>
-
-          <div class="cv__entry">
-            <span class="cv__entry-date">2009</span>
-            <strong class="cv__entry-title" data-i18n="cv.edu.e3.degree"></strong>
-            <span class="cv__entry-company" data-i18n="cv.edu.e3.school"></span>
-          </div>
-        </div>
-
-        <div class="cv__block">
-          <h3 class="cv__block-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-            <span data-i18n="cv.certifs.title"></span>
-          </h3>
-          <div class="cv__skills">
-            <span class="cv__skill" data-i18n="cv.certifs.c1"></span>
-            <span class="cv__skill" data-i18n="cv.certifs.c2"></span>
-            <span class="cv__skill" data-i18n="cv.certifs.c3"></span>
-            <span class="cv__skill" data-i18n="cv.certifs.c4"></span>
-          </div>
-        </div>
-
-        <div class="cv__block">
-          <h3 class="cv__block-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <span data-i18n="cv.skills.title"></span>
-          </h3>
-          <div class="cv__skills">
-            <span class="cv__skill">Squash TM</span>
-            <span class="cv__skill">Selenium</span>
-            <span class="cv__skill">Playwright</span>
-            <span class="cv__skill">Jira</span>
-            <span class="cv__skill">Agile</span>
-          </div>
-        </div>
-
-        <div class="cv__block">
-          <h3 class="cv__block-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            <span data-i18n="cv.langs.title"></span>
-          </h3>
-          <div class="cv__langs">
-            <div class="cv__lang">
-              <span data-i18n="cv.langs.l1"></span><span class="cv__lang-level" data-i18n="cv.langs.l1level"></span>
-            </div>
-            <div class="cv__lang">
-              <span data-i18n="cv.langs.l2"></span><span class="cv__lang-level" data-i18n="cv.langs.l2level"></span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CONTACT ===== -->
-  <section class="contact" id="contact">
-    <h2 class="contact__title" data-i18n="modal.title"></h2>
-    <p class="contact__subtitle" data-i18n="modal.subtitle"></p>
-
-    <div class="contact__card">
-      <form class="contact__form" id="contactForm">
-        <input type="hidden" name="_subject" value="Nouveau message — Portfolio" />
-        <input type="hidden" name="_autoresponse" value="Merci, je vous réponds bientôt." />
-        <div class="form-group">
-          <label for="nom" data-i18n="modal.name"></label>
-          <input type="text" id="nom" name="nom" data-i18n-placeholder="modal.namePH" required />
-        </div>
-        <div class="form-group">
-          <label for="email" data-i18n="modal.email"></label>
-          <input type="email" id="email" name="email" placeholder="votre@email.com" required />
-        </div>
-        <div class="form-group">
-          <label for="message" data-i18n="modal.message"></label>
-          <textarea id="message" name="message" data-i18n-placeholder="modal.messagePH" rows="5" required></textarea>
-        </div>
-        <button type="submit" class="btn-submit">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          <span data-i18n="modal.send"></span>
-        </button>
-        <p class="modal__error" id="modalError"></p>
-      </form>
-      <div class="modal__success" id="modalSuccess">
-        <div class="modal__success-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        <h4 class="modal__success-title" data-i18n="modal.successTitle"></h4>
-        <p class="modal__success-text" data-i18n="modal.successText"></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="footer__copy">
-      © <span id="year"></span> Kevin Auchoybur — <span data-i18n="footer.rights"></span>
-    </div>
-  </footer>
-
-  <!-- Bouton retour en haut -->
-  <button id="backToTop" class="back-to-top" aria-label="Revenir en haut">
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-  </button>
+    <p class="maint__sub">
+      <span data-fr="Cette page se rafraîchit automatiquement. Une urgence ? "
+            data-en="This page refreshes automatically. Need to reach me? ">Cette page se rafraîchit automatiquement. Une urgence ? </span>
+      <a href="https://www.linkedin.com/in/kevin-auchoybur-17a15a42/" target="_blank" rel="noopener">LinkedIn</a>
+    </p>
+  </main>
 
   <script>
-    // ===== TRADUCTIONS =====
-    const translations = {
-      fr: {
-        'nav.about':       'À propos',
-        'nav.expertises':  'Mes expertises',
-        'nav.projects':    'Mes projets',
-        'nav.cv':          'Mon CV',
-        'nav.contact':     'Me contacter',
-        'hero.greeting':   'Bonjour et bienvenue',
-        'about.title':     'À propos de moi',
-        'about.intro':     'Mon parcours en quelques mots.',
-        'about.who.title': 'Qui suis-je ?',
-        'about.who.text':  'J\'ai trouvé dans l\'assurance qualité le terrain idéal pour allier rigueur technique et esprit critique.<br /><br />Au fil de mes expériences, du secteur privé au secteur public, j\'ai appris qu\'un bon test ne se contente pas de vérifier : il <strong>anticipe les risques</strong>, les usages et les défaillances possibles.<br /><br />Mon objectif est simple : sécuriser des systèmes <strong>fiables et robustes</strong>, en particulier dans des <span class="hl">environnements critiques</span> où la qualité ne peut pas être laissée au hasard.',
-        'about.vision.title': 'Ma vision du métier',
-        'about.vision.text':  'Être QA est autant un état d\'esprit qu\'une exigence : <strong>rigueur, curiosité et sens du détail</strong> sont au cœur de mon approche.<br /><br />La qualité ne se contrôle pas en fin de chaîne — elle se construit <span class="hl">dès les premières étapes</span>, en collaboration avec toutes les équipes.<br /><br />Mon rôle est clair : anticiper les risques, <strong>challenger les choix</strong> et garantir la livraison de produits fiables et robustes.',
-        'about.mottoLabel': 'Ma devise',
-        'about.motto':     'Tester, c\'est anticiper là où l\'erreur n\'est pas permise.',
-        'about.statsIntro': 'Mes chiffres clés',
-        'about.stat1':     'Années d\'expérience',
-        'about.stat2':     'Certifications',
-        'about.stat3':     'Projets majeurs',
-        'about.stat4':     'langues',
-        'hero.iam':        'Je suis',
-        'hero.role':       'Analyste QA',
-        'hero.pitch':      'Je sécurise la qualité des <span class="hl">systèmes critiques</span> grâce aux tests <strong>fonctionnels et automatisés</strong>.',
-        'hero.subrole':    '<strong>Certifié ISTQB</strong>',
-        'hero.follow':     'Me suivre :',
-        'hero.downloadCv': 'Télécharger mon CV',
-        'hero.quickaccess': 'Accès rapide :',
-        'exp.title':       'Ce que je vous apporte',
-        'exp.desc':        'Au-delà des tests, une valeur concrète pour vos équipes et vos produits.',
-        'exp.card1.title': 'Fiabiliser avant la mise en production',
-        'exp.card1.desc':  'Je sécurise chaque livraison en détectant les anomalies au plus tôt, pour éviter les régressions et les correctifs coûteux en production.',
-        'exp.card2.title': 'Accélérer les cycles de livraison',
-        'exp.card2.desc':  'J\'automatise les tests répétitifs pour raccourcir les phases de validation et permettre aux équipes de livrer plus vite, sans sacrifier la qualité.',
-        'exp.card3.title': 'Faire le pont entre les équipes',
-        'exp.card3.desc':  'Je traduis les besoins métier en cas de tests concrets et facilite la communication entre développeurs, métiers et utilisateurs.',
-        'proj.title':      'Mes projets',
-        'proj.desc':       'Une sélection de projets sur lesquels j\'ai travaillé.',
-        'proj.view':       'Voir le projet',
-        'proj.activitiesLabel': 'Activité de tests',
-        'tools.title':     'Mes outils, par type de test',
-        'tools.cat.func':  'Tests fonctionnels',
-        'tools.cat.auto':  'Tests automatisés',
-        'tools.cat.api':   'Tests API',
-        'proj.p1.link':    'Accéder au portail',
-        'proj.p1.client':  'Gouvernement Princier de Monaco',
-        'proj.p1.clientSub': 'Pour le compte d\'Asteria',
-        'proj.p1.desc':    'Le portail de l\'Administration monégasque pour accéder aux services en ligne.',
-        'proj.p1.act1':    'Rédaction et exécution des plans et cas de test',
-        'proj.p1.act2':    'Tests de non-régression et validation avant mise en production',
-        'proj.p1.act3':    'Suivi des anomalies et reporting qualité',
-        'proj.p2.name':    'Powercard',
-        'proj.p2.client':  'Hightech Payment Systems',
-        'proj.p2.clientSub': 'Pour le compte d\'Inetum',
-        'proj.p2.desc':    'Solution permettant l\'émission et la gestion complètes de tous les types de moyens de paiement (crédit, débit, prépayé, etc.), quel que soit leur format.',
-        'proj.p2.act1':    'Conception et automatisation des tests de l\'interface graphique',
-        'proj.p2.act2':    'Exécution des campagnes et analyse des résultats',
-        'proj.p2.act3':    'Détection et suivi des anomalies avec les équipes de dev',
-        'proj.p3.name':    'Système de régularisation des carrières (SYRCA)',
-        'proj.p3.client':  'Carsat Sud-Est',
-        'proj.p3.clientSub': 'Pour le compte d\'Inetum',
-        'proj.p3.desc':    'Solution de l\'Assurance retraite dédiée à la régularisation et à la fiabilisation des carrières des assurés en vue du calcul de leurs droits à la retraite.',
-        'proj.p3.act1':    'Conception et exécution des cas de tests fonctionnels',
-        'proj.p3.act2':    'Préparation des environnements et jeux de données',
-        'proj.p3.act3':    'Validation de la couverture avant déploiement',
-        'cv.title':            'Mon CV',
-        'cv.profile.title':    'Profil',
-        'cv.profile.text':     'Analyste QA avec 7+ ans d\'expérience, du test fonctionnel à l\'automatisation. J\'ai accompagné des projets exigeants, du privé jusqu\'au Gouvernement Princier de Monaco, en fiabilisant des produits utilisés par des milliers d\'usagers. Mon obsession : qu\'aucune anomalie critique n\'atteigne la production.',
-        'cv.exp.title':        'Expériences',
-        'cv.exp.e1.date':      'Depuis 2022',
-        'cv.exp.e1.role':      'Analyste QA',
-        'cv.exp.e1.company':   'Asteria — Monaco',
-        'cv.exp.e1.context':   'Pour le compte du Gouvernement Princier de Monaco — Portail MonGuichet.mc :',
-        'cv.exp.e1.t1':        'Rédaction et exécution de plans de test',
-        'cv.exp.e1.t2':        'Identification et suivi des anomalies',
-        'cv.exp.e1.t3':        'Reporting qualité',
-        'cv.exp.e1.t4':        'Exécution des tests de non-régression et validation finale avant mise en production',
-        'cv.exp.e1.t5':        'Collaboration cross-fonctionnelle',
-        'cv.exp.e2.role':      'Ingénieur QA / Automatisation',
-        'cv.exp.e2.context':   'Au cours de mes diverses missions pour les clients d\'Inetum :',
-        'cv.exp.e2.t1':        'Assimilation des livrables et mise en place de la stratégie de tests',
-        'cv.exp.e2.t2':        'Définition des exigences et préparation des environnements et jeux de données',
-        'cv.exp.e2.t3':        'Conception et exécution des cas de tests fonctionnels et automatisés',
-        'cv.exp.e2.t4':        'Gestion des anomalies en collaboration avec l\'équipe de développement',
-        'cv.edu.title':        'Formation',
-        'cv.edu.e1.degree':    'Master 2 MIAGE — Nouvelles Technologies et Direction de Projets',
-        'cv.edu.e1.school':    'Université Côte d\'Azur — Sophia-Antipolis',
-        'cv.edu.e2.degree':    'DUT Techniques de Commercialisation',
-        'cv.edu.e2.school':    'IUT Nice Côte d\'Azur — Nice',
-        'cv.edu.e3.degree':    'Baccalauréat Économique et Social',
-        'cv.edu.e3.school':    'Lycée Don Bosco — Nice',
-        'cv.certifs.title':    'Certifications',
-        'cv.certifs.c1':       'ISTQB Fondation',
-        'cv.certifs.c2':       'ISTQB Extension Agile',
-        'cv.certifs.c3':       'ISTQB Test Manager',
-        'cv.certifs.c4':       'A4Q Selenium Tester Fondation',
-        'cv.skills.title':     'Outils & méthodes',
-        'cv.langs.title':      'Langues',
-        'cv.langs.l1':         'Français',
-        'cv.langs.l1level':    'Natif',
-        'cv.langs.l2':         'Anglais',
-        'cv.langs.l2level':    'Courant (C1)',
-        'cv.download':         'Télécharger mon CV',
-        'modal.title':         'Me contacter',
-        'modal.subtitle':      'Remplissez le formulaire, je vous répondrai dans les plus brefs délais.',
-        'modal.name':          'Nom',
-        'modal.namePH':        'Votre nom',
-        'modal.email':         'Adresse e-mail',
-        'modal.message':       'Message',
-        'modal.messagePH':     'Saisir votre message',
-        'modal.send':          'Envoyer le message',
-        'modal.sending':       'Envoi en cours…',
-        'modal.error':         'Une erreur est survenue. Veuillez réessayer ou me contacter via LinkedIn.',
-        'modal.successTitle':  'Message bien envoyé !',
-        'modal.successText':   'Merci pour votre message. Je vous répondrai dans les plus brefs délais.',
-        'footer.rights':       'Tous droits réservés.'
-      },
-      en: {
-        'nav.about':       'About',
-        'nav.expertises':  'My expertise',
-        'nav.projects':    'My projects',
-        'nav.cv':          'My CV',
-        'nav.contact':     'Contact me',
-        'hero.greeting':   'Hello and welcome',
-        'about.title':     'About me',
-        'about.intro':     'My background in a few words.',
-        'about.who.title': 'Who am I?',
-        'about.who.text':  'In quality assurance, I found the ideal field to combine technical rigour with critical thinking.<br /><br />Throughout my experiences, from the private to the public sector, I learned that good testing doesn\'t just verify: it <strong>anticipates risks</strong>, use cases and potential failures.<br /><br />My goal is simple: to secure <strong>reliable, robust</strong> systems — especially in <span class="hl">critical environments</span> where quality cannot be left to chance.',
-        'about.vision.title': 'My vision of the job',
-        'about.vision.text':  'Being a QA is as much a mindset as a standard: <strong>rigour, curiosity and attention to detail</strong> are at the heart of my approach.<br /><br />Quality isn\'t checked at the end of the line — it\'s built <span class="hl">from the very first steps</span>, in collaboration with every team.<br /><br />My role is clear: to anticipate risks, <strong>challenge decisions</strong> and ensure the delivery of reliable, robust products.',
-        'about.mottoLabel': 'My motto',
-        'about.motto':     'Testing means anticipating — where failure is not an option.',
-        'about.statsIntro': 'My key figures',
-        'about.stat1':     'Years of experience',
-        'about.stat2':     'Certifications',
-        'about.stat3':     'Major projects',
-        'about.stat4':     'languages',
-        'hero.iam':        'I am',
-        'hero.role':       'Quality Analyst',
-        'hero.pitch':      'I secure the quality of <span class="hl">critical systems</span> through <strong>functional and automated</strong> testing.',
-        'hero.subrole':    '<strong>ISTQB-certified</strong>',
-        'hero.follow':     'Follow me:',
-        'hero.downloadCv': 'Download my CV',
-        'hero.quickaccess': 'Quick access:',
-        'exp.title':       'What I bring you',
-        'exp.desc':        'Beyond testing, concrete value for your teams and your products.',
-        'exp.card1.title': 'Securing releases before production',
-        'exp.card1.desc':  'I secure every release by catching defects early, preventing regressions and costly production fixes.',
-        'exp.card2.title': 'Accelerating delivery cycles',
-        'exp.card2.desc':  'I automate repetitive tests to shorten validation phases and help teams ship faster, without sacrificing quality.',
-        'exp.card3.title': 'Bridging teams together',
-        'exp.card3.desc':  'I translate business needs into concrete test cases and ease communication between developers, business and users.',
-        'proj.title':      'My projects',
-        'proj.desc':       'A selection of projects I have worked on.',
-        'proj.view':       'View project',
-        'proj.activitiesLabel': 'Testing activity',
-        'tools.title':     'My tools, by test type',
-        'tools.cat.func':  'Functional testing',
-        'tools.cat.auto':  'Automated testing',
-        'tools.cat.api':   'API testing',
-        'proj.p1.link':    'Go to the portal',
-        'proj.p1.client':  'Princely Government of Monaco',
-        'proj.p1.clientSub': 'on behalf of Asteria',
-        'proj.p1.desc':    'The Monegasque Administration portal for accessing online services.',
-        'proj.p1.act1':    'Writing and executing test plans and cases',
-        'proj.p1.act2':    'Regression testing and validation before production',
-        'proj.p1.act3':    'Defect tracking and quality reporting',
-        'proj.p2.name':    'Powercard',
-        'proj.p2.client':  'Hightech Payment Systems',
-        'proj.p2.clientSub': 'on behalf of Inetum',
-        'proj.p2.desc':    'Solution for the full issuance and management of all types of payment methods (credit, debit, prepaid, etc.), whatever their format.',
-        'proj.p2.act1':    'Designing and automating UI tests',
-        'proj.p2.act2':    'Running test campaigns and analysing results',
-        'proj.p2.act3':    'Detecting and tracking defects with the dev teams',
-        'proj.p3.name':    'Career adjustment system (SYRCA)',
-        'proj.p3.client':  'Carsat Sud-Est',
-        'proj.p3.clientSub': 'on behalf of Inetum',
-        'proj.p3.desc':    'French state pension solution dedicated to adjusting and consolidating insured members\' careers in order to calculate their pension entitlements.',
-        'proj.p3.act1':    'Designing and executing functional test cases',
-        'proj.p3.act2':    'Preparing environments and test data',
-        'proj.p3.act3':    'Validating coverage before rollout',
-        'cv.title':            'My CV',
-        'cv.profile.title':    'Profile',
-        'cv.profile.text':     'QA Analyst with 7+ years of experience, from functional testing to automation. I have contributed to demanding projects, from the private sector to the Princely Government of Monaco, making products used by thousands of users more reliable. My obsession: ensuring no critical defect ever reaches production.',
-        'cv.exp.title':        'Experience',
-        'cv.exp.e1.date':      'Since 2022',
-        'cv.exp.e1.role':      'QA Analyst',
-        'cv.exp.e1.company':   'Asteria — Monaco',
-        'cv.exp.e1.context':   'On behalf of the Princely Government of Monaco — MonGuichet.mc Portal:',
-        'cv.exp.e1.t1':        'Writing and executing test plans',
-        'cv.exp.e1.t2':        'Identifying and tracking defects',
-        'cv.exp.e1.t3':        'Quality reporting',
-        'cv.exp.e1.t4':        'Running regression tests and final validation before production release',
-        'cv.exp.e1.t5':        'Cross-functional collaboration',
-        'cv.exp.e2.role':      'QA / Automation Engineer',
-        'cv.exp.e2.context':   'During my various assignments for Inetum\'s clients:',
-        'cv.exp.e2.t1':        'Reviewing deliverables and defining the test strategy',
-        'cv.exp.e2.t2':        'Defining requirements and preparing environments and test data',
-        'cv.exp.e2.t3':        'Designing and executing functional and automated test cases',
-        'cv.exp.e2.t4':        'Defect management in collaboration with the development team',
-        'cv.edu.title':        'Education',
-        'cv.edu.e1.degree':    'Master\'s (MIAGE) — New Technologies and Project Management',
-        'cv.edu.e1.school':    'Université Côte d\'Azur — Sophia-Antipolis',
-        'cv.edu.e2.degree':    'Two-year technical degree in Sales & Marketing',
-        'cv.edu.e2.school':    'IUT Nice Côte d\'Azur — Nice',
-        'cv.edu.e3.degree':    'High School Diploma — Economics and Social Sciences',
-        'cv.edu.e3.school':    'Lycée Don Bosco — Nice',
-        'cv.certifs.title':    'Certifications',
-        'cv.certifs.c1':       'ISTQB Foundation Level',
-        'cv.certifs.c2':       'ISTQB Agile Extension',
-        'cv.certifs.c3':       'ISTQB Test Manager',
-        'cv.certifs.c4':       'A4Q Selenium Tester Foundation',
-        'cv.skills.title':     'Tools & methods',
-        'cv.langs.title':      'Languages',
-        'cv.langs.l1':         'French',
-        'cv.langs.l1level':    'Native',
-        'cv.langs.l2':         'English',
-        'cv.langs.l2level':    'Fluent (C1)',
-        'cv.download':         'Download my CV',
-        'modal.title':         'Contact me',
-        'modal.subtitle':      'Fill in the form and I\'ll get back to you as soon as possible.',
-        'modal.name':          'Name',
-        'modal.namePH':        'Your name',
-        'modal.email':         'Email address',
-        'modal.message':       'Message',
-        'modal.messagePH':     'Enter your message',
-        'modal.send':          'Send message',
-        'modal.sending':       'Sending…',
-        'modal.error':         'Something went wrong. Please try again or reach out via LinkedIn.',
-        'modal.successTitle':  'Message sent!',
-        'modal.successText':   'Thank you for your message. I\'ll get back to you as soon as possible.',
-        'footer.rights':       'All rights reserved.'
-      }
-    };
-
-    let currentLang = 'fr';
-
-    function applyLang(lang) {
-      currentLang = lang;
-      const t = translations[lang];
+    function setLang(lang) {
       document.documentElement.lang = lang;
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (t[key] !== undefined) el.textContent = t[key];
+      document.querySelectorAll('[data-fr]').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
       });
-
-      document.querySelectorAll('[data-i18n-html]').forEach(el => {
-        const key = el.getAttribute('data-i18n-html');
-        if (t[key] !== undefined) el.innerHTML = t[key];
-      });
-
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (t[key] !== undefined) el.placeholder = t[key];
-      });
-
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.dataset.lang === lang);
-      });
-
-      // Liens de téléchargement du CV selon la langue (section CV + hero)
-      const cvHref = lang === 'en'
-        ? 'assets/cv-en-KevinAuchoybur.pdf'
-        : 'assets/cv-fr-KevinAuchoybur.pdf';
-      ['downloadCv', 'heroDownloadCv'].forEach(id => {
-        const link = document.getElementById(id);
-        if (link) link.setAttribute('href', cvHref);
-      });
-
-      // Lien WhatsApp avec message pré-rempli selon la langue
-      const waMsg = lang === 'en'
-        ? 'Hello Kevin, I came across your portfolio and would like to get in touch.'
-        : 'Bonjour Kevin, je découvre votre portfolio et souhaiterais échanger avec vous.';
-      const wa = document.getElementById('heroWhatsapp');
-      if (wa) wa.setAttribute('href', 'https://wa.me/33641931342?text=' + encodeURIComponent(waMsg));
+      document.getElementById('fr').classList.toggle('active', lang === 'fr');
+      document.getElementById('en').classList.toggle('active', lang === 'en');
     }
-
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
-    });
-
-    // Init FR
-    applyLang('fr');
-
-    // ===== DARK MODE =====
-    const themeToggle = document.getElementById('themeToggle');
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.setAttribute('data-theme', 'dark');
-    }
-    themeToggle.addEventListener('click', () => {
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        document.documentElement.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      }
-    });
-
-    // ===== SCROLL ACTIVE NAV =====
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.navbar__links a');
-
-    function setActiveLink() {
-      // Ligne de reference a 40% de la hauteur du viewport : une section devient
-      // active des qu'elle occupe l'ecran (robuste pour les sections hautes).
-      const ref = window.innerHeight * 0.4;
-      let current = sections[0].id;
-      sections.forEach(section => {
-        if (section.getBoundingClientRect().top <= ref) current = section.id;
-      });
-      // Si on est en bas de page, on force la derniere section comme active.
-      const enBasDePage = window.innerHeight + window.scrollY >= document.body.scrollHeight - 2;
-      if (enBasDePage) current = sections[sections.length - 1].id;
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + current) link.classList.add('active');
-      });
-    }
-    window.addEventListener('scroll', setActiveLink, { passive: true });
-    setActiveLink();
-
-    // ===== BARRE DE PROGRESSION DE LECTURE =====
-    const progressBar = document.getElementById('readingProgress');
-    function updateReadingProgress() {
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      const ratio = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
-      progressBar.style.transform = 'scaleX(' + ratio + ')';
-    }
-    window.addEventListener('scroll', updateReadingProgress, { passive: true });
-    window.addEventListener('resize', updateReadingProgress, { passive: true });
-    updateReadingProgress();
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      });
-    });
-
-    // ===== COMPTEURS ANIMES (chiffres clés) =====
-    function animateCount(el) {
-      const m = el.textContent.trim().match(/^(\d+)(.*)$/);
-      if (!m) return;
-      const target = parseInt(m[1], 10);
-      const suffix = m[2] || '';
-      const duration = 1300;
-      const start = performance.now();
-      function tick(now) {
-        const p = Math.min((now - start) / duration, 1);
-        const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
-        el.textContent = Math.round(eased * target) + suffix;
-        if (p < 1) requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    }
-    const statsContainer = document.querySelector('.about__stats');
-    if (statsContainer && 'IntersectionObserver' in window) {
-      const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.stat__num').forEach(animateCount);
-            statsObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.4 });
-      statsObserver.observe(statsContainer);
-    }
-
-    // ===== FORMULAIRE DE CONTACT (inline) =====
-    const form = document.getElementById('contactForm');
-    const success = document.getElementById('modalSuccess');
-    const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xojzvrwj';
-    const submitBtn = form.querySelector('.btn-submit');
-    const submitLabel = submitBtn.querySelector('[data-i18n="modal.send"]');
-    const errorBox = document.getElementById('modalError');
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      errorBox.classList.remove('is-visible');
-      submitBtn.disabled = true;
-      const originalLabel = submitLabel.textContent;
-      submitLabel.textContent = translations[currentLang]['modal.sending'];
-
-      try {
-        const response = await fetch(FORMSPREE_ENDPOINT, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-          // Affiche le message de succès en place du formulaire
-          form.style.display = 'none';
-          success.classList.add('is-visible');
-          // Réinitialise le formulaire après 3 secondes
-          setTimeout(() => {
-            success.classList.remove('is-visible');
-            form.reset();
-            form.style.display = '';
-          }, 3000);
-        } else {
-          errorBox.textContent = translations[currentLang]['modal.error'];
-          errorBox.classList.add('is-visible');
-        }
-      } catch (err) {
-        errorBox.textContent = translations[currentLang]['modal.error'];
-        errorBox.classList.add('is-visible');
-      } finally {
-        submitBtn.disabled = false;
-        submitLabel.textContent = originalLabel;
-      }
-    });
-
-
-    // ===== BOUTON RETOUR EN HAUT =====
-    const backToTop = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      backToTop.classList.toggle('is-visible', window.scrollY > 500);
-    }, { passive: true });
-    backToTop.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    // ===== FOOTER YEAR =====
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // ===== HAMBURGER =====
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('is-open');
-      mobileMenu.classList.toggle('is-open');
-    });
-    document.querySelectorAll('.mobile-menu__link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('is-open');
-        mobileMenu.classList.remove('is-open');
-      });
-    });
+    // Détection rapide de la langue du navigateur
+    if ((navigator.language || 'fr').slice(0, 2) === 'en') setLang('en');
   </script>
-
 </body>
 </html>
