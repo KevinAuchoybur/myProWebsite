@@ -184,10 +184,12 @@
           <em class="project-card__client-sub" data-i18n="proj.p1.clientSub"></em>
         </p>
         <p class="project-card__desc" data-i18n="proj.p1.desc"></p>
-        <p class="project-card__role">
-          <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          <span data-i18n="proj.p1.role"></span>
-        </p>
+        <p class="project-card__activities-label" data-i18n="proj.activitiesLabel"></p>
+        <ul class="project-card__activities">
+          <li data-i18n="proj.p1.act1"></li>
+          <li data-i18n="proj.p1.act2"></li>
+          <li data-i18n="proj.p1.act3"></li>
+        </ul>
       </div>
 
       <div class="project-card">
@@ -200,10 +202,12 @@
           <em class="project-card__client-sub" data-i18n="proj.p2.clientSub"></em>
         </p>
         <p class="project-card__desc" data-i18n="proj.p2.desc"></p>
-        <p class="project-card__role">
-          <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          <span data-i18n="proj.p2.role"></span>
-        </p>
+        <p class="project-card__activities-label" data-i18n="proj.activitiesLabel"></p>
+        <ul class="project-card__activities">
+          <li data-i18n="proj.p2.act1"></li>
+          <li data-i18n="proj.p2.act2"></li>
+          <li data-i18n="proj.p2.act3"></li>
+        </ul>
       </div>
 
       <div class="project-card">
@@ -216,10 +220,12 @@
           <em class="project-card__client-sub" data-i18n="proj.p3.clientSub"></em>
         </p>
         <p class="project-card__desc" data-i18n="proj.p3.desc"></p>
-        <p class="project-card__role">
-          <svg class="project-card__arrow" xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-          <span data-i18n="proj.p3.role"></span>
-        </p>
+        <p class="project-card__activities-label" data-i18n="proj.activitiesLabel"></p>
+        <ul class="project-card__activities">
+          <li data-i18n="proj.p3.act1"></li>
+          <li data-i18n="proj.p3.act2"></li>
+          <li data-i18n="proj.p3.act3"></li>
+        </ul>
       </div>
 
     </div>
@@ -499,21 +505,28 @@
         'proj.title':      'Mes projets',
         'proj.desc':       'Une sélection de projets sur lesquels j\'ai travaillé.',
         'proj.view':       'Voir le projet',
+        'proj.activitiesLabel': 'Activité de tests',
         'proj.p1.link':    'Accéder au portail',
         'proj.p1.client':  'Gouvernement Princier de Monaco',
         'proj.p1.clientSub': 'Pour le compte d\'Asteria',
         'proj.p1.desc':    'Le portail de l\'Administration monégasque pour accéder aux services en ligne.',
-        'proj.p1.role':    'En charge de l\'ensemble de l\'activité de tests et de la validation avant mise en production.',
+        'proj.p1.act1':    'Rédaction et exécution des plans et cas de test',
+        'proj.p1.act2':    'Tests de non-régression et validation avant mise en production',
+        'proj.p1.act3':    'Suivi des anomalies et reporting qualité',
         'proj.p2.name':    'Powercard',
         'proj.p2.client':  'Hightech Payment Systems',
         'proj.p2.clientSub': 'Pour le compte d\'Inetum',
         'proj.p2.desc':    'Solution permettant l\'émission et la gestion complètes de tous les types de moyens de paiement (crédit, débit, prépayé, etc.), quel que soit leur format.',
-        'proj.p2.role':    'En charge de la conception et de l\'exécution des tests automatisés sur l\'interface graphique utilisateur.',
+        'proj.p2.act1':    'Conception et automatisation des tests de l\'interface graphique',
+        'proj.p2.act2':    'Exécution des campagnes et analyse des résultats',
+        'proj.p2.act3':    'Détection et suivi des anomalies avec les équipes de dev',
         'proj.p3.name':    'Système de régularisation des carrières (SYRCA)',
         'proj.p3.client':  'Carsat Sud-Est',
         'proj.p3.clientSub': 'Pour le compte d\'Inetum',
         'proj.p3.desc':    'Solution de l\'Assurance retraite dédiée à la régularisation et à la fiabilisation des carrières des assurés en vue du calcul de leurs droits à la retraite.',
-        'proj.p3.role':    'En charge de la conception, de l\'exécution et du suivi des tests fonctionnels afin de garantir la qualité de la solution avant son déploiement.',
+        'proj.p3.act1':    'Conception et exécution des cas de tests fonctionnels',
+        'proj.p3.act2':    'Préparation des environnements et jeux de données',
+        'proj.p3.act3':    'Validation de la couverture avant déploiement',
         'cv.title':            'Mon CV',
         'cv.profile.title':    'Profil',
         'cv.profile.text':     'Analyste QA avec 7+ ans d\'expérience, du test fonctionnel à l\'automatisation. J\'ai accompagné des projets exigeants, du privé jusqu\'au Gouvernement Princier de Monaco, en fiabilisant des produits utilisés par des milliers d\'usagers. Mon obsession : qu\'aucune anomalie critique n\'atteigne la production.',
@@ -604,21 +617,28 @@
         'proj.title':      'My projects',
         'proj.desc':       'A selection of projects I have worked on.',
         'proj.view':       'View project',
+        'proj.activitiesLabel': 'Testing activity',
         'proj.p1.link':    'Go to the portal',
         'proj.p1.client':  'Princely Government of Monaco',
         'proj.p1.clientSub': 'on behalf of Asteria',
         'proj.p1.desc':    'The Monegasque Administration portal for accessing online services.',
-        'proj.p1.role':    'Responsible for the entire testing activity and validation before production release.',
+        'proj.p1.act1':    'Writing and executing test plans and cases',
+        'proj.p1.act2':    'Regression testing and validation before production',
+        'proj.p1.act3':    'Defect tracking and quality reporting',
         'proj.p2.name':    'Powercard',
         'proj.p2.client':  'Hightech Payment Systems',
         'proj.p2.clientSub': 'on behalf of Inetum',
         'proj.p2.desc':    'Solution for the full issuance and management of all types of payment methods (credit, debit, prepaid, etc.), whatever their format.',
-        'proj.p2.role':    'Responsible for designing and running automated tests on the graphical user interface.',
+        'proj.p2.act1':    'Designing and automating UI tests',
+        'proj.p2.act2':    'Running test campaigns and analysing results',
+        'proj.p2.act3':    'Detecting and tracking defects with the dev teams',
         'proj.p3.name':    'Career adjustment system (SYRCA)',
         'proj.p3.client':  'Carsat Sud-Est',
         'proj.p3.clientSub': 'on behalf of Inetum',
         'proj.p3.desc':    'French state pension solution dedicated to adjusting and consolidating insured members\' careers in order to calculate their pension entitlements.',
-        'proj.p3.role':    'Responsible for designing, running and monitoring functional tests to ensure the solution\'s quality before its rollout.',
+        'proj.p3.act1':    'Designing and executing functional test cases',
+        'proj.p3.act2':    'Preparing environments and test data',
+        'proj.p3.act3':    'Validating coverage before rollout',
         'cv.title':            'My CV',
         'cv.profile.title':    'Profile',
         'cv.profile.text':     'QA Analyst with 7+ years of experience, from functional testing to automation. I have contributed to demanding projects, from the private sector to the Princely Government of Monaco, making products used by thousands of users more reliable. My obsession: ensuring no critical defect ever reaches production.',
