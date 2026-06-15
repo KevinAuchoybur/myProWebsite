@@ -1084,14 +1084,27 @@ section {
   border-color: var(--purple);
 }
 
+/* En-tete carte : logo + nom/client alignes sur une ligne */
+.project-card__header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 4px;
+}
+.project-card__head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .project-card__logo {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   width: 130px;
   height: 48px;
   padding: 8px;
-  margin-bottom: 16px;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
@@ -1106,19 +1119,17 @@ section {
 }
 
 .project-card__name {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 9px;
-  padding-bottom: 9px;
-  border-bottom: 1px solid var(--card-divider);
+  margin: 0;
 }
 
 .project-card__client {
   font-size: 13px;
   font-weight: 600;
   color: var(--purple);
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 .project-card__client-sub {
@@ -1148,7 +1159,9 @@ section {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--purple);
-  margin: 0 0 8px;
+  margin: 16px 0 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--card-divider);
 }
 .project-card__desc-icon {
   color: var(--purple);
@@ -1182,7 +1195,9 @@ section {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--purple);
-  margin: 4px 0 9px;
+  margin: 16px 0 9px;
+  padding-top: 16px;
+  border-top: 1px solid var(--card-divider);
 }
 .project-card__activities-icon {
   color: var(--purple);
@@ -2050,6 +2065,11 @@ section {
 @media (max-width: 768px) {
   .project-card__activities {
     column-count: 1;
+  }
+  .project-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
   }
   .navbar {
     padding: 16px 20px;
