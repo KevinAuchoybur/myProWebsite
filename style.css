@@ -994,35 +994,31 @@ section {
 .expertise-card {
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 28px 24px;
-  transition: box-shadow 0.2s, transform 0.15s;
+  border-left: 4px solid var(--purple);
+  border-radius: 14px;
+  padding: 24px 28px;
+  transition: box-shadow 0.25s ease, transform 0.2s ease;
 }
 
 .expertise-card:hover {
-  box-shadow: 0 6px 24px rgba(124, 110, 248, 0.13);
-  transform: translateY(-3px);
-}
-
-.expertise-card__icon {
-  width: 52px;
-  height: 52px;
-  background: var(--surface);
-  border: 1px solid var(--card-border);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
+  box-shadow: 0 10px 30px rgba(124, 110, 248, 0.12);
+  transform: translateY(-2px);
 }
 
 .expertise-card__name {
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-dark);
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--card-divider);
+  margin-bottom: 14px;
+}
+.expertise-card__name::after {
+  content: '';
+  display: block;
+  width: 34px;
+  height: 3px;
+  background: var(--purple);
+  border-radius: 2px;
+  margin-top: 8px;
 }
 
 .expertise-card__desc {
