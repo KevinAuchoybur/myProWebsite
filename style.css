@@ -833,6 +833,11 @@ section {
   color: var(--text-dark);
   margin-bottom: 14px;
 }
+.about__block-icon {
+  color: var(--purple);
+  vertical-align: -3px;
+  margin-right: 8px;
+}
 
 .about__block-title::after {
   content: '';
