@@ -303,57 +303,49 @@
   <section class="expertises" id="expertises">
     <h2 class="expertises__title" data-i18n="exp.title"></h2>
     <p class="expertises__desc" data-i18n="exp.desc"></p>
-    <div class="expertises__grid">
-
-      <div class="expertise-card">
-        <h4 class="expertise-card__name">
-          <svg class="about__block-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-          <span data-i18n="exp.card1.title"></span>
-        </h4>
-        <p class="expertise-card__desc"><span data-i18n="exp.card1.desc"></span></p>
+    <div class="skills">
+      <div class="skills__group">
+        <h3 class="skills__group-title" data-i18n="skills.g1.title"></h3>
+        <div class="skills__badges">
+          <span class="skill-badge" data-i18n="skills.g1.s1"></span>
+          <span class="skill-badge" data-i18n="skills.g1.s2"></span>
+          <span class="skill-badge" data-i18n="skills.g1.s3"></span>
+        </div>
       </div>
-
-      <div class="expertise-card">
-        <h4 class="expertise-card__name">
-          <svg class="about__block-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          <span data-i18n="exp.card2.title"></span>
-        </h4>
-        <p class="expertise-card__desc"><span data-i18n="exp.card2.desc"></span></p>
+      <div class="skills__group">
+        <h3 class="skills__group-title" data-i18n="skills.g2.title"></h3>
+        <div class="skills__badges">
+          <span class="skill-badge" data-i18n="skills.g2.s1"></span>
+          <span class="skill-badge" data-i18n="skills.g2.s2"></span>
+          <span class="skill-badge" data-i18n="skills.g2.s3"></span>
+        </div>
       </div>
-
-      <div class="expertise-card">
-        <h4 class="expertise-card__name">
-          <svg class="about__block-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M21 3l-7 7"/><path d="M3 3l7 7"/><path d="M12 12v9"/><path d="M8 17h8"/></svg>
-          <span data-i18n="exp.card3.title"></span>
-        </h4>
-        <p class="expertise-card__desc"><span data-i18n="exp.card3.desc"></span></p>
+      <div class="skills__group">
+        <h3 class="skills__group-title" data-i18n="skills.g3.title"></h3>
+        <div class="skills__badges">
+          <span class="skill-badge" data-i18n="skills.g3.s1"></span>
+          <span class="skill-badge" data-i18n="skills.g3.s2"></span>
+          <span class="skill-badge" data-i18n="skills.g3.s3"></span>
+        </div>
       </div>
-
+      <div class="skills__group">
+        <h3 class="skills__group-title" data-i18n="skills.g4.title"></h3>
+        <div class="skills__badges">
+          <span class="skill-badge" data-i18n="skills.g4.s1"></span>
+          <span class="skill-badge" data-i18n="skills.g4.s2"></span>
+          <span class="skill-badge" data-i18n="skills.g4.s3"></span>
+        </div>
+      </div>
     </div>
 
-    <div class="tools">
-      <h3 class="tools__title" data-i18n="tools.title"></h3>
-
-      <div class="tools__cat">
-        <span class="tools__cat-label" data-i18n="tools.cat.func"></span>
-        <div class="tools__cat-items">
-          <div class="tool"><img src="assets/tool-squashtm.svg" alt="Squash TM" /></div>
-        </div>
-      </div>
-
-      <div class="tools__cat">
-        <span class="tools__cat-label" data-i18n="tools.cat.auto"></span>
-        <div class="tools__cat-items">
-          <div class="tool"><img src="assets/tool-selenium.svg" alt="Selenium" /></div>
-          <div class="tool"><img src="assets/tool-playwright.svg" alt="Playwright" /></div>
-        </div>
-      </div>
-
-      <div class="tools__cat">
-        <span class="tools__cat-label" data-i18n="tools.cat.api"></span>
-        <div class="tools__cat-items">
-          <div class="tool"><img src="assets/tool-postman.svg" alt="Postman" /></div>
-        </div>
+    <div class="skills__tools">
+      <h3 class="skills__group-title" data-i18n="skills.toolsTitle"></h3>
+      <div class="skills__tools-row">
+        <div class="tool"><img src="assets/tool-squashtm.svg" alt="Squash TM" /></div>
+        <div class="tool"><img src="assets/tool-selenium.svg" alt="Selenium" /></div>
+        <div class="tool"><img src="assets/tool-playwright.svg" alt="Playwright" /></div>
+        <div class="tool"><img src="assets/tool-postman.svg" alt="Postman" /></div>
+        <div class="tool"><img src="assets/tool-jira.svg" alt="Jira" /></div>
       </div>
     </div>
   </section>
@@ -558,7 +550,7 @@
     const translations = {
       fr: {
         'nav.about':       'À propos',
-        'nav.expertises':  'Mes expertises',
+        'nav.expertises':  'Mes compétences',
         'nav.projects':    'Mes projets',
         'nav.cv':          'Mon CV',
         'nav.contact':     'Me contacter',
@@ -585,8 +577,25 @@
         'hero.follow':     'Me suivre :',
         'hero.downloadCv': 'Télécharger mon CV',
         'hero.quickaccess': 'Accès rapide :',
-        'exp.title':       'Ce que je vous apporte',
-        'exp.desc':        'Au-delà des tests, une valeur concrète pour vos équipes et vos produits.',
+        'exp.title':       'Mes compétences',
+        'exp.desc':        'Les savoir-faire que je mobilise au quotidien.',
+        'skills.g1.title': 'Conception & stratégie',
+        'skills.g1.s1':    'Rédaction de plans de test',
+        'skills.g1.s2':    'Conception de cas de test',
+        'skills.g1.s3':    'Analyse des exigences',
+        'skills.g2.title': 'Exécution & validation',
+        'skills.g2.s1':    'Tests fonctionnels',
+        'skills.g2.s2':    'Tests de non-régression',
+        'skills.g2.s3':    'Validation avant mise en production',
+        'skills.g3.title': 'Automatisation',
+        'skills.g3.s1':    'Tests automatisés',
+        'skills.g3.s2':    'Tests d\'IHM',
+        'skills.g3.s3':    'Tests API',
+        'skills.g4.title': 'Suivi & méthode',
+        'skills.g4.s1':    'Gestion des anomalies',
+        'skills.g4.s2':    'Reporting qualité',
+        'skills.g4.s3':    'Agile / Scrum',
+        'skills.toolsTitle': 'Outils',
         'exp.card1.title': 'Fiabiliser avant la mise en production',
         'exp.card1.desc':  'Je sécurise chaque livraison en détectant les anomalies au plus tôt, pour éviter les régressions et les correctifs coûteux en production.',
         'exp.card2.title': 'Accélérer les cycles de livraison',
@@ -690,7 +699,7 @@
       },
       en: {
         'nav.about':       'About',
-        'nav.expertises':  'My expertise',
+        'nav.expertises':  'My skills',
         'nav.projects':    'My projects',
         'nav.cv':          'My CV',
         'nav.contact':     'Contact me',
@@ -717,8 +726,25 @@
         'hero.follow':     'Follow me:',
         'hero.downloadCv': 'Download my CV',
         'hero.quickaccess': 'Quick access:',
-        'exp.title':       'What I bring you',
-        'exp.desc':        'Beyond testing, concrete value for your teams and your products.',
+        'exp.title':       'My skills',
+        'exp.desc':        'The skills I rely on every day.',
+        'skills.g1.title': 'Test design & strategy',
+        'skills.g1.s1':    'Writing test plans',
+        'skills.g1.s2':    'Designing test cases',
+        'skills.g1.s3':    'Requirements analysis',
+        'skills.g2.title': 'Execution & validation',
+        'skills.g2.s1':    'Functional testing',
+        'skills.g2.s2':    'Regression testing',
+        'skills.g2.s3':    'Pre-release validation',
+        'skills.g3.title': 'Automation',
+        'skills.g3.s1':    'Automated testing',
+        'skills.g3.s2':    'UI testing',
+        'skills.g3.s3':    'API testing',
+        'skills.g4.title': 'Tracking & method',
+        'skills.g4.s1':    'Defect management',
+        'skills.g4.s2':    'Quality reporting',
+        'skills.g4.s3':    'Agile / Scrum',
+        'skills.toolsTitle': 'Tools',
         'exp.card1.title': 'Securing releases before production',
         'exp.card1.desc':  'I secure every release by catching defects early, preventing regressions and costly production fixes.',
         'exp.card2.title': 'Accelerating delivery cycles',

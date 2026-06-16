@@ -990,47 +990,55 @@ section {
   margin: 0 auto 40px;
 }
 
-.expertises__grid {
+/* ===== Mes competences (badges groupes) ===== */
+.skills {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 44px;
+  max-width: 880px;
+  margin: 0 auto;
   text-align: left;
 }
-
-.expertise-card {
+.skills__group-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--purple);
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--card-divider);
+}
+.skills__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.skill-badge {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-dark);
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-left: 4px solid var(--purple);
-  border-radius: 14px;
-  padding: 24px 28px;
-  transition: box-shadow 0.25s ease, transform 0.2s ease;
+  border-radius: 50px;
+  padding: 8px 16px;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
 }
-
-.expertise-card:hover {
-  box-shadow: 0 10px 30px rgba(124, 110, 248, 0.12);
+.skill-badge:hover {
+  border-color: var(--purple);
+  color: var(--purple);
   transform: translateY(-2px);
 }
 
-.expertise-card__name {
-  font-size: 17px;
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 14px;
+.skills__tools {
+  max-width: 880px;
+  margin: 40px auto 0;
+  text-align: left;
 }
-.expertise-card__name::after {
-  content: '';
-  display: block;
-  width: 34px;
-  height: 3px;
-  background: var(--purple);
-  border-radius: 2px;
-  margin-top: 8px;
-}
-
-.expertise-card__desc {
-  font-size: 13.5px;
-  color: var(--text-muted);
-  line-height: 1.6;
+.skills__tools-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 /* ===== PROJETS ===== */
@@ -2070,6 +2078,10 @@ section {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
   .project-card__activities {
     column-count: 1;
   }
