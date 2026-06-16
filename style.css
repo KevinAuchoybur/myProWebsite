@@ -488,13 +488,19 @@ section {
   padding: 0 20px;
 }
 .about__motto-label {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--purple);
   margin-bottom: 12px;
+}
+.about__motto-label-icon {
+  flex-shrink: 0;
 }
 .about__motto-text {
   display: block;
