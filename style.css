@@ -4,6 +4,48 @@
   padding: 0;
 }
 
+/* ===== Loader d'accueil ===== */
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+.page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.page-loader__logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: loaderPulse 1.4s ease-in-out infinite;
+}
+.page-loader__ring {
+  position: absolute;
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  border: 3px solid var(--purple-light);
+  border-top-color: var(--purple);
+  animation: loaderSpin 0.9s linear infinite;
+}
+@keyframes loaderSpin {
+  to { transform: rotate(360deg); }
+}
+@keyframes loaderPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page-loader__logo, .page-loader__ring { animation: none; }
+}
+
 :root {
   --purple: #7C6EF8;
   --purple-light: #ede9fe;
@@ -897,6 +939,9 @@ section {
 }
 
 .about__stats-intro {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   max-width: 760px;
   margin: 44px auto 18px;
   text-align: left;
@@ -905,14 +950,25 @@ section {
   color: var(--text-dark);
 }
 
-.about__stats-intro::after {
+.about__stats-intro-icon {
+  color: var(--purple);
+  flex-shrink: 0;
+}
+
+.about__stats-intro > span {
+  position: relative;
+  padding-bottom: 8px;
+}
+
+.about__stats-intro > span::after {
   content: '';
-  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 34px;
   height: 3px;
   background: var(--purple);
   border-radius: 2px;
-  margin-top: 8px;
 }
 
 .about__stats {
@@ -1246,12 +1302,48 @@ section {
   transform: rotate(-45deg);
 }
 
+/* Ligne "Outils & méthodologie" : badges au-dessus du résultat */
+.project-card__tools-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--purple);
+  margin: 16px 0 9px;
+  padding-top: 16px;
+  border-top: 1px solid var(--card-divider);
+}
+.project-card__tools-icon {
+  color: var(--purple);
+  flex-shrink: 0;
+}
+.project-card__tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+.project-card__tools .skill-badge {
+  color: #fff;
+  background: linear-gradient(135deg, var(--purple) 0%, #9d7bff 100%);
+  border: none;
+  box-shadow: 0 3px 8px rgba(124, 110, 248, 0.28);
+}
+.project-card__tools .skill-badge:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(124, 110, 248, 0.4);
+}
+
 /* Encadré "Résultat" : met en évidence l'impact du projet */
 .project-card__result {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  margin-top: 16px;
+  margin: 16px -14px 0;
   padding: 12px 14px;
   background: var(--purple-light);
   border-radius: 10px;

@@ -34,6 +34,17 @@
 </head>
 <body>
 
+  <!-- ===== LOADER ===== -->
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="page-loader__logo">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="56" height="56">
+        <circle class="logo-bg" cx="32" cy="32" r="31"/>
+        <text class="logo-text" x="50%" y="54%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="26" letter-spacing="-1">KA</text>
+      </svg>
+      <span class="page-loader__ring"></span>
+    </div>
+  </div>
+
   <!-- ===== NAVBAR ===== -->
   <header class="navbar">
     <a href="#home" class="navbar__brand">
@@ -131,7 +142,10 @@
     <h2 class="about__title" data-i18n="about.title"></h2>
     <p class="about__intro" data-i18n="about.intro"></p>
 
-    <p class="about__stats-intro" data-i18n="about.statsIntro"></p>
+    <p class="about__stats-intro">
+      <svg class="about__stats-intro-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+      <span data-i18n="about.statsIntro"></span>
+    </p>
     <div class="about__stats">
       <div class="stat">
         <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
@@ -220,6 +234,16 @@
           <li data-i18n="proj.p1.act5"></li>
           <li data-i18n="proj.p1.act6"></li>
         </ul>
+        <p class="project-card__tools-label">
+          <svg class="project-card__tools-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span data-i18n="proj.toolsLabel"></span>
+        </p>
+        <div class="project-card__tools">
+          <span class="skill-badge">Squash TM</span>
+          <span class="skill-badge">Selenium</span>
+          <span class="skill-badge">Jira</span>
+          <span class="skill-badge">Agile / Scrum</span>
+        </div>
         <p class="project-card__result">
           <svg class="project-card__result-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           <span class="project-card__result-text"><span class="project-card__result-label" data-i18n="proj.resultLabel"></span> <span data-i18n="proj.p1.result"></span></span>
@@ -255,6 +279,15 @@
           <li data-i18n="proj.p2.act4"></li>
           <li data-i18n="proj.p2.act5"></li>
         </ul>
+        <p class="project-card__tools-label">
+          <svg class="project-card__tools-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span data-i18n="proj.toolsLabel"></span>
+        </p>
+        <div class="project-card__tools">
+          <span class="skill-badge">Protractor</span>
+          <span class="skill-badge">Jira</span>
+          <span class="skill-badge">Agile</span>
+        </div>
         <p class="project-card__result">
           <svg class="project-card__result-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           <span class="project-card__result-text"><span class="project-card__result-label" data-i18n="proj.resultLabel"></span> <span data-i18n="proj.p2.result"></span></span>
@@ -290,6 +323,15 @@
           <li data-i18n="proj.p3.act4"></li>
           <li data-i18n="proj.p3.act5"></li>
         </ul>
+        <p class="project-card__tools-label">
+          <svg class="project-card__tools-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          <span data-i18n="proj.toolsLabel"></span>
+        </p>
+        <div class="project-card__tools">
+          <span class="skill-badge">Squash TM</span>
+          <span class="skill-badge">Jira</span>
+          <span class="skill-badge">Agile</span>
+        </div>
         <p class="project-card__result">
           <svg class="project-card__result-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           <span class="project-card__result-text"><span class="project-card__result-label" data-i18n="proj.resultLabel"></span> <span data-i18n="proj.p3.result"></span></span>
@@ -546,6 +588,24 @@
   </button>
 
   <script>
+    // ===== LOADER : masquage une fois la page chargee =====
+    (function () {
+      const loader = document.getElementById('pageLoader');
+      if (!loader) return;
+      const hide = () => {
+        loader.classList.add('is-hidden');
+        setTimeout(() => loader.remove(), 600);
+      };
+      // delai mini pour eviter un flash, puis masquage au chargement complet
+      const minDelay = new Promise(r => setTimeout(r, 500));
+      const loaded = document.readyState === 'complete'
+        ? Promise.resolve()
+        : new Promise(r => window.addEventListener('load', r, { once: true }));
+      Promise.all([minDelay, loaded]).then(hide);
+      // filet de securite : ne jamais bloquer l'ecran
+      setTimeout(hide, 4000);
+    })();
+
     // ===== TRADUCTIONS =====
     const translations = {
       fr: {
@@ -607,6 +667,7 @@
         'proj.view':       'Voir le projet',
         'proj.contextLabel': 'Contexte',
         'proj.activitiesLabel': 'Activité de tests',
+        'proj.toolsLabel': 'Outils & méthodologie',
         'proj.resultLabel': 'Résultat :',
         'tools.title':     'Mes outils, par type de test',
         'tools.cat.func':  'Tests fonctionnels',
@@ -756,6 +817,7 @@
         'proj.view':       'View project',
         'proj.contextLabel': 'Context',
         'proj.activitiesLabel': 'Testing activity',
+        'proj.toolsLabel': 'Tools & methodology',
         'proj.resultLabel': 'Result:',
         'tools.title':     'My tools, by test type',
         'tools.cat.func':  'Functional testing',
