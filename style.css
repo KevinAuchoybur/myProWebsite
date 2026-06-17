@@ -26,6 +26,13 @@
   justify-content: center;
   animation: loaderPulse 1.4s ease-in-out infinite;
 }
+.page-loader__logo .logo-bg {
+  fill: var(--purple);
+  stroke: none;
+}
+.page-loader__logo .logo-text {
+  fill: #fff;
+}
 .page-loader__ring {
   position: absolute;
   width: 84px;
