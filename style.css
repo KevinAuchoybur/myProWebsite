@@ -1440,9 +1440,13 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 11px;
   width: 168px;
   height: 64px;
   padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
   background: #ffffff;
   border: 1px solid var(--card-border);
   border-radius: 14px;
@@ -1455,11 +1459,11 @@ section {
   border-color: var(--purple);
 }
 .tool img {
-  max-height: 30px;
-  max-width: 124px;
-  width: auto;
+  height: 26px;
+  width: 26px;
   object-fit: contain;
   display: block;
+  flex-shrink: 0;
 }
 
 /* ===== CV ===== */
