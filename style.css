@@ -1063,6 +1063,9 @@ section {
   text-align: left;
 }
 .skills__group-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -1071,6 +1074,11 @@ section {
   margin-bottom: 14px;
   padding-bottom: 8px;
   border-bottom: 1px solid var(--card-divider);
+}
+.skills__group-title svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
 }
 .skills__badges {
   display: flex;
@@ -1333,18 +1341,6 @@ section {
   gap: 8px;
   margin-bottom: 4px;
 }
-.project-card__tools .skill-badge {
-  color: #fff;
-  background: linear-gradient(135deg, var(--purple) 0%, #9d7bff 100%);
-  border: none;
-  box-shadow: 0 3px 8px rgba(124, 110, 248, 0.28);
-}
-.project-card__tools .skill-badge:hover {
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 14px rgba(124, 110, 248, 0.4);
-}
-
 /* Encadré "Résultat" : met en évidence l'impact du projet */
 .project-card__result {
   display: flex;
