@@ -1446,7 +1446,7 @@ section {
   padding: 12px 20px;
   font-size: 15px;
   font-weight: 700;
-  color: var(--text-dark);
+  color: #1a1a2e;
   background: #ffffff;
   border: 1px solid var(--card-border);
   border-radius: 14px;
