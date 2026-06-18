@@ -583,15 +583,6 @@ section {
   opacity: 0.32;
 }
 /* Trait d'accent sous la devise (deplace sur le conteneur) */
-.about__motto::after {
-  content: '';
-  display: block;
-  width: 44px;
-  height: 3px;
-  background: var(--purple);
-  border-radius: 2px;
-  margin: 18px auto 0;
-}
 
 .hero__actions {
   display: flex;
