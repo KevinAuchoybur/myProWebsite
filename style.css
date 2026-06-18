@@ -1112,6 +1112,15 @@ section {
   gap: 16px;
 }
 
+/* Separateur discret entre les sections */
+.section-sep {
+  width: min(72%, 760px);
+  height: 1px;
+  margin: 4px auto;
+  border: none;
+  background: linear-gradient(90deg, transparent, rgba(124, 110, 248, 0.35), transparent);
+}
+
 /* ===== PROJETS ===== */
 .projects {
   padding: 60px 60px 80px;
