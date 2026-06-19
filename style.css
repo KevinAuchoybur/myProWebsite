@@ -405,6 +405,9 @@ body.modal-open {
 }
 
 .mobile-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 11px;
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
@@ -412,6 +415,12 @@ body.modal-open {
   padding: 12px 8px;
   border-radius: 8px;
   transition: background 0.2s, color 0.2s;
+}
+.mobile-menu__link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--purple);
 }
 
 .mobile-menu__contact {
@@ -832,6 +841,19 @@ section {
   max-width: 1100px;
   margin: 0 auto;
   text-align: center;
+}
+
+/* Icone devant les titres de section (coherence avec la navbar) */
+.section-title__row {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+}
+.section-title__icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  color: var(--purple);
 }
 
 .about__title {
