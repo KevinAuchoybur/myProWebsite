@@ -686,19 +686,39 @@ section {
 }
 
 .hero__quicklinks a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
   color: var(--purple);
-  font-weight: 600;
   text-decoration: none;
-  padding: 5px 13px;
   background: var(--purple-light);
-  border-radius: 50px;
+  border-radius: 50%;
   transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+.hero__quicklinks a svg {
+  width: 18px;
+  height: 18px;
 }
 
 .hero__quicklinks a:hover {
   background: var(--purple);
   color: #ffffff;
   transform: translateY(-2px);
+}
+
+/* Libelle visible uniquement par les lecteurs d'ecran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .hero__quicklinks-sep {
