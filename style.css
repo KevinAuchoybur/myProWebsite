@@ -689,23 +689,32 @@ section {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   color: var(--purple);
   text-decoration: none;
-  background: var(--purple-light);
+  background: var(--surface);
+  border: 1.5px solid var(--purple-light);
   border-radius: 50%;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 3px 10px rgba(124, 110, 248, 0.18);
+  transition: background 0.2s ease, color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 .hero__quicklinks a svg {
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
 }
 
 .hero__quicklinks a:hover {
   background: var(--purple);
+  border-color: var(--purple);
   color: #ffffff;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(124, 110, 248, 0.4);
+}
+
+/* Acces rapide 'Me contacter' : uniquement en mobile (le CTA navbar passe dans le hamburger) */
+.hero__quicklinks a.hero__quicklinks-contact {
+  display: none;
 }
 
 /* Libelle visible uniquement par les lecteurs d'ecran */
@@ -2338,6 +2347,9 @@ section {
     align-items: center;
     gap: 6px;
     margin-top: 6px;
+  }
+  .hero__quicklinks a.hero__quicklinks-contact {
+    display: inline-flex;
   }
   .hero__visual {
     width: 190px;
