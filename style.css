@@ -1453,9 +1453,22 @@ section {
   padding-top: 16px;
   border-top: 1px solid var(--card-divider);
 }
+/* Encadré "Résultats" : tuile violet clair ton-sur-ton (met en évidence l'impact) */
+.project-card__results-box {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: var(--purple-light);
+  border-radius: 10px;
+}
+.project-card__results-box .project-card__results-label {
+  margin: 0 0 8px;
+  padding-top: 0;
+  border-top: none;
+}
 /* Liste "Résultats" : sur une seule colonne (lecture des impacts) */
 .project-card__results {
   column-count: 1;
+  margin-bottom: 0;
 }
 
 /* Sous-section "Métriques" : mini-cartes chiffres (effet dashboard) */
