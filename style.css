@@ -1490,14 +1490,12 @@ section {
   flex-shrink: 0;
 }
 .project-card__metrics {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   margin-bottom: 4px;
 }
 .project-card__metric {
-  flex: 1 1 0;
-  min-width: 120px;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: 10px;
@@ -2360,6 +2358,9 @@ section {
   }
   .project-card__activities {
     column-count: 1;
+  }
+  .project-card__metrics {
+    grid-template-columns: repeat(2, 1fr);
   }
   .project-card__header {
     flex-direction: row;
