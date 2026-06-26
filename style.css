@@ -730,10 +730,6 @@ section {
   box-shadow: 0 8px 18px rgba(124, 110, 248, 0.4);
 }
 
-/* Acces rapide 'Me contacter' : uniquement en mobile (le CTA navbar passe dans le hamburger) */
-.hero__quicklinks a.hero__quicklinks-contact {
-  display: none;
-}
 
 /* Libelle visible uniquement par les lecteurs d'ecran */
 .sr-only {
@@ -1894,9 +1890,9 @@ section {
   justify-content: center;
   width: 44px;
   height: 44px;
-  border: 1.5px solid var(--border);
+  border: 1.5px solid var(--purple-light);
   border-radius: 50%;
-  color: var(--text-dark);
+  color: var(--purple);
   background: var(--surface);
   text-decoration: none;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
@@ -2445,9 +2441,6 @@ section {
     align-items: center;
     gap: 6px;
     margin-top: 6px;
-  }
-  .hero__quicklinks a.hero__quicklinks-contact {
-    display: inline-flex;
   }
   .hero__visual {
     width: 190px;
