@@ -1151,6 +1151,27 @@
       statsObserver.observe(statsContainer);
     }
 
+    // ===== REVEAL AU SCROLL (apparition fondu + glissement, facon parallax) =====
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const revealEls = document.querySelectorAll('.about__title, .about__intro, .about__stats, .about__block, .about__motto, .projects__title, .projects__desc, .project-card, .expertises__title, .expertises__desc, .skills__group, .skills__tools, .contact__title, .contact__subtitle, .contact__card');
+      revealEls.forEach(el => el.classList.add('reveal'));
+      // petite cascade pour les elements affiches en groupe
+      const cascade = (list, step) => list.forEach((el, i) => { el.style.transitionDelay = (i * step) + 'ms'; });
+      cascade(document.querySelectorAll('.skills__group'), 80);
+      cascade(document.querySelectorAll('.about__block'), 90);
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      revealEls.forEach(el => revealObserver.observe(el));
+    })();
+
     // ===== FORMULAIRE DE CONTACT (inline) =====
     const form = document.getElementById('contactForm');
     const success = document.getElementById('modalSuccess');
