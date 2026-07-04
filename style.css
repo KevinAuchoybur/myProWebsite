@@ -72,7 +72,7 @@
 }
 
 :root {
-  --purple: #7C6EF8;
+  --purple: #6C5CEB;
   --purple-light: #ede9fe;
   --purple-blob: #c4b5fd;
   --text-dark: #1a1a2e;
@@ -2554,7 +2554,7 @@ section {
     --surface: #ffffff;
     --text-dark: #1a1a2e;
     --text-muted: #555;
-    --purple: #7C6EF8;
+    --purple: #6C5CEB;
     --card-bg: #ffffff;
     --card-border: #e5e7eb;
   }
