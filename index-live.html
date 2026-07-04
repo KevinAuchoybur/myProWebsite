@@ -13,9 +13,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Kevin Auchoybur – Analyste QA" />
   <meta property="og:description" content="Tester, c'est anticiper. Je détecte les anomalies avant qu'elles n'atteignent vos utilisateurs." />
-  <meta property="og:image" content="https://kevinauchoybur.me/assets/og-share.png" />
+  <meta property="og:image" content="https://kevinauchoybur.me/assets/og-share.jpg" />
   <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="627" />
+  <meta property="og:image:height" content="768" />
   <meta property="og:url" content="https://kevinauchoybur.me/" />
   <meta property="og:locale" content="fr_FR" />
   <meta property="og:locale:alternate" content="en_US" />
@@ -24,7 +24,23 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Kevin Auchoybur – Analyste QA" />
   <meta name="twitter:description" content="Tester, c'est anticiper. Je détecte les anomalies avant qu'elles n'atteignent vos utilisateurs." />
-  <meta name="twitter:image" content="https://kevinauchoybur.me/assets/og-share.png" />
+  <meta name="twitter:image" content="https://kevinauchoybur.me/assets/og-share.jpg" />
+
+  <!-- Donnees structurees (SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kevin Auchoybur",
+    "jobTitle": "QA Analyst",
+    "description": "Analyste QA certifié ISTQB — tests fonctionnels, automatisation et fiabilisation des livraisons logicielles.",
+    "url": "https://kevinauchoybur.me",
+    "image": "https://kevinauchoybur.me/assets/og-share.jpg",
+    "sameAs": ["https://www.linkedin.com/in/kevin-auchoybur-17a15a42/"],
+    "knowsAbout": ["Assurance qualité logicielle", "Tests fonctionnels", "Tests automatisés", "ISTQB", "Selenium", "Squash TM", "Jira", "Agile"],
+    "address": { "@type": "PostalAddress", "addressCountry": "MC" }
+  }
+  </script>
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -161,7 +177,10 @@
     </div>
     <div class="hero__visual">
       <div class="hero__photo-ring">
-        <img src="assets/photo.png" alt="Kevin Auchoybur" class="hero__photo" />
+        <picture>
+          <source srcset="assets/photo-web.webp" type="image/webp" />
+          <img src="assets/photo-web.jpg" alt="Kevin Auchoybur" class="hero__photo" width="560" height="700" fetchpriority="high" />
+        </picture>
       </div>
     </div>
   </section>
@@ -238,7 +257,7 @@
       <div class="project-card">
         <div class="project-card__header">
           <div class="project-card__logo">
-            <img src="assets/project-1-logo.png" alt="MonGuichet.mc" />
+            <img loading="lazy" src="assets/project-1-logo.png" alt="MonGuichet.mc" />
           </div>
           <div class="project-card__head-text">
             <h4 class="project-card__name">MonGuichet.mc</h4>
@@ -248,7 +267,7 @@
           </div>
           <div class="project-card__via">
             <span class="project-card__via-label" data-i18n="proj.viaLabel"></span>
-            <span class="project-card__via-logo"><img src="assets/company-asteria.png" alt="Asteria" /></span>
+            <span class="project-card__via-logo"><img loading="lazy" src="assets/company-asteria.png" alt="Asteria" /></span>
           </div>
         </div>
         <p class="project-card__desc-label">
@@ -322,7 +341,7 @@
       <div class="project-card">
         <div class="project-card__header">
           <div class="project-card__logo">
-            <img src="assets/project-2-logo.png" alt="Powercard" />
+            <img loading="lazy" src="assets/project-2-logo.png" alt="Powercard" />
           </div>
           <div class="project-card__head-text">
             <h4 class="project-card__name" data-i18n="proj.p2.name"></h4>
@@ -332,7 +351,7 @@
           </div>
           <div class="project-card__via">
             <span class="project-card__via-label" data-i18n="proj.viaLabel"></span>
-            <span class="project-card__via-logo"><img src="assets/company-inetum.png" alt="Inetum" /></span>
+            <span class="project-card__via-logo"><img loading="lazy" src="assets/company-inetum.png" alt="Inetum" /></span>
           </div>
         </div>
         <p class="project-card__desc-label">
@@ -402,7 +421,7 @@
       <div class="project-card">
         <div class="project-card__header">
           <div class="project-card__logo">
-            <img src="assets/project-3-logo.png" alt="SYRCA — Carsat" />
+            <img loading="lazy" src="assets/project-3-logo.png" alt="SYRCA — Carsat" />
           </div>
           <div class="project-card__head-text">
             <h4 class="project-card__name" data-i18n="proj.p3.name"></h4>
@@ -412,7 +431,7 @@
           </div>
           <div class="project-card__via">
             <span class="project-card__via-label" data-i18n="proj.viaLabel"></span>
-            <span class="project-card__via-logo"><img src="assets/company-inetum.png" alt="Inetum" /></span>
+            <span class="project-card__via-logo"><img loading="lazy" src="assets/company-inetum.png" alt="Inetum" /></span>
           </div>
         </div>
         <p class="project-card__desc-label">
@@ -535,11 +554,11 @@
         <span data-i18n="skills.toolsTitle"></span>
       </h3>
       <div class="skills__tools-row">
-        <div class="tool"><img src="assets/tool-squashtm.svg" alt="Squash TM" /><span>Squash TM</span></div>
-        <div class="tool"><img src="assets/tool-selenium.svg" alt="Selenium" /><span>Selenium</span></div>
-        <div class="tool"><img src="assets/tool-playwright.svg" alt="Playwright" /><span>Playwright</span></div>
-        <div class="tool"><img src="assets/tool-postman.svg" alt="Postman" /><span>Postman</span></div>
-        <div class="tool"><img src="assets/tool-jira.svg" alt="Jira" /><span>Jira</span></div>
+        <div class="tool"><img loading="lazy" src="assets/tool-squashtm.svg" alt="Squash TM" /><span>Squash TM</span></div>
+        <div class="tool"><img loading="lazy" src="assets/tool-selenium.svg" alt="Selenium" /><span>Selenium</span></div>
+        <div class="tool"><img loading="lazy" src="assets/tool-playwright.svg" alt="Playwright" /><span>Playwright</span></div>
+        <div class="tool"><img loading="lazy" src="assets/tool-postman.svg" alt="Postman" /><span>Postman</span></div>
+        <div class="tool"><img loading="lazy" src="assets/tool-jira.svg" alt="Jira" /><span>Jira</span></div>
       </div>
     </div>
   </section>
@@ -624,7 +643,6 @@
         'nav.about':       'À propos',
         'nav.expertises':  'Mes compétences',
         'nav.projects':    'Mes projets',
-        'nav.cv':          'Mon CV',
         'nav.contact':     'Me contacter',
         'hero.greeting':   'Bonjour et bienvenue',
         'about.title':     'À propos de moi',
@@ -761,44 +779,6 @@
         'proj.p3.r2':      'Amélioration de la fiabilité des calculs de droits',
         'proj.p3.r3':      'Sécurisation des mises en production',
         'proj.p3.result':  'Fiabilisation d\'un système essentiel au calcul des droits à la retraite.',
-        'cv.title':            'Mon CV',
-        'cv.profile.title':    'Profil',
-        'cv.profile.text':     'Analyste QA avec 7+ ans d\'expérience, du test fonctionnel à l\'automatisation. J\'ai accompagné des projets exigeants, du privé jusqu\'au Gouvernement Princier de Monaco, en fiabilisant des produits utilisés par des milliers d\'usagers. Mon obsession : qu\'aucune anomalie critique n\'atteigne la production.',
-        'cv.exp.title':        'Expériences',
-        'cv.exp.e1.date':      'Depuis 2022',
-        'cv.exp.e1.role':      'Analyste QA',
-        'cv.exp.e1.company':   'Asteria — Monaco',
-        'cv.exp.e1.context':   'Pour le compte du Gouvernement Princier de Monaco — Portail MonGuichet.mc :',
-        'cv.exp.e1.t1':        'Rédaction et exécution de plans de test',
-        'cv.exp.e1.t2':        'Identification et suivi des anomalies',
-        'cv.exp.e1.t3':        'Reporting qualité',
-        'cv.exp.e1.t4':        'Exécution des tests de non-régression et validation finale avant mise en production',
-        'cv.exp.e1.t5':        'Collaboration cross-fonctionnelle',
-        'cv.exp.e2.role':      'Ingénieur QA / Automatisation',
-        'cv.exp.e2.context':   'Au cours de mes diverses missions pour les clients d\'Inetum :',
-        'cv.exp.e2.t1':        'Assimilation des livrables et mise en place de la stratégie de tests',
-        'cv.exp.e2.t2':        'Définition des exigences et préparation des environnements et jeux de données',
-        'cv.exp.e2.t3':        'Conception et exécution des cas de tests fonctionnels et automatisés',
-        'cv.exp.e2.t4':        'Gestion des anomalies en collaboration avec l\'équipe de développement',
-        'cv.edu.title':        'Formation',
-        'cv.edu.e1.degree':    'Master 2 MIAGE — Nouvelles Technologies et Direction de Projets',
-        'cv.edu.e1.school':    'Université Côte d\'Azur — Sophia-Antipolis',
-        'cv.edu.e2.degree':    'DUT Techniques de Commercialisation',
-        'cv.edu.e2.school':    'IUT Nice Côte d\'Azur — Nice',
-        'cv.edu.e3.degree':    'Baccalauréat Économique et Social',
-        'cv.edu.e3.school':    'Lycée Don Bosco — Nice',
-        'cv.certifs.title':    'Certifications',
-        'cv.certifs.c1':       'ISTQB Fondation',
-        'cv.certifs.c2':       'ISTQB Extension Agile',
-        'cv.certifs.c3':       'ISTQB Test Manager',
-        'cv.certifs.c4':       'A4Q Selenium Tester Fondation',
-        'cv.skills.title':     'Outils & méthodes',
-        'cv.langs.title':      'Langues',
-        'cv.langs.l1':         'Français',
-        'cv.langs.l1level':    'Natif',
-        'cv.langs.l2':         'Anglais',
-        'cv.langs.l2level':    'Courant (C1)',
-        'cv.download':         'Télécharger mon CV',
         'modal.title':         'Me contacter',
         'modal.subtitle':      'Une question, un projet, ou juste envie d\'échanger ?<br />Écrivez-moi, je vous réponds personnellement.',
         'modal.name':          'Nom',
@@ -819,7 +799,6 @@
         'nav.about':       'About',
         'nav.expertises':  'My skills',
         'nav.projects':    'My projects',
-        'nav.cv':          'My CV',
         'nav.contact':     'Contact me',
         'hero.greeting':   'Hello and welcome',
         'about.title':     'About me',
@@ -956,44 +935,6 @@
         'proj.p3.r2':      'Improved reliability of entitlement calculations',
         'proj.p3.r3':      'Safer production releases',
         'proj.p3.result':  'Improved reliability of a system essential to calculating pension entitlements.',
-        'cv.title':            'My CV',
-        'cv.profile.title':    'Profile',
-        'cv.profile.text':     'QA Analyst with 7+ years of experience, from functional testing to automation. I have contributed to demanding projects, from the private sector to the Princely Government of Monaco, making products used by thousands of users more reliable. My obsession: ensuring no critical defect ever reaches production.',
-        'cv.exp.title':        'Experience',
-        'cv.exp.e1.date':      'Since 2022',
-        'cv.exp.e1.role':      'QA Analyst',
-        'cv.exp.e1.company':   'Asteria — Monaco',
-        'cv.exp.e1.context':   'On behalf of the Princely Government of Monaco — MonGuichet.mc Portal:',
-        'cv.exp.e1.t1':        'Writing and executing test plans',
-        'cv.exp.e1.t2':        'Identifying and tracking defects',
-        'cv.exp.e1.t3':        'Quality reporting',
-        'cv.exp.e1.t4':        'Running regression tests and final validation before production release',
-        'cv.exp.e1.t5':        'Cross-functional collaboration',
-        'cv.exp.e2.role':      'QA / Automation Engineer',
-        'cv.exp.e2.context':   'During my various assignments for Inetum\'s clients:',
-        'cv.exp.e2.t1':        'Reviewing deliverables and defining the test strategy',
-        'cv.exp.e2.t2':        'Defining requirements and preparing environments and test data',
-        'cv.exp.e2.t3':        'Designing and executing functional and automated test cases',
-        'cv.exp.e2.t4':        'Defect management in collaboration with the development team',
-        'cv.edu.title':        'Education',
-        'cv.edu.e1.degree':    'Master\'s (MIAGE) — New Technologies and Project Management',
-        'cv.edu.e1.school':    'Université Côte d\'Azur — Sophia-Antipolis',
-        'cv.edu.e2.degree':    'Two-year technical degree in Sales & Marketing',
-        'cv.edu.e2.school':    'IUT Nice Côte d\'Azur — Nice',
-        'cv.edu.e3.degree':    'High School Diploma — Economics and Social Sciences',
-        'cv.edu.e3.school':    'Lycée Don Bosco — Nice',
-        'cv.certifs.title':    'Certifications',
-        'cv.certifs.c1':       'ISTQB Foundation Level',
-        'cv.certifs.c2':       'ISTQB Agile Extension',
-        'cv.certifs.c3':       'ISTQB Test Manager',
-        'cv.certifs.c4':       'A4Q Selenium Tester Foundation',
-        'cv.skills.title':     'Tools & methods',
-        'cv.langs.title':      'Languages',
-        'cv.langs.l1':         'French',
-        'cv.langs.l1level':    'Native',
-        'cv.langs.l2':         'English',
-        'cv.langs.l2level':    'Fluent (C1)',
-        'cv.download':         'Download my CV',
         'modal.title':         'Contact me',
         'modal.subtitle':      'A question, a project, or just to say hello?<br />Drop me a line — I\'ll reply personally.',
         'modal.name':          'Name',

@@ -785,6 +785,9 @@ section {
   background: #e5e7eb;
 }
 
+.hero__photo-ring picture {
+  display: contents;
+}
 .hero__photo {
   width: 100%;
   height: 100%;
@@ -2076,7 +2079,6 @@ section {
 /* Barre d'accent violette sous les titres de section */
 .expertises__title::after,
 .projects__title::after,
-.cv__title::after,
 .contact__title::after {
   content: '';
   display: block;
