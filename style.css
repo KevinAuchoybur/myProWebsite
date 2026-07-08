@@ -2546,7 +2546,7 @@ select:focus-visible,
     justify-content: center;
   }
   .hero__scroll {
-    display: none;
+    bottom: 8px;
   }
   .hero__visual {
     width: 210px;
