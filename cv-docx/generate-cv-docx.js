@@ -180,16 +180,16 @@ const bullet = (text) => new Paragraph({
 // En-tete d'experience : role (gauche, peut passer sur 2 lignes) + annee calee en haut a droite
 const entryHeader = (role, date) => new Table({
   width: { size: 5760, type: WidthType.DXA },
-  columnWidths: [4380, 1380],
+  columnWidths: [4000, 1760],
   borders: NO_BORDERS,
   rows: [new TableRow({ children: [
     new TableCell({
-      width: { size: 4380, type: WidthType.DXA }, borders: NO_BORDERS, verticalAlign: VerticalAlign.TOP,
-      margins: { top: 120, right: 80, bottom: 0 },
+      width: { size: 4000, type: WidthType.DXA }, borders: NO_BORDERS, verticalAlign: VerticalAlign.TOP,
+      margins: { top: 120, right: 160, bottom: 0 },
       children: [new Paragraph({ children: [new TextRun({ text: role, bold: true, size: 21, color: DARK })] })],
     }),
     new TableCell({
-      width: { size: 1380, type: WidthType.DXA }, borders: NO_BORDERS, verticalAlign: VerticalAlign.TOP,
+      width: { size: 1760, type: WidthType.DXA }, borders: NO_BORDERS, verticalAlign: VerticalAlign.TOP,
       margins: { top: 122, bottom: 0 },
       children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: date ? [new TextRun({ text: date, size: 18, color: PURPLE, bold: true })] : [] })],
     }),
@@ -210,12 +210,22 @@ const pill = (text) => new Paragraph({
   children: [new TextRun({ text, size: 18, color: PURPLE_DK, bold: true })],
 });
 
-const langLine = (lang, level) => new Paragraph({
-  spacing: { after: 40 }, tabStops: [{ type: 'right', position: 3800 }],
-  children: [
-    new TextRun({ text: lang, bold: true, size: 19, color: DARK }),
-    new TextRun({ text: '\t' + level, size: 18, color: MUTED }),
-  ],
+const langLine = (lang, level) => new Table({
+  width: { size: 3840, type: WidthType.DXA },
+  columnWidths: [2140, 1700],
+  borders: NO_BORDERS,
+  rows: [new TableRow({ children: [
+    new TableCell({
+      width: { size: 2140, type: WidthType.DXA }, borders: NO_BORDERS, verticalAlign: VerticalAlign.TOP,
+      margins: { top: 20, bottom: 40, right: 80 },
+      children: [new Paragraph({ children: [new TextRun({ text: lang, bold: true, size: 19, color: DARK })] })],
+    }),
+    new TableCell({
+      width: { size: 1700, type: WidthType.DXA }, borders: NO_BORDERS, verticalAlign: VerticalAlign.TOP,
+      margins: { top: 22, bottom: 40 },
+      children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: level, size: 18, color: MUTED })] })],
+    }),
+  ] })],
 });
 
 const contactLine = (label, value) => new Paragraph({
