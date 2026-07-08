@@ -158,23 +158,6 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885M20.52 3.449C18.24 1.245 15.24 0 12.045 0 5.463 0 .104 5.334.101 11.892c0 2.096.549 4.142 1.595 5.945L0 24l6.305-1.654a11.98 11.98 0 0 0 5.734 1.46h.005c6.581 0 11.945-5.334 11.948-11.893a11.821 11.821 0 0 0-3.467-8.464"/></svg>
         </a>
       </div>
-      <p class="hero__quicklinks">
-        <span class="hero__quicklinks-label" data-i18n="hero.quickaccess"></span>
-        <span class="hero__quicklinks-items">
-          <a href="#about">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-            <span class="sr-only" data-i18n="nav.about"></span>
-          </a>
-          <a href="#expertises">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-            <span class="sr-only" data-i18n="nav.expertises"></span>
-          </a>
-          <a href="#projects">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-            <span class="sr-only" data-i18n="nav.projects"></span>
-          </a>
-        </span>
-      </p>
     </div>
     <div class="hero__visual">
       <div class="hero__blob"></div>
@@ -185,6 +168,9 @@
         </picture>
       </div>
     </div>
+    <a href="#about" class="hero__scroll" aria-label="Découvrir la suite">
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+    </a>
   </section>
 
   <!-- ===== À PROPOS DE MOI ===== -->
@@ -715,7 +701,6 @@
         'hero.subrole':    '<strong>Certifié ISTQB</strong>',
         'hero.follow':     'Me suivre :',
         'hero.downloadCv': 'Télécharger mon CV',
-        'hero.quickaccess': 'Accès rapide :',
         'exp.title':       'Mes compétences',
         'exp.desc':        'Les savoir-faire que je mobilise au quotidien.',
         'skills.g1.title': 'Conception & stratégie',
@@ -877,7 +862,6 @@
         'hero.subrole':    '<strong>ISTQB-certified</strong>',
         'hero.follow':     'Follow me:',
         'hero.downloadCv': 'Download my CV',
-        'hero.quickaccess': 'Quick access:',
         'exp.title':       'My skills',
         'exp.desc':        'The skills I rely on every day.',
         'skills.g1.title': 'Test design & strategy',

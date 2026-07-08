@@ -711,56 +711,6 @@ section {
   color: var(--purple);
 }
 
-/* Accès rapide (raccourcis discrets dans le hero) */
-.hero__quicklinks {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  margin-top: 18px;
-  font-size: 13px;
-}
-
-.hero__quicklinks-items {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-}
-
-.hero__quicklinks-label {
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-.hero__quicklinks a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  color: var(--purple);
-  text-decoration: none;
-  background: var(--surface);
-  border: 1.5px solid var(--purple-light);
-  border-radius: 50%;
-  box-shadow: 0 3px 10px rgba(124, 110, 248, 0.18);
-  transition: background 0.2s ease, color 0.2s ease, transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-}
-.hero__quicklinks a svg {
-  width: 19px;
-  height: 19px;
-}
-
-.hero__quicklinks a:hover {
-  background: var(--purple);
-  border-color: var(--purple);
-  color: #ffffff;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 18px rgba(124, 110, 248, 0.4);
-}
-
-
 /* Libelle visible uniquement par les lecteurs d'ecran */
 .sr-only {
   position: absolute;
@@ -774,11 +724,47 @@ section {
   border: 0;
 }
 
-.hero__quicklinks-sep {
-  display: none;
+/* Accessibilite clavier : anneau de focus violet coherent, visible uniquement
+   a la navigation clavier (Tab) et invisible au clic souris. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--purple);
+  outline-offset: 3px;
+}
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Indicateur de defilement discret en bas du hero */
+.hero__scroll {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
   color: var(--purple);
-  font-weight: 700;
-  opacity: 0.7;
+  opacity: 0.65;
+  z-index: 2;
+  animation: heroScrollBounce 1.8s ease-in-out infinite;
+  transition: opacity 0.2s ease;
+}
+.hero__scroll:hover {
+  opacity: 1;
+}
+@keyframes heroScrollBounce {
+  0%, 100% { transform: translate(-50%, 0); }
+  50%      { transform: translate(-50%, 6px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__scroll { animation: none; }
 }
 
 /* Hero visual */
@@ -2559,11 +2545,8 @@ section {
   .hero__social {
     justify-content: center;
   }
-  .hero__quicklinks {
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    margin-top: 6px;
+  .hero__scroll {
+    display: none;
   }
   .hero__visual {
     width: 210px;
