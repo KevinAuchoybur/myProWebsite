@@ -2397,6 +2397,28 @@ section {
   color: var(--white);
 }
 
+/* Bouton "Telecharger mon CV" dans le footer */
+.footer__cv {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple);
+  background: transparent;
+  border: 1.5px solid var(--purple);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+.footer__cv:hover {
+  background: var(--purple);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
 /* Bloc reseaux du footer : icones rondes assorties au hero */
 .footer__social {
   display: flex;

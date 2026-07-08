@@ -635,6 +635,10 @@
       <div class="footer__brand">
         <span class="footer__name">Kevin Auchoybur</span>
         <span class="footer__role" data-i18n="footer.tagline"></span>
+        <a id="footerDownloadCv" class="footer__cv" href="assets/cv-fr-KevinAuchoybur.pdf" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="hero.downloadCv"></span>
+        </a>
       </div>
       <nav class="footer__links">
         <a href="#about" data-i18n="nav.about"></a>
@@ -1042,6 +1046,8 @@
         : 'assets/cv-fr-KevinAuchoybur.pdf';
       const heroCv = document.getElementById('heroDownloadCv');
       if (heroCv) heroCv.setAttribute('href', cvHref);
+      const footerCv = document.getElementById('footerDownloadCv');
+      if (footerCv) footerCv.setAttribute('href', cvHref);
 
       // Lien WhatsApp avec message pré-rempli selon la langue
       const waMsg = lang === 'en'

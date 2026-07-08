@@ -95,7 +95,7 @@ const DATA = {
       ['Baccalauréat Économique et Social', 'Lycée Don Bosco, Nice', '2009'],
     ],
     certifs: ['ISTQB Fondation', 'ISTQB Extension Agile', 'ISTQB Test Manager', 'A4Q Selenium Tester Fondation'],
-    tools: ['Squash TM', 'Selenium', 'Playwright', 'Postman', 'Jira', 'Agile'],
+    tools: ['Squash TM', 'Selenium', 'Playwright', 'Postman', 'Jira', 'TypeScript', 'Agile'],
     langs: [['Français', 'Natif'], ['Anglais', 'Courant (C1)']],
   },
   en: {
@@ -150,7 +150,7 @@ const DATA = {
       ['High School Diploma — Economics & Social Sciences', 'Lycée Don Bosco, Nice', '2009'],
     ],
     certifs: ['ISTQB Foundation', 'ISTQB Agile Extension', 'ISTQB Test Manager', 'A4Q Selenium Tester Foundation'],
-    tools: ['Squash TM', 'Selenium', 'Playwright', 'Postman', 'Jira', 'Agile'],
+    tools: ['Squash TM', 'Selenium', 'Playwright', 'Postman', 'Jira', 'TypeScript', 'Agile'],
     langs: [['French', 'Native'], ['English', 'Fluent (C1)']],
   },
 };
