@@ -624,9 +624,9 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
           <span data-i18n="modal.send"></span>
         </button>
-        <p class="modal__error" id="modalError"></p>
+        <p class="modal__error" id="modalError" role="alert" aria-live="assertive"></p>
       </form>
-      <div class="modal__success" id="modalSuccess">
+      <div class="modal__success" id="modalSuccess" role="status" aria-live="polite">
         <div class="modal__success-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7C6EF8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
@@ -1259,13 +1259,13 @@
           // Affiche le message de succès en place du formulaire
           form.style.display = 'none';
           success.classList.add('is-visible');
-          // Réinitialise le formulaire après 3 secondes
+          // Réinitialise le formulaire après 6 secondes (laisse le temps de lire)
           setTimeout(() => {
             success.classList.remove('is-visible');
             form.reset();
             newCaptcha();
             form.style.display = '';
-          }, 3000);
+          }, 6000);
         } else {
           errorBox.textContent = translations[currentLang]['modal.error'];
           errorBox.classList.add('is-visible');
