@@ -1142,6 +1142,15 @@ select:focus-visible,
   line-height: 1.4;
   opacity: 0.95;
 }
+.stat__sub {
+  font-size: 10.5px;
+  color: #ffffff;
+  font-weight: 500;
+  line-height: 1.35;
+  opacity: 0.78;
+  max-width: 150px;
+  margin-top: 2px;
+}
 
 /* ===== EXPERTISES ===== */
 .expertises {
@@ -2700,6 +2709,9 @@ select:focus-visible,
   }
   .stat__num {
     font-size: 28px;
+  }
+  .stat__sub {
+    display: none;
   }
 
   .expertises {
