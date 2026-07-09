@@ -1216,6 +1216,60 @@ select:focus-visible,
   background: linear-gradient(90deg, transparent, rgba(124, 110, 248, 0.35), transparent);
 }
 
+/* ===== PARCOURS (mini timeline verticale, dans le bloc "A propos") ===== */
+.timeline {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  text-align: left;
+}
+.timeline__item {
+  position: relative;
+  padding: 0 0 22px 26px;
+  border-left: 2px solid var(--card-border);
+}
+.timeline__item:last-child {
+  border-left-color: transparent;
+  padding-bottom: 0;
+}
+/* Dot violet centre sur la ligne (anneau de la couleur de la carte) */
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 1px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--purple);
+  border: 3px solid var(--card-bg);
+  box-shadow: 0 0 0 2px var(--purple-light);
+}
+.timeline__date {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--purple);
+  margin-bottom: 3px;
+}
+.timeline__role {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0 0 2px;
+}
+.timeline__place {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0;
+}
+.timeline__context {
+  font-size: 13px;
+  color: var(--text-dark);
+  line-height: 1.55;
+  margin: 6px 0 0;
+}
+
 /* ===== PROJETS ===== */
 .projects {
   padding: 60px 60px 80px;
@@ -2337,7 +2391,7 @@ select:focus-visible,
 
 .footer__role {
   font-size: 13px;
-  color: var(--purple);
+  color: var(--text-dark);
   font-weight: 500;
 }
 
@@ -2387,16 +2441,16 @@ select:focus-visible,
   padding: 8px 16px;
   font-size: 13px;
   font-weight: 600;
-  color: var(--purple);
-  background: transparent;
+  color: #ffffff;
+  background: var(--purple);
   border: 1.5px solid var(--purple);
   border-radius: 50px;
   text-decoration: none;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  transition: background 0.2s ease, transform 0.15s ease;
 }
 .footer__cv:hover {
-  background: var(--purple);
-  color: #ffffff;
+  background: #5b4bd6;
+  border-color: #5b4bd6;
   transform: translateY(-1px);
 }
 
