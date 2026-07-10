@@ -2692,7 +2692,8 @@ select:focus-visible,
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 8px 16px;
     aspect-ratio: auto;
     padding: 16px 20px;
     text-align: left;
@@ -2710,8 +2711,12 @@ select:focus-visible,
   .stat__num {
     font-size: 28px;
   }
+  /* Detail des secteurs : passe sur une 2e ligne, pleine largeur */
   .stat__sub {
-    display: none;
+    flex-basis: 100%;
+    max-width: none;
+    margin-top: 0;
+    font-size: 11.5px;
   }
 
   .expertises {
