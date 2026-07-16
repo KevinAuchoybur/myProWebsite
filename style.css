@@ -1208,6 +1208,13 @@ select:focus-visible,
   flex-wrap: wrap;
   gap: 9px;
 }
+/* Bloc transversal (Méthodologie & suivi) : pleine largeur sous les 2 blocs, séparé d'un filet */
+.skills__group--full {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+  padding-top: 22px;
+  border-top: 1px solid var(--card-divider);
+}
 .skill-badge {
   font-size: 13px;
   font-weight: 600;
