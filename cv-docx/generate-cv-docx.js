@@ -5,11 +5,12 @@ const {
   Table, TableRow, TableCell, WidthType, ImageRun, LevelFormat, VerticalAlign,
 } = require('docx');
 
-const PURPLE = '7C6EF8';
-const PURPLE_DK = '5B4FD0';
-const PURPLE_LT = 'EDE9FE';
-const PURPLE_BORDER = 'E0DAFB';
-const DARK = '1A1A2E';
+/* Charte alignée sur le site : bleu profond en accent (nom historique PURPLE conservé) */
+const PURPLE = '1E3FC4';
+const PURPLE_DK = '14297A';
+const PURPLE_LT = 'F0F3FC';
+const PURPLE_BORDER = 'DCE3F6';
+const DARK = '14183A';
 const MUTED = '555555';
 
 const ROOT = path.resolve(__dirname, '..');
@@ -242,7 +243,7 @@ function build(lang) {
 
   const photoCell = hasPhoto
     ? [new Paragraph({ alignment: AlignmentType.CENTER, children: [new ImageRun({
-        type: 'png', data: fs.readFileSync(photoPath), transformation: { width: 118, height: 138 },
+        type: 'png', data: fs.readFileSync(photoPath), transformation: { width: 112, height: 140 },
         altText: { title: 'Photo', description: 'Photo de profil', name: 'photo' } })] })]
     : [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 600, after: 600 }, children: [new TextRun({ text: '[ Photo ]', color: MUTED, size: 20 })] })];
 
