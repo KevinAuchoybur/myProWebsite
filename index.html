@@ -88,6 +88,10 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         <span data-i18n="nav.projects"></span>
       </a>
+      <a href="#lab">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        <span data-i18n="nav.lab"></span>
+      </a>
     </nav>
     <div class="navbar__right">
       <!-- Switch langue -->
@@ -128,6 +132,10 @@
       <a href="#projects" class="mobile-menu__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         <span data-i18n="nav.projects"></span>
+      </a>
+      <a href="#lab" class="mobile-menu__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+        <span data-i18n="nav.lab"></span>
       </a>
       <a href="#contact" class="mobile-menu__link">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -609,6 +617,93 @@
 
   <div class="section-sep" aria-hidden="true"></div>
 
+  <!-- ===== MES PROJETS (perso QA) ===== -->
+  <section class="lab" id="lab">
+    <h2 class="lab__title"><span class="section-title__row"><svg class="section-title__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg><span data-i18n="lab.title"></span></span></h2>
+    <p class="lab__desc" data-i18n="lab.desc"></p>
+    <div class="lab__grid">
+
+      <!-- Projet 1 : AS Monaco (E2E UI) -->
+      <article class="repo-card">
+        <div class="repo-card__top">
+          <span class="repo-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </span>
+          <div class="repo-card__headtext">
+            <h3 class="repo-card__name" data-i18n="lab.p1.name"></h3>
+            <span class="repo-card__type" data-i18n="lab.p1.type"></span>
+          </div>
+        </div>
+        <p class="repo-card__scope-label">
+          <svg class="repo-card__scope-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span data-i18n="lab.scopeLabel"></span>
+        </p>
+        <p class="repo-card__desc" data-i18n="lab.p1.desc"></p>
+        <div class="repo-card__stack">
+          <span class="repo-badge">Playwright</span>
+          <span class="repo-badge">TypeScript</span>
+          <span class="repo-badge">Page Object Model</span>
+          <span class="repo-badge">GitHub Actions</span>
+        </div>
+        <div class="repo-card__metrics">
+          <div class="repo-card__metric"><span class="repo-card__metric-num">35</span><span class="repo-card__metric-label" data-i18n="lab.p1.m1"></span></div>
+          <div class="repo-card__metric"><span class="repo-card__metric-num">3</span><span class="repo-card__metric-label" data-i18n="lab.p1.m2"></span></div>
+        </div>
+        <div class="repo-card__footer">
+          <span class="repo-card__ci">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span data-i18n="lab.ciPassing"></span>
+          </span>
+          <a class="repo-card__link" href="https://github.com/KevinAuchoybur/testAuto_asmfc" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <span data-i18n="lab.viewRepo"></span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Projet 2 : Restful-Booker (API) -->
+      <article class="repo-card">
+        <div class="repo-card__top">
+          <span class="repo-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2"/><rect width="20" height="8" x="2" y="14" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+          </span>
+          <div class="repo-card__headtext">
+            <h3 class="repo-card__name" data-i18n="lab.p2.name"></h3>
+            <span class="repo-card__type" data-i18n="lab.p2.type"></span>
+          </div>
+        </div>
+        <p class="repo-card__scope-label">
+          <svg class="repo-card__scope-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+          <span data-i18n="lab.scopeLabel"></span>
+        </p>
+        <p class="repo-card__desc" data-i18n="lab.p2.desc"></p>
+        <div class="repo-card__stack">
+          <span class="repo-badge">Playwright</span>
+          <span class="repo-badge">APIRequestContext</span>
+          <span class="repo-badge">TypeScript</span>
+          <span class="repo-badge">GitHub Actions</span>
+        </div>
+        <div class="repo-card__metrics">
+          <div class="repo-card__metric"><span class="repo-card__metric-num">4</span><span class="repo-card__metric-label" data-i18n="lab.p2.m1"></span></div>
+          <div class="repo-card__metric"><span class="repo-card__metric-num">CRUD</span><span class="repo-card__metric-label" data-i18n="lab.p2.m2"></span></div>
+        </div>
+        <div class="repo-card__footer">
+          <span class="repo-card__ci">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+            <span data-i18n="lab.ciPassing"></span>
+          </span>
+          <a class="repo-card__link" href="https://github.com/KevinAuchoybur/restful-booker-api-test" target="_blank" rel="noopener noreferrer">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <span data-i18n="lab.viewRepo"></span>
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <div class="section-sep" aria-hidden="true"></div>
+
   <!-- ===== CONTACT ===== -->
   <section class="contact" id="contact">
     <h2 class="contact__title"><span class="section-title__row"><svg class="section-title__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span data-i18n="modal.title"></span></span></h2>
@@ -713,6 +808,7 @@
         'nav.about':       'À propos',
         'nav.expertises':  'Mes compétences',
         'nav.projects':    'Mes expériences',
+        'nav.lab':         'Mes projets',
         'nav.contact':     'Me contacter',
         'hero.greeting':   'Bonjour et bienvenue',
         'about.title':     'À propos de moi',
@@ -776,6 +872,21 @@
         'exp.card3.desc':  'Je traduis les besoins métier en cas de tests concrets et facilite la communication entre développeurs, métiers et utilisateurs.',
         'proj.title':      'Mes expériences',
         'proj.desc':       'Des environnements critiques, des utilisateurs réels.',
+        'lab.title':       'Mes projets',
+        'lab.desc':        'Des projets personnels qui démontrent mes compétences par le code — repos publics, CI automatisée.',
+        'lab.scopeLabel':  'Périmètre',
+        'lab.viewRepo':    'Voir le repo',
+        'lab.ciPassing':   'CI verte',
+        'lab.p1.name':     'Tests E2E UI — AS Monaco',
+        'lab.p1.type':     'Tests end-to-end (UI)',
+        'lab.p1.desc':     'Automatisation de la page d\'accueil du site officiel de l\'AS Monaco : vérification du contenu (carrousel, blocs actualités, classement, joueurs…) et de la navigation & liens (menu généré en data-driven, liens externes billetterie / boutique). Architecture Page Object Model.',
+        'lab.p1.m1':       'tests',
+        'lab.p1.m2':       'navigateurs',
+        'lab.p2.name':     'Tests d\'API — Restful-Booker',
+        'lab.p2.type':     'Tests d\'API REST',
+        'lab.p2.desc':     'Tests d\'une API REST publique d\'entraînement : parcours CRUD (lecture de liste, lecture par ID, création, mise à jour) avec authentification par token et assertions sur les codes HTTP et les payloads. Requêtes via l\'APIRequestContext de Playwright.',
+        'lab.p2.m1':       'tests',
+        'lab.p2.m2':       '+ auth par token',
         'proj.view':       'Voir le projet',
         'proj.contextLabel': 'Contexte',
         'proj.viaLabel':   'via',
@@ -885,6 +996,7 @@
         'nav.about':       'About',
         'nav.expertises':  'My skills',
         'nav.projects':    'My experience',
+        'nav.lab':         'My projects',
         'nav.contact':     'Contact me',
         'hero.greeting':   'Hello and welcome',
         'about.title':     'About me',
@@ -948,6 +1060,21 @@
         'exp.card3.desc':  'I translate business needs into concrete test cases and ease communication between developers, business and users.',
         'proj.title':      'My experience',
         'proj.desc':       'Critical environments, real users.',
+        'lab.title':       'My projects',
+        'lab.desc':        'Personal projects that back up my skills with code — public repos, automated CI.',
+        'lab.scopeLabel':  'Scope',
+        'lab.viewRepo':    'View repo',
+        'lab.ciPassing':   'CI passing',
+        'lab.p1.name':     'E2E UI tests — AS Monaco',
+        'lab.p1.type':     'End-to-end tests (UI)',
+        'lab.p1.desc':     'Automating the home page of AS Monaco\'s official website: checking content (carousel, news / standings / players blocks…) and navigation & links (data-driven menu, external ticketing / shop links). Page Object Model architecture.',
+        'lab.p1.m1':       'tests',
+        'lab.p1.m2':       'browsers',
+        'lab.p2.name':     'API tests — Restful-Booker',
+        'lab.p2.type':     'REST API tests',
+        'lab.p2.desc':     'Testing a public practice REST API: CRUD flow (list read, read by ID, create, update) with token authentication and assertions on HTTP status codes and payloads. Requests via Playwright\'s APIRequestContext.',
+        'lab.p2.m1':       'tests',
+        'lab.p2.m2':       '+ token auth',
         'proj.view':       'View project',
         'proj.contextLabel': 'Context',
         'proj.viaLabel':   'via',
@@ -1213,7 +1340,7 @@
     (function () {
       if (!('IntersectionObserver' in window)) return;
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const revealEls = document.querySelectorAll('.about__title, .about__intro, .about__stats, .about__block, .about__motto, .projects__title, .projects__desc, .project-card, .expertises__title, .expertises__desc, .skills__group, .skills__tools, .contact__title, .contact__subtitle, .contact__card');
+      const revealEls = document.querySelectorAll('.about__title, .about__intro, .about__stats, .about__block, .about__motto, .projects__title, .projects__desc, .project-card, .lab__title, .lab__desc, .repo-card, .expertises__title, .expertises__desc, .skills__group, .skills__tools, .contact__title, .contact__subtitle, .contact__card');
       revealEls.forEach(el => el.classList.add('reveal'));
       // petite cascade pour les elements affiches en groupe
       const cascade = (list, step) => list.forEach((el, i) => { el.style.transitionDelay = (i * step) + 'ms'; });
