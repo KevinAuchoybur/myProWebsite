@@ -1055,7 +1055,7 @@ select:focus-visible,
   padding-left: 24px;
   font-size: 14px;
   line-height: 1.5;
-  color: var(--text-muted);
+  color: var(--text-dark);
 }
 .abx-list li::before {
   content: '';
@@ -1112,7 +1112,7 @@ select:focus-visible,
 
 .abx-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
 .abx-chip {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: inherit;
   font-size: 12px;
   font-weight: 500;
   color: var(--purple);
@@ -1122,7 +1122,7 @@ select:focus-visible,
   border-radius: 7px;
 }
 
-.abx-vision-text { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-muted); }
+.abx-vision-text { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-dark); }
 .abx-vision-text strong { color: var(--text-dark); font-weight: 600; }
 
 .abx-timeline { list-style: none; margin: auto 0 0; padding: 0; display: grid; gap: 13px; }
@@ -1137,7 +1137,7 @@ select:focus-visible,
   box-shadow: 0 0 0 4px var(--purple-light);
 }
 .abx-role { font-size: 13.5px; font-weight: 700; color: var(--text-dark); }
-.abx-place { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); }
+.abx-place { font-family: inherit; font-size: 11px; color: var(--text-muted); }
 
 @media (max-width: 780px) {
   .about__bento { grid-template-columns: repeat(2, 1fr); }
@@ -1160,23 +1160,28 @@ select:focus-visible,
 
 /* ===== Mes competences — grille BENTO ===== */
 .skills__bento {
-  column-count: 2;
-  column-gap: 16px;
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
   text-align: left;
   max-width: 940px;
   margin: 0 auto;
 }
-.skills__bento .abx-tile {
-  break-inside: avoid;
-  margin: 0 0 16px;
+.skx-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
+.skx-col .abx-tile:last-child { flex: 1 1 auto; }
 .skills__bento .abx-list { margin-top: 12px; }
 
 .skx-desc {
   font-size: 13.5px;
   font-style: italic;
   line-height: 1.55;
-  color: var(--text-muted);
+  color: var(--text-dark);
   margin: 0 0 4px;
 }
 
@@ -1197,14 +1202,14 @@ select:focus-visible,
 }
 .skx-tool img { width: 24px; height: 24px; flex-shrink: 0; object-fit: contain; }
 .skx-tool span {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: inherit;
   font-size: 13px;
   font-weight: 500;
   color: var(--text-dark);
 }
 
 @media (max-width: 640px) {
-  .skills__bento { column-count: 1; }
+  .skills__bento { flex-direction: column; }
 }
 
 .about__text {
@@ -1534,7 +1539,7 @@ select:focus-visible,
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .skill-badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: inherit;
   font-size: 12px;
   font-weight: 500;
   color: var(--purple);
@@ -2051,7 +2056,7 @@ select:focus-visible,
   flex-shrink: 0;
 }
 .project-card__via-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: inherit;
   font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
