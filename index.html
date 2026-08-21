@@ -49,7 +49,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Orbitron:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Orbitron:wght@700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -193,81 +193,63 @@
     <h2 class="about__title"><span class="section-title__row"><svg class="section-title__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span data-i18n="about.title"></span></span></h2>
     <p class="about__intro" data-i18n="about.intro"></p>
 
-    <p class="about__stats-intro">
-      <svg class="about__stats-intro-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-      <span data-i18n="about.statsIntro"></span>
-    </p>
-    <div class="about__stats">
-      <div class="stat">
-        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 14"/></svg>
-        <span class="stat__label" data-i18n="about.stat1"></span>
-        <span class="stat__num">7+</span>
-      </div>
-      <div class="stat">
-        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.7L16.5 22 15 14.5"/></svg>
-        <span class="stat__label" data-i18n="about.stat2"></span>
-        <span class="stat__num">4</span>
-        <span class="stat__sub" data-i18n="about.stat2sub"></span>
-      </div>
-      <div class="stat">
-        <svg class="stat__icon" xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12.83a1 1 0 0 0 .6.91l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 .6-.92"/><path d="M2 17.83a1 1 0 0 0 .6.91l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 .6-.92"/></svg>
-        <span class="stat__label" data-i18n="about.stat3"></span>
-        <span class="stat__num">3</span>
-        <span class="stat__sub" data-i18n="about.stat3sub"></span>
-      </div>
-    </div>
+    <div class="about__bento">
 
-    <div class="about__text">
-      <div class="about__block">
-        <h3 class="about__block-title">
-          <svg class="about__block-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          <span data-i18n="about.who.title"></span>
-        </h3>
-        <p class="about__block-text about__block-text--quote" data-i18n-html="about.who.text"></p>
-      </div>
-      <div class="about__block">
-        <h3 class="about__block-title">
-          <svg class="about__block-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          <span data-i18n="about.vision.title"></span>
-        </h3>
-        <p class="about__block-text about__block-text--quote" data-i18n-html="about.vision.text"></p>
-      </div>
-      <div class="about__block">
-        <h3 class="about__block-title">
-          <svg class="about__block-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-          <span data-i18n="about.certifs.title"></span>
-        </h3>
-        <p class="about__block-text about__block-text--quote" data-i18n-html="about.certifs.text"></p>
-      </div>
-      <div class="about__block about__block--timeline">
-        <h3 class="about__block-title">
-          <svg class="about__block-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
-          <span data-i18n="career.title"></span>
-        </h3>
-        <ol class="timeline">
-          <li class="timeline__item">
-            <span class="timeline__date" data-i18n="career.e1.date"></span>
-            <h4 class="timeline__role" data-i18n="career.e1.role"></h4>
-            <p class="timeline__place">Asteria · Monaco</p>
-            <p class="timeline__context" data-i18n-html="career.e1.context"></p>
-          </li>
-          <li class="timeline__item">
-            <span class="timeline__date" data-i18n="career.e2.date"></span>
-            <h4 class="timeline__role" data-i18n="career.e2.role"></h4>
-            <p class="timeline__place">Inetum · Aix-en-Provence / Marseille</p>
-            <p class="timeline__context" data-i18n-html="career.e2.context"></p>
-          </li>
+      <article class="abx-tile abx-who">
+        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg><span data-i18n="about.who.title"></span></span>
+        <p class="abx-lead" data-i18n-html="about.who.lead"></p>
+        <ul class="abx-list">
+          <li data-i18n="about.who.p1"></li>
+          <li data-i18n="about.who.p2"></li>
+          <li data-i18n="about.who.p3"></li>
+        </ul>
+      </article>
+
+      <article class="abx-tile abx-metric">
+        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-i18n="about.metricExp"></span></span>
+        <div class="abx-num-wrap"><span class="stat__num abx-num">7+</span><span class="abx-cap" data-i18n="about.metricYears"></span></div>
+      </article>
+
+      <article class="abx-tile abx-metric">
+        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M9 14.5 7.5 22l4.5-2.7L16.5 22 15 14.5"/></svg><span data-i18n="about.stat2"></span></span>
+        <div class="abx-num-wrap"><span class="stat__num abx-num">4</span><span class="abx-cap">ISTQB · A4Q</span></div>
+      </article>
+
+      <article class="abx-tile abx-motto">
+        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg><span data-i18n="about.mottoLabel"></span></span>
+        <p class="abx-motto-text" data-i18n="about.motto"></p>
+        <span class="abx-ka">KA</span>
+      </article>
+
+      <article class="abx-tile abx-certs">
+        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg><span data-i18n="about.certifs.title"></span></span>
+        <div class="abx-chips">
+          <span class="abx-chip">ISTQB Foundation</span>
+          <span class="abx-chip">ISTQB Agile</span>
+          <span class="abx-chip">ISTQB Test Manager</span>
+          <span class="abx-chip">A4Q Selenium</span>
+        </div>
+      </article>
+
+      <article class="abx-tile abx-vision">
+        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg><span data-i18n="about.vision.title"></span></span>
+        <p class="abx-vision-text" data-i18n-html="about.vision.short"></p>
+      </article>
+
+      <article class="abx-tile abx-time">
+        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg><span data-i18n="career.title"></span></span>
+        <ol class="abx-timeline">
+          <li><span class="abx-dot"></span><div><div class="abx-role" data-i18n="career.e1.role"></div><div class="abx-place">Asteria · Monaco</div></div></li>
+          <li><span class="abx-dot"></span><div><div class="abx-role" data-i18n="career.e2.role"></div><div class="abx-place">Inetum · Aix / Marseille</div></div></li>
         </ol>
-      </div>
-    </div>
+      </article>
 
-    <blockquote class="about__motto">
-      <span class="about__motto-label">
-        <svg class="about__motto-label-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span data-i18n="about.mottoLabel"></span>
-      </span>
-      <span class="about__motto-text" data-i18n="about.motto"></span>
-    </blockquote>
+      <article class="abx-tile abx-metric abx-sectors">
+        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="M2 12.83a1 1 0 0 0 .6.91l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 .6-.92"/><path d="M2 17.83a1 1 0 0 0 .6.91l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 .6-.92"/></svg><span data-i18n="about.stat3"></span></span>
+        <div class="abx-num-wrap"><span class="stat__num abx-num">3</span><span class="abx-cap" data-i18n="about.stat3sub"></span></div>
+      </article>
+
+    </div>
   </section>
 
   <div class="section-sep" aria-hidden="true"></div>
@@ -840,6 +822,13 @@
         'about.title':     'À propos de moi',
         'about.intro':     'La qualité logicielle, mon fil conducteur.',
         'about.who.title': 'Qui suis-je ?',
+        'about.who.lead':  'L\'assurance qualité réconcilie deux réflexes que j\'aime : la <strong>rigueur technique</strong> et l\'esprit critique.',
+        'about.who.p1':    'Un bon test ne se contente pas de vérifier — il anticipe les risques et les défaillances.',
+        'about.who.p2':    'La qualité se construit dès les premières étapes, avec toutes les équipes.',
+        'about.who.p3':    'Cap : sécuriser des environnements critiques, sans rien laisser au hasard.',
+        'about.metricExp': 'Expérience',
+        'about.metricYears': 'années',
+        'about.vision.short': '<strong>Rigueur, curiosité, sens du détail.</strong> La qualité ne se contrôle pas en fin de chaîne — je challenge les choix pour livrer des produits sur lesquels on peut compter.',
         'about.who.text':  'J\'ai trouvé dans l\'assurance qualité le terrain idéal pour allier rigueur technique et esprit critique.<br /><br />Au fil de mes expériences, du secteur privé au secteur public, j\'ai appris qu\'un bon test ne se contente pas de vérifier : il <strong>anticipe les risques</strong>, les usages et les défaillances possibles.<br /><br />Mon objectif est simple : sécuriser des systèmes <strong>fiables et robustes</strong>, en particulier dans des <span class="hl">environnements critiques</span> où la qualité ne peut pas être laissée au hasard.',
         'about.vision.title': 'Ma vision du métier',
         'about.vision.text':  'Être QA est autant un état d\'esprit qu\'une exigence : <strong>rigueur, curiosité et sens du détail</strong> sont au cœur de mon approche.<br /><br />La qualité ne se contrôle pas en fin de chaîne — elle se construit <span class="hl">dès les premières étapes</span>, en collaboration avec toutes les équipes.<br /><br />Mon rôle est clair : anticiper les risques, <strong>challenger les choix</strong> et garantir la livraison de produits fiables et robustes.',
@@ -1037,6 +1026,13 @@
         'about.title':     'About me',
         'about.intro':     'Software quality, my common thread.',
         'about.who.title': 'Who am I?',
+        'about.who.lead':  'Quality assurance reconciles two instincts I love: <strong>technical rigour</strong> and critical thinking.',
+        'about.who.p1':    'Good testing doesn\'t just verify — it anticipates risks and failures.',
+        'about.who.p2':    'Quality is built from the very first steps, with every team.',
+        'about.who.p3':    'The aim: secure critical environments, leaving nothing to chance.',
+        'about.metricExp': 'Experience',
+        'about.metricYears': 'years',
+        'about.vision.short': '<strong>Rigour, curiosity, attention to detail.</strong> Quality isn\'t checked at the end of the line — I challenge decisions to deliver products you can count on.',
         'about.who.text':  'In quality assurance, I found the ideal field to combine technical rigour with critical thinking.<br /><br />Throughout my experiences, from the private to the public sector, I learned that good testing doesn\'t just verify: it <strong>anticipates risks</strong>, use cases and potential failures.<br /><br />My goal is simple: to secure <strong>reliable, robust</strong> systems — especially in <span class="hl">critical environments</span> where quality cannot be left to chance.',
         'about.vision.title': 'My vision of the job',
         'about.vision.text':  'Being a QA is as much a mindset as a standard: <strong>rigour, curiosity and attention to detail</strong> are at the heart of my approach.<br /><br />Quality isn\'t checked at the end of the line — it\'s built <span class="hl">from the very first steps</span>, in collaboration with every team.<br /><br />My role is clear: to anticipate risks, <strong>challenge decisions</strong> and ensure the delivery of reliable, robust products.',
@@ -1367,7 +1363,7 @@
       }
       requestAnimationFrame(tick);
     }
-    const statsContainer = document.querySelector('.about__stats');
+    const statsContainer = document.querySelector('.about__bento');
     if (statsContainer && 'IntersectionObserver' in window) {
       const statsObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -1384,7 +1380,7 @@
     (function () {
       if (!('IntersectionObserver' in window)) return;
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const revealEls = document.querySelectorAll('.about__title, .about__intro, .about__stats, .about__block, .about__motto, .projects__title, .projects__desc, .project-card, .lab__title, .lab__desc, .repo-card, .expertises__title, .expertises__desc, .skills__group, .skills__tools, .contact__title, .contact__subtitle, .contact__card');
+      const revealEls = document.querySelectorAll('.about__title, .about__intro, .abx-tile, .projects__title, .projects__desc, .project-card, .lab__title, .lab__desc, .repo-card, .expertises__title, .expertises__desc, .skills__group, .skills__tools, .contact__title, .contact__subtitle, .contact__card');
       revealEls.forEach(el => el.classList.add('reveal'));
       // petite cascade pour les elements affiches en groupe
       const cascade = (list, step) => list.forEach((el, i) => { el.style.transitionDelay = (i * step) + 'ms'; });
