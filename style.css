@@ -1160,27 +1160,25 @@ select:focus-visible,
 
 /* ===== Mes competences — grille BENTO ===== */
 .skills__bento {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  grid-auto-rows: minmax(148px, auto);
+  column-count: 2;
+  column-gap: 16px;
   text-align: left;
   max-width: 940px;
   margin: 0 auto;
 }
-.skx-big { grid-column: span 2; grid-row: span 2; }
-.skx-wide { grid-column: span 2; }
-.skx-tools { grid-column: span 4; }
+.skills__bento .abx-tile {
+  break-inside: avoid;
+  margin: 0 0 16px;
+}
+.skills__bento .abx-list { margin-top: 12px; }
 
 .skx-desc {
   font-size: 13.5px;
   font-style: italic;
   line-height: 1.55;
   color: var(--text-muted);
-  margin: 0 0 16px;
+  margin: 0 0 4px;
 }
-.skx-big .abx-list { column-count: 2; column-gap: 32px; }
-.skx-big .abx-list li { break-inside: avoid; margin-bottom: 11px; }
 
 .skx-tools-row {
   display: grid;
@@ -1205,16 +1203,8 @@ select:focus-visible,
   color: var(--text-dark);
 }
 
-@media (max-width: 780px) {
-  .skills__bento { grid-template-columns: repeat(2, 1fr); }
-  .skx-big { grid-column: span 2; grid-row: auto; }
-  .skx-wide { grid-column: span 2; }
-  .skx-tools { grid-column: span 2; }
-  .skx-big .abx-list { column-count: 1; }
-}
-@media (max-width: 460px) {
-  .skills__bento { grid-template-columns: 1fr; }
-  .skx-big, .skx-wide, .skx-tools { grid-column: span 1; }
+@media (max-width: 640px) {
+  .skills__bento { column-count: 1; }
 }
 
 .about__text {
