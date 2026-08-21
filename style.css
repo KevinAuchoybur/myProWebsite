@@ -1486,7 +1486,7 @@ select:focus-visible,
   display: flex;
   align-items: center;
   gap: 14px;
-  margin-bottom: 16px;
+  margin-bottom: 4px;
 }
 
 .repo-card__icon {
@@ -1523,13 +1523,15 @@ select:focus-visible,
 .repo-card__scope-label {
   display: flex;
   align-items: center;
-  gap: 7px;
-  font-size: 12px;
+  gap: 6px;
+  font-size: 11px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--text-muted);
-  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+  color: var(--purple);
+  margin: 16px 0 9px;
+  padding-top: 16px;
+  border-top: 1px solid var(--card-divider);
 }
 
 .repo-card__scope-icon {
@@ -1541,7 +1543,7 @@ select:focus-visible,
   font-size: 14px;
   color: var(--text-dark);
   line-height: 1.6;
-  margin-bottom: 18px;
+  margin: 0 0 2px;
 }
 
 .repo-card__list {
@@ -2412,7 +2414,8 @@ select:focus-visible,
 
 /* LinkedIn en icône seule */
 .btn-linkedin-icon,
-.btn-whatsapp-icon {
+.btn-whatsapp-icon,
+.btn-github-icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2427,7 +2430,8 @@ select:focus-visible,
 }
 
 .btn-linkedin-icon:hover,
-.btn-whatsapp-icon:hover {
+.btn-whatsapp-icon:hover,
+.btn-github-icon:hover {
   background: var(--purple);
   border-color: var(--purple);
   color: #ffffff;
