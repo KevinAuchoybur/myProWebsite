@@ -1158,6 +1158,65 @@ select:focus-visible,
   .abx-sectors { grid-column: span 1; }
 }
 
+/* ===== Mes competences — grille BENTO ===== */
+.skills__bento {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  grid-auto-rows: minmax(148px, auto);
+  text-align: left;
+  max-width: 940px;
+  margin: 0 auto;
+}
+.skx-big { grid-column: span 2; grid-row: span 2; }
+.skx-wide { grid-column: span 2; }
+.skx-tools { grid-column: span 4; }
+
+.skx-desc {
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+}
+.skx-big .abx-list { column-count: 2; column-gap: 32px; }
+.skx-big .abx-list li { break-inside: avoid; margin-bottom: 11px; }
+
+.skx-tools-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-top: auto;
+}
+.skx-tool {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  background: var(--purple-light);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+}
+.skx-tool img { width: 24px; height: 24px; flex-shrink: 0; object-fit: contain; }
+.skx-tool span {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+@media (max-width: 780px) {
+  .skills__bento { grid-template-columns: repeat(2, 1fr); }
+  .skx-big { grid-column: span 2; grid-row: auto; }
+  .skx-wide { grid-column: span 2; }
+  .skx-tools { grid-column: span 2; }
+  .skx-big .abx-list { column-count: 1; }
+}
+@media (max-width: 460px) {
+  .skills__bento { grid-template-columns: 1fr; }
+  .skx-big, .skx-wide, .skx-tools { grid-column: span 1; }
+}
+
 .about__text {
   text-align: left;
   max-width: 760px;
