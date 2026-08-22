@@ -603,6 +603,7 @@
     <div class="contact__grid">
 
       <aside class="contact__side">
+        <svg class="contact__side-deco" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
         <span class="contact__avail"><span class="contact__avail-dot"></span><span data-i18n="contact.availability"></span></span>
         <p class="contact__side-lead" data-i18n="contact.quickest"></p>
         <div class="contact__channels">
@@ -636,6 +637,10 @@
           <div class="form-group">
             <label for="message" data-i18n="modal.message"></label>
             <textarea id="message" name="message" data-i18n-placeholder="modal.messagePH" rows="5" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="captcha"><span data-i18n="modal.captcha"></span> <span id="captchaQuestion"></span></label>
+            <input type="text" id="captcha" inputmode="numeric" autocomplete="off" required />
           </div>
           <button type="submit" class="btn-submit">
             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
@@ -1331,9 +1336,31 @@
     const submitLabel = submitBtn.querySelector('[data-i18n="modal.send"]');
     const errorBox = document.getElementById('modalError');
 
+    // ===== Vérification anti-robot (calcul simple) =====
+    const captchaInput = document.getElementById('captcha');
+    const captchaQuestion = document.getElementById('captchaQuestion');
+    let captchaAnswer = 0;
+    function newCaptcha() {
+      const a = Math.floor(Math.random() * 8) + 1;
+      const b = Math.floor(Math.random() * 8) + 1;
+      captchaAnswer = a + b;
+      captchaQuestion.textContent = a + ' + ' + b + ' = ?';
+    }
+    newCaptcha();
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       errorBox.classList.remove('is-visible');
+
+      // Contrôle anti-robot avant tout envoi
+      if (parseInt(captchaInput.value, 10) !== captchaAnswer) {
+        errorBox.textContent = translations[currentLang]['modal.captchaError'];
+        errorBox.classList.add('is-visible');
+        newCaptcha();
+        captchaInput.value = '';
+        captchaInput.focus();
+        return;
+      }
 
       submitBtn.disabled = true;
       const originalLabel = submitLabel.textContent;
@@ -1354,6 +1381,7 @@
           setTimeout(() => {
             success.classList.remove('is-visible');
             form.reset();
+            newCaptcha();
             form.style.display = '';
           }, 6000);
         } else {

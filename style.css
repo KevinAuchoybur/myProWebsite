@@ -3117,6 +3117,8 @@ select:focus-visible,
   align-items: stretch;
 }
 .contact__side {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   background: var(--card-bg);
@@ -3124,6 +3126,17 @@ select:focus-visible,
   border-radius: 16px;
   padding: 28px 26px;
 }
+.contact__side-deco {
+  position: absolute;
+  right: -22px;
+  bottom: -26px;
+  width: 150px;
+  height: 150px;
+  color: var(--purple);
+  opacity: 0.05;
+  pointer-events: none;
+}
+.contact__side > *:not(.contact__side-deco) { position: relative; z-index: 1; }
 .contact__avail {
   display: inline-flex;
   align-items: center;
