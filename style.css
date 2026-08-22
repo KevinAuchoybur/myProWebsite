@@ -1101,25 +1101,28 @@ select:focus-visible,
   background: linear-gradient(135deg, var(--purple) 0%, #4a35cf 52%, var(--violet) 100%);
   border: none;
   color: #ffffff;
-  justify-content: center;
+  justify-content: flex-start;
 }
-.abx-motto .abx-lbl { color: rgba(255, 255, 255, 0.85); }
+.abx-motto .abx-lbl { color: rgba(255, 255, 255, 0.85); position: relative; z-index: 1; }
 .abx-motto-text {
   font-style: italic;
   font-weight: 700;
-  font-size: 19px;
-  line-height: 1.35;
-  margin: 0;
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 8px 0 0;
+  position: relative;
+  z-index: 1;
 }
 .abx-ka {
   position: absolute;
-  right: -6px;
-  bottom: -20px;
+  right: -12px;
+  bottom: -42px;
   font-family: 'Orbitron', sans-serif;
   font-weight: 800;
-  font-size: 92px;
-  letter-spacing: -2px;
-  color: rgba(255, 255, 255, 0.10);
+  font-size: 178px;
+  letter-spacing: -6px;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.16);
   pointer-events: none;
 }
 
