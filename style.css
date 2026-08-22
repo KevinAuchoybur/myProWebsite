@@ -78,7 +78,7 @@
   --purple-light: #e8ecfb;    /* teinte claire (bleutee) pour les fonds discrets */
   --purple-blob: #6D28D9;     /* partenaire des degrades -> violet */
   --text-dark: #14183a;
-  --text-muted: #4b5563;
+  --text-muted: #363b52;      /* secondaire assombri (moins terne que gris) */
   --white: #ffffff;           /* texte sur aplat colore : toujours blanc */
   --bg: #ffffff;
   --surface: #ffffff;         /* surfaces élevées (navbar, cartes, modale) */
@@ -100,7 +100,7 @@
   --purple-light: #1e2340;
   --purple-blob: #9a6df2;
   --text-dark: #e8e8f0;
-  --text-muted: #9a9ab0;
+  --text-muted: #b4b8d0;
   --white: #ffffff;
   --bg: #0f0f17;
   --surface: #1a1a26;
