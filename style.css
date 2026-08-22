@@ -1010,10 +1010,9 @@ select:focus-visible,
 
 .abx-who { grid-column: span 2; grid-row: span 2; }
 .abx-motto,
-.abx-certs,
 .abx-vision,
-.abx-time,
-.abx-sectors { grid-column: span 2; }
+.abx-certs { grid-column: span 2; }
+.abx-time { grid-column: 1 / -1; }
 
 .abx-lbl {
   display: inline-flex;
