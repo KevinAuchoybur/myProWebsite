@@ -2059,11 +2059,35 @@ select:focus-visible,
   margin: 40px auto 0;
 }
 .exp-cta__line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 15.5px;
   font-weight: 500;
   font-style: italic;
   color: var(--purple);
   margin: 0;
+}
+.exp-cta__bubble { flex-shrink: 0; }
+.exp-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple);
+  text-decoration: none;
+  padding: 11px 22px;
+  border-radius: 8px;
+  border: 1.5px solid var(--purple);
+  background: linear-gradient(to right, var(--purple) 50%, transparent 50%);
+  background-size: 220% 100%;
+  background-position: right center;
+  transition: background-position 0.35s ease, color 0.25s ease;
+}
+.exp-cta__btn:hover {
+  background-position: left center;
+  color: var(--white);
 }
 
 .project-card {
