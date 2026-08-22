@@ -2043,13 +2043,12 @@ select:focus-visible,
 
 .projects__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   gap: 16px;
   text-align: left;
   max-width: 940px;
   margin: 0 auto;
 }
-.project-card--flagship { grid-column: 1 / -1; }
 
 .project-card {
   position: relative;
