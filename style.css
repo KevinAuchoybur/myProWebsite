@@ -1225,11 +1225,12 @@ select:focus-visible,
   padding-top: 14px;
   border-top: 1px solid var(--card-border);
 }
-.skx-list-2col { column-count: 2; column-gap: 30px; }
+.skills__bento .abx-list li { font-size: 14.5px; }
+.skx-list-2col { column-count: 1; }
 .skx-list-2col li { break-inside: avoid; }
 
 .skx-desc {
-  font-size: 13.5px;
+  font-size: 14.5px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.55;
