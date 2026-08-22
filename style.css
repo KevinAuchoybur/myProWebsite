@@ -1229,7 +1229,7 @@ select:focus-visible,
 .skx-desc {
   font-size: 13.5px;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.55;
   color: var(--text-dark);
   margin: 0 0 4px;
@@ -1272,16 +1272,6 @@ select:focus-visible,
 .skx-wide .abx-lbl,
 .skx-flagship .abx-list,
 .skx-wide .abx-list { position: relative; z-index: 1; }
-.skx-deco {
-  position: absolute;
-  right: -14px;
-  bottom: -20px;
-  width: 118px;
-  height: 118px;
-  color: var(--purple);
-  opacity: 0.07;
-  pointer-events: none;
-}
 
 .skx-tools-row {
   display: grid;
