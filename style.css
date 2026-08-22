@@ -1994,15 +1994,18 @@ select:focus-visible,
   font-weight: 700;
   color: var(--purple);
   text-decoration: none;
-  padding: 8px 14px;
+  padding: 9px 16px;
   border-radius: 8px;
   border: 1.5px solid var(--purple);
-  transition: background 0.2s ease, color 0.2s ease;
+  background: linear-gradient(to right, var(--purple) 50%, transparent 50%);
+  background-size: 220% 100%;
+  background-position: right center;
+  transition: background-position 0.35s ease, color 0.25s ease;
   white-space: nowrap;
 }
 
 .repo-card__link:hover {
-  background: var(--purple);
+  background-position: left center;
   color: var(--white);
 }
 
