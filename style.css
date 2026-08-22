@@ -1878,6 +1878,7 @@ select:focus-visible,
   color: var(--text-dark);
   line-height: 1.6;
   margin: 0 0 2px;
+  min-height: 46px;
 }
 
 .repo-card__list {
