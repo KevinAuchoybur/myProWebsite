@@ -1221,7 +1221,9 @@ select:focus-visible,
 .skx-wide { grid-column: span 2; }
 .skx-tools { grid-column: 1 / -1; }
 .skills__bento .abx-list {
-  margin-top: 0;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--card-border);
 }
 .skx-list-2col { column-count: 2; column-gap: 30px; }
 .skx-list-2col li { break-inside: avoid; }
