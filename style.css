@@ -1109,22 +1109,29 @@ select:focus-visible,
   pointer-events: none;
 }
 
+/* Tuile Certifications mise en valeur : fond teinte + chips qui ressortent */
+.abx-certs {
+  background: var(--purple-light);
+  border-color: transparent;
+}
+.abx-certs .abx-lbl { color: var(--purple); }
 .abx-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
 .abx-chip {
   font-family: inherit;
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 12.5px;
+  font-weight: 600;
   color: var(--purple);
-  background: var(--purple-light);
+  background: var(--card-bg);
   border: 1px solid var(--card-border);
-  padding: 5px 9px;
-  border-radius: 7px;
+  padding: 6px 11px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(40, 62, 175, 0.06);
 }
 
 .abx-vision-text { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-dark); }
 .abx-vision-text strong { color: var(--text-dark); font-weight: 600; }
 
-.abx-timeline { list-style: none; margin: auto 0 0; padding: 0; display: grid; gap: 13px; }
+.abx-timeline { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
 .abx-timeline li { display: flex; gap: 11px; align-items: flex-start; }
 .abx-dot {
   flex: none;
@@ -1155,6 +1162,7 @@ select:focus-visible,
   .abx-vision,
   .abx-time,
   .abx-sectors { grid-column: span 1; }
+  .abx-timeline { grid-template-columns: 1fr; }
 }
 
 /* ===== Mes competences — grille BENTO ===== */
