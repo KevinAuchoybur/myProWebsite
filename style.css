@@ -1209,36 +1209,87 @@ select:focus-visible,
 
 /* ===== Mes competences — grille BENTO ===== */
 .skills__bento {
-  display: flex;
-  align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  grid-auto-rows: minmax(138px, auto);
   text-align: left;
   max-width: 940px;
   margin: 0 auto;
 }
-.skx-col {
-  flex: 1;
-  min-width: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.skx-flagship { grid-column: span 2; grid-row: span 2; }
+.skx-wide { grid-column: span 2; }
+.skx-tools { grid-column: 1 / -1; }
+.skills__bento .abx-list {
+  margin-top: 0;
 }
-.skx-col .abx-tile:last-child { flex: 1 1 auto; }
-.skills__bento .abx-list { margin-top: 12px; }
+.skx-list-2col { column-count: 2; column-gap: 30px; }
+.skx-list-2col li { break-inside: avoid; }
 
 .skx-desc {
   font-size: 13.5px;
-  font-style: italic;
+  font-style: normal;
+  font-weight: 600;
   line-height: 1.55;
   color: var(--text-dark);
   margin: 0 0 4px;
+  position: relative;
+  z-index: 1;
+  padding-left: 23px;
+}
+.skx-practice {
+  margin: 14px 0 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--card-border);
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+}
+.skx-desc::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+  background: var(--purple);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m12 8 4 4-4 4'/%3E%3Cpath d='M8 12h8'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m12 8 4 4-4 4'/%3E%3Cpath d='M8 12h8'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.skx-desc strong {
+  font-style: normal;
+  font-weight: 700;
+  background: linear-gradient(120deg, var(--purple), var(--violet));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.skx-flagship .abx-lbl,
+.skx-wide .abx-lbl,
+.skx-flagship .abx-list,
+.skx-wide .abx-list { position: relative; z-index: 1; }
+.skx-deco {
+  position: absolute;
+  right: -14px;
+  bottom: -20px;
+  width: 118px;
+  height: 118px;
+  color: var(--purple);
+  opacity: 0.07;
+  pointer-events: none;
 }
 
 .skx-tools-row {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 12px;
-  margin-top: auto;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--card-border);
 }
 .skx-tool {
   display: flex;
@@ -1257,8 +1308,15 @@ select:focus-visible,
   color: var(--text-dark);
 }
 
-@media (max-width: 640px) {
-  .skills__bento { flex-direction: column; }
+@media (max-width: 780px) {
+  .skills__bento { grid-template-columns: repeat(2, 1fr); }
+  .skx-flagship { grid-column: span 2; grid-row: auto; }
+  .skx-wide { grid-column: span 2; }
+}
+@media (max-width: 460px) {
+  .skills__bento { grid-template-columns: 1fr; }
+  .skx-flagship, .skx-wide, .skx-tools { grid-column: span 1; }
+  .skx-list-2col { column-count: 1; }
 }
 
 .about__text {
