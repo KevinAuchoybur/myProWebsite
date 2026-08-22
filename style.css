@@ -1129,9 +1129,31 @@ select:focus-visible,
 /* Tuile Certifications mise en valeur : fond teinte + chips qui ressortent */
 .abx-certs {
   background: var(--purple-light);
-  border-color: transparent;
+  border-color: rgba(30, 63, 196, 0.22);
+  box-shadow: 0 8px 26px rgba(40, 62, 175, 0.12);
+  justify-content: flex-start;
 }
-.abx-certs .abx-lbl { color: var(--purple); }
+.abx-certs::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--purple), var(--violet));
+}
+.abx-certs .abx-lbl { color: var(--purple); margin-bottom: 12px; position: relative; z-index: 1; }
+.abx-certs .abx-chips { margin-top: 0; position: relative; z-index: 1; }
+.abx-certs-deco {
+  position: absolute;
+  right: -16px;
+  bottom: -26px;
+  width: 138px;
+  height: 138px;
+  color: var(--purple);
+  opacity: 0.12;
+  pointer-events: none;
+}
 .abx-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
 .abx-chip {
   font-family: inherit;
