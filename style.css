@@ -1148,19 +1148,22 @@ select:focus-visible,
 .abx-vision .abx-lead { font-size: 17px; margin-bottom: 12px; }
 .abx-vision .abx-list { margin-top: 0; }
 
-.abx-timeline { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
-.abx-timeline li { display: flex; gap: 11px; align-items: flex-start; }
-.abx-dot {
-  flex: none;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--purple);
-  margin-top: 5px;
-  box-shadow: 0 0 0 4px var(--purple-light);
+.abx-timeline { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 32px; }
+.abx-timeline li { display: block; }
+.abx-year {
+  display: inline-block;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--purple);
+  background: var(--purple-light);
+  border: 1px solid var(--card-border);
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
 }
-.abx-role { font-size: 13.5px; font-weight: 700; color: var(--text-dark); }
-.abx-place { font-family: inherit; font-size: 11px; color: var(--text-muted); }
+.abx-role { font-size: 14px; font-weight: 700; color: var(--text-dark); }
+.abx-place { font-family: inherit; font-size: 11.5px; color: var(--text-muted); margin-top: 1px; }
 
 @media (max-width: 780px) {
   .about__bento { grid-template-columns: repeat(2, 1fr); }
