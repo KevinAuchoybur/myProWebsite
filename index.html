@@ -484,6 +484,14 @@
       </div>
 
     </div>
+
+    <div class="exp-cta">
+      <p class="exp-cta__line" data-i18n="exp.ctaLine"></p>
+      <a id="expDownloadCv" href="assets/cv-fr-KevinAuchoybur.pdf" target="_blank" rel="noopener" class="btn-hero-cv">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span data-i18n="hero.downloadCv"></span>
+      </a>
+    </div>
   </section>
 
   <div class="section-sep" aria-hidden="true"></div>
@@ -776,6 +784,7 @@
         'exp.card3.desc':  'Je traduis les besoins métier en cas de tests concrets et facilite la communication entre développeurs, métiers et utilisateurs.',
         'proj.title':      'Mes expériences',
         'proj.desc':       'Des environnements critiques, des utilisateurs réels.',
+        'exp.ctaLine':     'Ces expériences vous parlent ?',
         'lab.title':       'Mes projets',
         'lab.desc':        'Des projets personnels qui démontrent mes compétences par la pratique — code ouvert, tests automatisés.',
         'lab.contextLabel': 'Contexte',
@@ -983,6 +992,7 @@
         'exp.card3.desc':  'I translate business needs into concrete test cases and ease communication between developers, business and users.',
         'proj.title':      'My experience',
         'proj.desc':       'Critical environments, real users.',
+        'exp.ctaLine':     'Do these experiences speak to you?',
         'lab.title':       'My projects',
         'lab.desc':        'Personal projects that back up my skills through practice — open code, automated tests.',
         'lab.contextLabel': 'Context',
@@ -1148,6 +1158,8 @@
       if (heroCv) heroCv.setAttribute('href', cvHref);
       const footerCv = document.getElementById('footerDownloadCv');
       if (footerCv) footerCv.setAttribute('href', cvHref);
+      const expCv = document.getElementById('expDownloadCv');
+      if (expCv) expCv.setAttribute('href', cvHref);
 
       // Lien WhatsApp avec message pré-rempli selon la langue
       const waMsg = lang === 'en'
