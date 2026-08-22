@@ -1995,15 +1995,23 @@ select:focus-visible,
 .repo-card__ci {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-size: 12.5px;
   font-weight: 700;
   color: #1a7f4b;
   background: rgba(34, 160, 94, 0.12);
   border: 1px solid rgba(34, 160, 94, 0.28);
-  padding: 6px 11px;
+  padding: 5px 12px;
   border-radius: 8px;
   white-space: nowrap;
+}
+.repo-card__ci-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22a05e;
+  box-shadow: 0 0 0 3px rgba(34, 160, 94, 0.18);
+  flex: none;
 }
 
 [data-theme="dark"] .repo-card__ci {
