@@ -2189,7 +2189,7 @@ select:focus-visible,
   font-size: 14.5px;
   color: var(--text-dark);
   line-height: 1.6;
-  margin-bottom: 16px;
+  margin: 14px 0 18px;
 }
 /* Label "Contexte" : meme style que "Activite de tests" */
 .project-card__desc-label {
