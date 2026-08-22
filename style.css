@@ -1875,10 +1875,26 @@ select:focus-visible,
 
 .repo-card__desc {
   font-size: 14.5px;
+  font-weight: 500;
   color: var(--text-dark);
   line-height: 1.6;
   margin: 0 0 2px;
   min-height: 46px;
+  position: relative;
+  padding-left: 23px;
+}
+
+.project-card__desc::before,
+.repo-card__desc::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+  background: var(--purple);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m12 8 4 4-4 4'/%3E%3Cpath d='M8 12h8'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m12 8 4 4-4 4'/%3E%3Cpath d='M8 12h8'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 .repo-card__list {
@@ -1931,14 +1947,23 @@ select:focus-visible,
 
 .repo-card__metrics {
   display: flex;
-  gap: 26px;
+  gap: 0;
   margin-bottom: 22px;
+  padding: 16px 20px;
+  background: var(--purple-light);
+  border-radius: 10px;
 }
 
 .repo-card__metric {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: 3px;
+}
+.repo-card__metric + .repo-card__metric {
+  border-left: 1px solid var(--card-border);
+  padding-left: 20px;
 }
 
 .repo-card__metric-num {
@@ -2008,6 +2033,19 @@ select:focus-visible,
 .repo-card__link:hover {
   background-position: left center;
   color: var(--white);
+}
+
+.repo-card__metrics { position: relative; overflow: hidden; }
+.repo-card__metric { position: relative; z-index: 1; }
+.repo-card__metrics-deco {
+  position: absolute;
+  right: -10px;
+  bottom: -14px;
+  width: 66px;
+  height: 66px;
+  color: var(--purple);
+  opacity: 0.09;
+  pointer-events: none;
 }
 
 @media (max-width: 640px) {
@@ -2246,9 +2284,12 @@ select:focus-visible,
 
 .project-card__desc {
   font-size: 14.5px;
+  font-weight: 500;
   color: var(--text-dark);
   line-height: 1.6;
   margin: 14px 0 18px;
+  position: relative;
+  padding-left: 23px;
 }
 /* Label "Contexte" : meme style que "Activite de tests" */
 .project-card__desc-label {
