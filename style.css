@@ -2077,17 +2077,19 @@ select:focus-visible,
   border-color: var(--purple);
 }
 
-/* En-tete carte : logo + nom/client alignes sur une ligne */
+/* En-tete carte : nom + client/via a gauche, role en pill a droite */
 .project-card__header {
   display: flex;
-  align-items: center;
-  gap: 18px;
-  margin-bottom: 4px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
 }
 .project-card__head-text {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
+  min-width: 0;
 }
 
 .project-card__logo {
@@ -2112,17 +2114,27 @@ select:focus-visible,
 }
 
 .project-card__name {
-  font-size: 17px;
-  font-weight: 700;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
   color: var(--text-dark);
   margin: 0;
 }
 
 .project-card__client {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin: 0;
+}
+.project-card__via-text {
   color: var(--purple);
-  margin-bottom: 0;
+  font-weight: 600;
+}
+.project-card__via-text::before {
+  content: '· ';
+  color: var(--text-muted);
+  font-weight: 400;
 }
 
 .project-card__client-sub {
@@ -2131,13 +2143,17 @@ select:focus-visible,
   color: var(--text-muted);
 }
 
-/* Fonction du projet (ex. Analyste QA) : texte simple, sous le client */
+/* Fonction du projet (ex. Analyste QA) : pill en haut a droite */
 .project-card__role {
-  display: block;
-  margin-top: 4px;
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--text-dark);
+  flex: none;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--purple);
+  background: var(--purple-light);
+  border: 1px solid var(--card-border);
+  padding: 5px 11px;
+  border-radius: 8px;
+  white-space: nowrap;
 }
 
 .project-card__client-sub::before {
