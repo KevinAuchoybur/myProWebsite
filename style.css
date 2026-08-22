@@ -1128,8 +1128,8 @@ select:focus-visible,
   box-shadow: 0 1px 3px rgba(40, 62, 175, 0.06);
 }
 
-.abx-vision-text { margin: 0; font-size: 14.5px; line-height: 1.6; color: var(--text-dark); }
-.abx-vision-text strong { color: var(--text-dark); font-weight: 600; }
+.abx-vision .abx-lead { font-size: 17px; margin-bottom: 12px; }
+.abx-vision .abx-list { margin-top: 0; }
 
 .abx-timeline { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 16px 32px; }
 .abx-timeline li { display: flex; gap: 11px; align-items: flex-start; }
