@@ -600,39 +600,58 @@
     <h2 class="contact__title"><span class="section-title__row"><svg class="section-title__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span data-i18n="modal.title"></span></span></h2>
     <p class="contact__subtitle" data-i18n-html="modal.subtitle"></p>
 
-    <div class="contact__card">
-      <form class="contact__form" id="contactForm">
-        <input type="hidden" name="_subject" value="Nouveau message — Portfolio" />
-        <input type="hidden" name="_autoresponse" value="Merci, je vous réponds bientôt." />
-        <div class="form-group">
-          <label for="nom" data-i18n="modal.name"></label>
-          <input type="text" id="nom" name="nom" data-i18n-placeholder="modal.namePH" required />
+    <div class="contact__grid">
+
+      <aside class="contact__side">
+        <span class="contact__avail"><span class="contact__avail-dot"></span><span data-i18n="contact.availability"></span></span>
+        <p class="contact__side-lead" data-i18n="contact.quickest"></p>
+        <div class="contact__channels">
+          <a href="https://www.linkedin.com/in/kevin-auchoybur-17a15a42/" target="_blank" rel="noopener noreferrer" class="contact__channel">
+            <span class="contact__channel-ico"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+            <span class="contact__channel-text"><strong>LinkedIn</strong><small data-i18n="contact.linkedinSub"></small></span>
+            <svg class="contact__channel-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+          <a href="https://wa.me/33641931342" target="_blank" rel="noopener noreferrer" class="contact__channel">
+            <span class="contact__channel-ico"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.885-9.885 9.885"/></svg></span>
+            <span class="contact__channel-text"><strong>WhatsApp</strong><small data-i18n="contact.whatsappSub"></small></span>
+            <svg class="contact__channel-arrow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
         </div>
-        <div class="form-group">
-          <label for="email" data-i18n="modal.email"></label>
-          <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+        <p class="contact__side-note" data-i18n="contact.langNote"></p>
+      </aside>
+
+      <div class="contact__card">
+        <form class="contact__form" id="contactForm">
+          <input type="hidden" name="_subject" value="Nouveau message — Portfolio" />
+          <input type="hidden" name="_autoresponse" value="Merci, je vous réponds bientôt." />
+          <input type="text" name="_gotcha" class="contact__hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <div class="form-group">
+            <label for="nom" data-i18n="modal.name"></label>
+            <input type="text" id="nom" name="nom" data-i18n-placeholder="modal.namePH" required />
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="modal.email"></label>
+            <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message" data-i18n="modal.message"></label>
+            <textarea id="message" name="message" data-i18n-placeholder="modal.messagePH" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn-submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            <span data-i18n="modal.send"></span>
+          </button>
+          <p class="modal__error" id="modalError" role="alert" aria-live="assertive"></p>
+        </form>
+        <div class="modal__success" id="modalSuccess" role="status" aria-live="polite">
+          <div class="modal__success-icon">
+            <svg class="modal__success-check" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h4 class="modal__success-title" data-i18n="modal.successTitle"></h4>
+          <p class="modal__success-text" data-i18n="modal.successText"></p>
         </div>
-        <div class="form-group">
-          <label for="message" data-i18n="modal.message"></label>
-          <textarea id="message" name="message" data-i18n-placeholder="modal.messagePH" rows="5" required></textarea>
-        </div>
-        <div class="form-group">
-          <label for="captcha"><span data-i18n="modal.captcha"></span> <span id="captchaQuestion"></span></label>
-          <input type="text" id="captcha" inputmode="numeric" autocomplete="off" required />
-        </div>
-        <button type="submit" class="btn-submit">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-          <span data-i18n="modal.send"></span>
-        </button>
-        <p class="modal__error" id="modalError" role="alert" aria-live="assertive"></p>
-      </form>
-      <div class="modal__success" id="modalSuccess" role="status" aria-live="polite">
-        <div class="modal__success-icon">
-          <svg class="modal__success-check" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        <h4 class="modal__success-title" data-i18n="modal.successTitle"></h4>
-        <p class="modal__success-text" data-i18n="modal.successText"></p>
       </div>
+
     </div>
   </section>
 
@@ -651,6 +670,7 @@
         <a href="#about" data-i18n="nav.about"></a>
         <a href="#expertises" data-i18n="nav.expertises"></a>
         <a href="#projects" data-i18n="nav.projects"></a>
+        <a href="#lab" data-i18n="nav.lab"></a>
       </nav>
       <div class="footer__social">
         <a href="#contact" aria-label="Me contacter">
@@ -891,6 +911,11 @@
         'proj.p3.result':  'Fiabilisation d\'un système essentiel au calcul des droits à la retraite.',
         'modal.title':         'Me contacter',
         'modal.subtitle':      'Une question, un projet, ou juste envie d\'échanger ?<br />Écrivez-moi, je vous réponds personnellement.',
+        'contact.availability': 'Ouvert aux échanges',
+        'contact.quickest':    'Pour me joindre directement :',
+        'contact.linkedinSub': 'Voir mon profil',
+        'contact.whatsappSub': 'Message direct',
+        'contact.langNote':    'Je réponds en français ou en anglais.',
         'modal.name':          'Nom',
         'modal.namePH':        'Votre nom',
         'modal.email':         'Adresse e-mail',
@@ -1099,6 +1124,11 @@
         'proj.p3.result':  'Improved reliability of a system essential to calculating pension entitlements.',
         'modal.title':         'Contact me',
         'modal.subtitle':      'A question, a project, or just to say hello?<br />Drop me a line — I\'ll reply personally.',
+        'contact.availability': 'Open to a chat',
+        'contact.quickest':    'Reach me directly:',
+        'contact.linkedinSub': 'View my profile',
+        'contact.whatsappSub': 'Direct message',
+        'contact.langNote':    'I reply in French or English.',
         'modal.name':          'Name',
         'modal.namePH':        'Your name',
         'modal.email':         'Email address',
@@ -1301,31 +1331,9 @@
     const submitLabel = submitBtn.querySelector('[data-i18n="modal.send"]');
     const errorBox = document.getElementById('modalError');
 
-    // ===== Vérification anti-robot (calcul simple) =====
-    const captchaInput = document.getElementById('captcha');
-    const captchaQuestion = document.getElementById('captchaQuestion');
-    let captchaAnswer = 0;
-    function newCaptcha() {
-      const a = Math.floor(Math.random() * 8) + 1;
-      const b = Math.floor(Math.random() * 8) + 1;
-      captchaAnswer = a + b;
-      captchaQuestion.textContent = a + ' + ' + b + ' = ?';
-    }
-    newCaptcha();
-
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       errorBox.classList.remove('is-visible');
-
-      // Contrôle anti-robot avant tout envoi
-      if (parseInt(captchaInput.value, 10) !== captchaAnswer) {
-        errorBox.textContent = translations[currentLang]['modal.captchaError'];
-        errorBox.classList.add('is-visible');
-        newCaptcha();
-        captchaInput.value = '';
-        captchaInput.focus();
-        return;
-      }
 
       submitBtn.disabled = true;
       const originalLabel = submitLabel.textContent;
@@ -1346,7 +1354,6 @@
           setTimeout(() => {
             success.classList.remove('is-visible');
             form.reset();
-            newCaptcha();
             form.style.display = '';
           }, 6000);
         } else {
