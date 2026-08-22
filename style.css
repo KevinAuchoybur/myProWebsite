@@ -1052,7 +1052,7 @@ select:focus-visible,
 .abx-list li {
   position: relative;
   padding-left: 24px;
-  font-size: 14px;
+  font-size: 14.5px;
   line-height: 1.5;
   color: var(--text-dark);
 }
@@ -1075,7 +1075,7 @@ select:focus-visible,
   margin: 14px 0 0;
   padding-top: 14px;
   border-top: 1px solid var(--card-border);
-  font-size: 14px;
+  font-size: 14.5px;
   line-height: 1.5;
   color: var(--text-dark);
 }
@@ -1874,7 +1874,7 @@ select:focus-visible,
 }
 
 .repo-card__desc {
-  font-size: 14px;
+  font-size: 14.5px;
   color: var(--text-dark);
   line-height: 1.6;
   margin: 0 0 2px;
@@ -1890,7 +1890,7 @@ select:focus-visible,
   position: relative;
   padding-left: 24px;
   margin-bottom: 9px;
-  font-size: 13.5px;
+  font-size: 14.5px;
   line-height: 1.5;
   color: var(--text-dark);
 }
@@ -2186,7 +2186,7 @@ select:focus-visible,
 .project-card__via-logo img[alt="Inetum"] { max-height: 24px; }
 
 .project-card__desc {
-  font-size: 13.5px;
+  font-size: 14.5px;
   color: var(--text-dark);
   line-height: 1.6;
   margin-bottom: 16px;
@@ -2246,8 +2246,8 @@ select:focus-visible,
   padding-left: 19px;
   margin-bottom: 9px;
   break-inside: avoid;
-  font-size: 13px;
-  line-height: 1.45;
+  font-size: 14px;
+  line-height: 1.5;
   color: var(--text-dark);
 }
 .project-card__activities li::before {
