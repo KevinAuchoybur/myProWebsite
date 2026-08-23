@@ -1954,7 +1954,7 @@ select:focus-visible,
 .repo-card__type {
   margin-left: auto;
   flex: none;
-  align-self: flex-start;
+  align-self: center;
   font-size: 11px;
   font-weight: 700;
   color: var(--purple);
