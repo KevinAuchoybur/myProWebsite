@@ -1240,7 +1240,7 @@ select:focus-visible,
 .abx-who .abx-list { margin-top: 0; }
 .abx-who .abx-goal { margin-top: auto; }
 
-.abx-timeline { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 32px; }
+.abx-timeline { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px 32px; }
 .abx-timeline li { display: block; }
 .abx-year {
   display: inline-block;
@@ -1263,7 +1263,8 @@ select:focus-visible,
   margin-top: 7px;
   font-size: 11.5px;
   line-height: 1.4;
-  color: var(--text-muted);
+  font-weight: 600;
+  color: var(--text-dark);
 }
 .abx-tested::before {
   content: "";
