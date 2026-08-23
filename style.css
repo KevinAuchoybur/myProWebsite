@@ -1204,6 +1204,10 @@ select:focus-visible,
 .abx-vision .abx-lead { font-size: 17px; margin-bottom: 12px; }
 .abx-vision .abx-list { margin-top: 0; }
 
+/* Qui suis-je (tuile 2 rangees) : liste collee au lead comme Vision, objectif ancre en bas */
+.abx-who .abx-list { margin-top: 0; }
+.abx-who .abx-goal { margin-top: auto; }
+
 .abx-timeline { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 18px 32px; }
 .abx-timeline li { display: block; }
 .abx-year {
