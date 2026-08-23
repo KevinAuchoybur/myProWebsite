@@ -243,6 +243,17 @@ body.modal-open {
   gap: 22px;
 }
 
+/* Desktop : centrer reellement les icones sur la navbar (independamment de la
+   largeur du logo a gauche et du groupe FR/EN+theme+CTA a droite) */
+@media (min-width: 1081px) {
+  .navbar__links {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
 .navbar__links a {
   position: relative;
   display: inline-flex;
@@ -3622,9 +3633,6 @@ select:focus-visible,
 @media (max-width: 1080px) {
   /* Navbar en icones seules : plus de hamburger, les liens restent visibles */
   .hamburger { display: none; }
-  /* 'Me contacter' garde en version icone seule (compacte) pour tenir sur mobile */
-  .navbar__right .btn-talk { padding: 9px; gap: 0; }
-  .navbar__right .btn-talk span { display: none; }
   .navbar__links { gap: 4px; }
   .navbar__links a { padding: 8px; }
   .navbar__links a > span { display: none; } /* pas d'infobulle au tap */
@@ -3677,13 +3685,6 @@ select:focus-visible,
     display: none;
   }
 
-  .navbar__right .btn-talk {
-    padding: 9px;
-    gap: 0;
-  }
-  .navbar__right .btn-talk span {
-    display: none;
-  }
   .hero {
     flex-direction: column-reverse;
     padding: 24px 20px 40px;
