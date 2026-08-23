@@ -529,16 +529,18 @@ section {
 }
 
 .hero__greeting {
-  display: inline-block;
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  font-size: 12.5px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.1em;
   color: var(--purple);
   background: var(--purple-light);
-  padding: 6px 14px;
-  border-radius: 50px;
-  margin-bottom: 16px;
+  border: 1px solid var(--card-border);
+  padding: 7px 15px;
+  border-radius: 8px;
+  margin-bottom: 18px;
 }
 
 .hero__greeting::before {
@@ -584,17 +586,49 @@ section {
 }
 
 /* Ligne de pitch : ce que tu apportes, en une phrase */
+/* Punchline courte (ex-pitch) : casse l'effet pave, se lit d'un coup d'oeil */
 .hero__pitch {
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.55;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
   color: var(--text-dark);
-  max-width: 470px;
+  max-width: 25ch;
   margin: 0 0 14px;
+}
+
+/* Chips de specialites : reprennent les mots-cles de l'ancienne phrase */
+.hero__chips {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 16px;
+  padding: 0;
+}
+.hero__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple);
+  background: var(--purple-light);
+  border: 1px solid var(--card-border);
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+.hero__chip svg {
+  flex-shrink: 0;
 }
 /* Mot-cle fort : effet surligneur violet */
 .hero__pitch .hl {
   font-weight: 700;
+  background: linear-gradient(110deg, var(--purple) 0%, #4a35cf 52%, var(--violet) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: var(--purple); /* fallback */
 }
 /* Termes techniques : violet gras */
 .hero__pitch strong {
@@ -2902,12 +2936,12 @@ select:focus-visible,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: 1.5px solid var(--purple-light);
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--card-border);
   border-radius: 50%;
-  color: var(--purple);
-  background: var(--surface);
+  color: var(--text-muted);
+  background: transparent;
   text-decoration: none;
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
@@ -3551,6 +3585,8 @@ select:focus-visible,
   .hero__actions { justify-content: center; flex-wrap: wrap; }
   .hero__social { justify-content: center; }
   .hero__subrole { justify-content: center; }
+  .hero__pitch { max-width: none; }
+  .hero__chips { justify-content: center; }
 }
 
 @media (max-width: 768px) {
