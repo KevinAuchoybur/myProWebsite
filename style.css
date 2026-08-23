@@ -1240,8 +1240,10 @@ select:focus-visible,
 .abx-who .abx-list { margin-top: 0; }
 .abx-who .abx-goal { margin-top: auto; }
 
-.abx-timeline { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px 32px; }
-.abx-timeline li { display: block; }
+.abx-timeline { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px 32px; }
+/* subgrid : annee / role / lieu / produit partagent les memes rails entre colonnes
+   -> tout reste aligne meme si un role passe sur 2 lignes */
+.abx-timeline li { display: grid; grid-template-rows: subgrid; grid-row: span 4; row-gap: 0; }
 .abx-year {
   display: inline-block;
   font-size: 11.5px;
