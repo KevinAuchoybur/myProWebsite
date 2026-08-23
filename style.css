@@ -1106,9 +1106,11 @@ select:focus-visible,
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin: 14px 0 0;
-  padding-top: 14px;
-  border-top: 1px solid var(--card-border);
+  margin: 16px 0 0;
+  padding: 12px 14px;
+  background: var(--purple-light);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
   font-size: 14.5px;
   line-height: 1.5;
   color: var(--text-dark);
@@ -1234,6 +1236,8 @@ select:focus-visible,
   .abx-time,
   .abx-sectors { grid-column: span 2; }
   .abx-metric .abx-num-wrap { margin-top: 12px; }
+  /* Tuile 'Qui suis-je' plus en hauteur 2 rangees : espacement objectif naturel (sinon vide sous les puces) */
+  .abx-who .abx-goal { margin-top: 14px; }
 }
 @media (max-width: 460px) {
   .about__bento { grid-template-columns: 1fr 1fr; }
