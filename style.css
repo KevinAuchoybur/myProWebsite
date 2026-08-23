@@ -3645,6 +3645,39 @@ select:focus-visible,
   .navbar__right { gap: 9px; }
 }
 
+/* Mobile : icones de sections dans une barre de navigation fixe en bas d'ecran
+   (le haut ne garde que logo + theme + FR/EN, plus aere) */
+@media (max-width: 600px) {
+  .navbar__links {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+    padding: 9px 6px calc(9px + env(safe-area-inset-bottom, 0px));
+    background: var(--surface);
+    border-top: 1px solid var(--navbar-border);
+    box-shadow: 0 -3px 16px rgba(20, 24, 58, 0.07);
+    z-index: 95;
+  }
+  .navbar__links a {
+    padding: 8px;
+    flex: 0 0 auto;
+  }
+  .navbar__links a svg {
+    width: 22px;
+    height: 22px;
+    opacity: 1;
+  }
+  .navbar__links a > span { display: none; }
+  /* espace sous le contenu pour ne pas passer derriere la barre */
+  body { padding-bottom: 66px; }
+  /* remonter le bouton "retour en haut" au-dessus de la barre */
+  .back-to-top { bottom: 80px; }
+}
+
 /* Tablette portrait : empiler le hero (photo au-dessus, contenu centre) pour eviter que la photo deborde a droite */
 @media (max-width: 1024px) {
   .hero {
