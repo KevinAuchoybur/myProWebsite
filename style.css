@@ -1146,10 +1146,10 @@ select:focus-visible,
 .abx-certs .abx-chips { margin-top: 0; position: relative; z-index: 1; }
 .abx-certs-deco {
   position: absolute;
-  right: -16px;
-  bottom: -26px;
-  width: 138px;
-  height: 138px;
+  right: -12px;
+  bottom: -16px;
+  width: 96px;
+  height: 96px;
   color: var(--purple);
   opacity: 0.12;
   pointer-events: none;
@@ -1187,14 +1187,15 @@ select:focus-visible,
 .abx-role { font-size: 14px; font-weight: 700; color: var(--text-dark); }
 .abx-place { font-family: inherit; font-size: 11.5px; color: var(--text-muted); margin-top: 1px; }
 
-@media (max-width: 780px) {
-  .about__bento { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) {
+  .about__bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: auto; }
   .abx-who { grid-column: span 2; grid-row: auto; }
   .abx-motto,
   .abx-certs,
   .abx-vision,
   .abx-time,
   .abx-sectors { grid-column: span 2; }
+  .abx-metric .abx-num-wrap { margin-top: 12px; }
 }
 @media (max-width: 460px) {
   .about__bento { grid-template-columns: 1fr 1fr; }
@@ -2864,6 +2865,7 @@ select:focus-visible,
   align-items: center;
   gap: 8px;
   padding: 13px 26px;
+  white-space: nowrap;
   color: #ffffff;
   background: linear-gradient(to right, #14297a 50%, var(--purple) 50%);
   background-size: 220% 100%;
@@ -3520,6 +3522,13 @@ select:focus-visible,
 }
 
 /* ===== RESPONSIVE ===== */
+/* Tablette portrait : basculer sur le menu hamburger avant que la navbar deborde */
+@media (max-width: 900px) {
+  .navbar__links { display: none; }
+  .hamburger { display: flex; }
+  .navbar__right .btn-talk { display: none; }
+}
+
 @media (max-width: 768px) {
   .skills {
     grid-template-columns: 1fr;
@@ -3535,31 +3544,9 @@ select:focus-visible,
     grid-template-columns: repeat(2, 1fr);
   }
   .project-card__header {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 14px 8px;
-  }
-  .project-card__logo {
-    order: 1;
-    width: 110px;
-    height: 44px;
-  }
-  .project-card__via {
-    display: contents;
-  }
-  .project-card__via-label {
-    order: 2;
-  }
-  .project-card__via-logo {
-    order: 3;
-    width: 116px;
-    height: 44px;
-  }
-  .project-card__head-text {
-    order: 4;
-    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
   .navbar {
     padding: 16px 20px;
