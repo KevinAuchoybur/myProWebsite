@@ -1187,7 +1187,7 @@ select:focus-visible,
 .abx-role { font-size: 14px; font-weight: 700; color: var(--text-dark); }
 .abx-place { font-family: inherit; font-size: 11.5px; color: var(--text-muted); margin-top: 1px; }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   .about__bento { grid-template-columns: repeat(2, 1fr); grid-auto-rows: auto; }
   .abx-who { grid-column: span 2; grid-row: auto; }
   .abx-motto,
@@ -3522,8 +3522,8 @@ select:focus-visible,
 }
 
 /* ===== RESPONSIVE ===== */
-/* Tablette portrait : basculer sur le menu hamburger avant que la navbar deborde */
-@media (max-width: 900px) {
+/* Tablette : basculer sur le menu hamburger avant que la navbar deborde (iPad Pro portrait 1024) */
+@media (max-width: 1080px) {
   .navbar__links { display: none; }
   .hamburger { display: flex; }
   .navbar__right .btn-talk { display: none; }
