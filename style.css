@@ -1789,6 +1789,10 @@ select:focus-visible,
   gap: 24px;
   text-align: left;
 }
+/* Tablette portrait : cartes projets empilees pleine largeur (evite le tassement en 2 colonnes) */
+@media (max-width: 1024px) {
+  .lab__grid { grid-template-columns: 1fr; }
+}
 
 .repo-card {
   position: relative;
@@ -1851,9 +1855,17 @@ select:focus-visible,
 }
 
 .repo-card__type {
-  font-size: 12.5px;
-  font-weight: 600;
+  margin-left: auto;
+  flex: none;
+  align-self: flex-start;
+  font-size: 11px;
+  font-weight: 700;
   color: var(--purple);
+  background: var(--purple-light);
+  border: 1px solid var(--card-border);
+  padding: 4px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
 }
 
 .repo-card__scope-label {
@@ -3527,6 +3539,18 @@ select:focus-visible,
   .navbar__links { display: none; }
   .hamburger { display: flex; }
   .navbar__right .btn-talk { display: none; }
+}
+
+/* Tablette portrait : empiler le hero (photo au-dessus, contenu centre) pour eviter que la photo deborde a droite */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 24px;
+  }
+  .hero__actions { justify-content: center; flex-wrap: wrap; }
+  .hero__social { justify-content: center; }
+  .hero__subrole { justify-content: center; }
 }
 
 @media (max-width: 768px) {
