@@ -1197,13 +1197,14 @@ select:focus-visible,
   .abx-sectors { grid-column: span 2; }
 }
 @media (max-width: 460px) {
-  .about__bento { grid-template-columns: 1fr; }
+  .about__bento { grid-template-columns: 1fr 1fr; }
   .abx-who,
   .abx-motto,
   .abx-certs,
   .abx-vision,
   .abx-time,
-  .abx-sectors { grid-column: span 1; }
+  .abx-sectors { grid-column: 1 / -1; }
+  .abx-metric { grid-column: span 1; }
   .abx-timeline { grid-template-columns: 1fr; }
 }
 
