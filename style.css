@@ -1144,6 +1144,7 @@ select:focus-visible,
   font-size: 14.5px;
   line-height: 1.5;
   color: var(--text-dark);
+  text-wrap: balance; /* equilibre les lignes, evite le mot orphelin ('hasard' seul) */
 }
 .abx-goal svg { width: 17px; height: 17px; color: var(--purple); flex-shrink: 0; margin-top: 1px; }
 .abx-goal strong { color: var(--purple); font-weight: 700; }
