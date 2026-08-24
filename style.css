@@ -1313,16 +1313,15 @@ select:focus-visible,
   max-width: 940px;
   margin: 0 auto;
 }
-.skx-flagship { grid-column: span 2; grid-row: span 2; }
+.skx-flagship { grid-column: 1 / -1; }
 .skx-wide { grid-column: span 2; }
-.skx-tools { grid-column: 1 / -1; }
 .skills__bento .abx-list {
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid var(--card-border);
 }
 .skills__bento .abx-list li { font-size: 14.5px; }
-.skx-list-2col { column-count: 1; }
+.skx-list-2col { column-count: 2; column-gap: 30px; }
 .skx-list-2col li { break-inside: avoid; }
 
 .skx-desc {
@@ -3264,6 +3263,7 @@ select:focus-visible,
 .contact__side {
   position: relative;
   overflow: hidden;
+  align-self: start; /* la carte epouse son contenu au lieu d'etre etiree a la hauteur du formulaire */
   display: flex;
   flex-direction: column;
   background: var(--card-bg);
@@ -3272,13 +3272,7 @@ select:focus-visible,
   padding: 28px 26px;
 }
 .contact__side-deco {
-  position: absolute;
-  right: -22px;
-  bottom: -26px;
-  width: 150px;
-  height: 150px;
-  color: var(--purple);
-  opacity: 0.05;
+  display: none;
   pointer-events: none;
 }
 .contact__side > *:not(.contact__side-deco) { position: relative; z-index: 1; }
@@ -3345,7 +3339,7 @@ select:focus-visible,
   font-size: 13px;
   font-style: italic;
   color: var(--text-muted);
-  margin: auto 0 0;
+  margin: 0;
   padding-top: 20px;
 }
 @media (max-width: 760px) {
