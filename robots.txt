@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kevinauchoybur.me/sitemap.xml
