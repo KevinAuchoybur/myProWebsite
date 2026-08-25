@@ -34,6 +34,10 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.
       <stop offset="0.45" stop-color="${G2}"/>
       <stop offset="1" stop-color="${G3}"/>
     </linearGradient>
+    <linearGradient id="kaGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="${G1}"/>
+      <stop offset="1" stop-color="${G3}"/>
+    </linearGradient>
     <clipPath id="pc"><circle cx="960" cy="313" r="168"/></clipPath>
   </defs>
 
@@ -42,9 +46,9 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.
   <circle cx="700" cy="640" r="150" fill="#bcaef4" opacity="0.35"/>
 
   <g transform="translate(88,44)">
-    <circle cx="38" cy="38" r="36" fill="none" stroke="${PURPLE}" stroke-width="3.5"/>
+    <circle cx="38" cy="38" r="38" fill="url(#kaGrad)"/>
     <g transform="translate(11.32,49.95) scale(0.0332)">
-      <path fill="${PURPLE}" d="${KA_PATH}"/>
+      <path fill="#ffffff" d="${KA_PATH}"/>
     </g>
   </g>
 

@@ -218,27 +218,16 @@ body.modal-open {
 }
 
 .navbar__logo .logo-bg {
-  fill: var(--surface);
-  stroke: var(--purple);
-  stroke-width: 2;
-  transition: fill 0.2s ease;
+  fill: url(#kaNavGrad);
+  stroke: none;
 }
 
 .navbar__logo .logo-text {
-  fill: var(--purple);
-  transition: fill 0.2s ease;
+  fill: #ffffff;
 }
 
 .navbar__brand:hover .navbar__logo {
   transform: scale(1.06);
-}
-
-.navbar__brand:hover .navbar__logo .logo-bg {
-  fill: var(--purple);
-}
-
-.navbar__brand:hover .navbar__logo .logo-text {
-  fill: #ffffff;
 }
 
 .navbar__avatar {
