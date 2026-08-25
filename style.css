@@ -2227,19 +2227,20 @@ select:focus-visible,
   font-weight: 700;
   color: var(--purple);
   text-decoration: none;
-  padding: 9px 16px;
-  border-radius: 8px;
-  border: 1.5px solid var(--purple);
-  background: linear-gradient(to right, var(--purple) 50%, transparent 50%);
-  background-size: 220% 100%;
-  background-position: right center;
-  transition: background-position 0.35s ease, color 0.25s ease;
+  transition: color 0.25s ease;
   white-space: nowrap;
 }
 
+.repo-card__link-arrow {
+  transition: transform 0.25s ease;
+}
+
 .repo-card__link:hover {
-  background-position: left center;
-  color: var(--white);
+  color: var(--violet);
+}
+
+.repo-card__link:hover .repo-card__link-arrow {
+  transform: translate(2px, -2px);
 }
 
 /* bouton 'Voir le detail' : meme style que Mes experiences, pas pleine largeur
@@ -2317,20 +2318,19 @@ select:focus-visible,
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--purple);
   text-decoration: none;
-  padding: 11px 22px;
-  border-radius: 8px;
-  border: 1.5px solid var(--purple);
-  background: linear-gradient(to right, var(--purple) 50%, transparent 50%);
-  background-size: 220% 100%;
-  background-position: right center;
-  transition: background-position 0.35s ease, color 0.25s ease;
+  transition: color 0.25s ease;
+}
+.exp-cta__btn svg {
+  transition: transform 0.25s ease;
 }
 .exp-cta__btn:hover {
-  background-position: left center;
-  color: var(--white);
+  color: var(--violet);
+}
+.exp-cta__btn:hover svg {
+  transform: translateY(2px);
 }
 
 .project-card {
@@ -2656,6 +2656,8 @@ select:focus-visible,
   color: var(--violet);
 }
 .project-card__toggle-chevron {
+  position: relative;
+  top: 1px;
   transition: transform 0.25s ease;
 }
 /* ferme : le chevron nudge vers le bas au survol (invite a ouvrir) */
@@ -3118,6 +3120,23 @@ select:focus-visible,
     background: transparent;
     border-color: var(--card-border);
     color: var(--text-muted);
+  }
+  /* liens sobres : pas d'effet de survol / nudge sur tactile */
+  .project-card__toggle:hover,
+  .abx-parcours-cta:hover,
+  .exp-cta__btn:hover,
+  .repo-card__link:hover {
+    color: var(--purple);
+  }
+  .project-card__toggle:hover .project-card__toggle-chevron,
+  .project-card__toggle.is-open:hover .project-card__toggle-chevron,
+  .exp-cta__btn:hover svg,
+  .repo-card__link:hover .repo-card__link-arrow,
+  .abx-parcours-cta:hover .abx-parcours-cta-arrow {
+    transform: none;
+  }
+  .project-card__toggle.is-open:hover .project-card__toggle-chevron {
+    transform: rotate(180deg);
   }
 }
 
