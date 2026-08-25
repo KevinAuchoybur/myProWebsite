@@ -2662,11 +2662,11 @@ select:focus-visible,
 }
 /* ferme : le chevron nudge vers le bas au survol (invite a ouvrir) */
 .project-card__toggle:hover .project-card__toggle-chevron {
-  transform: translateY(3px);
+  transform: translateY(2px);
 }
 /* ouvert + survol : garde le retournement + petit nudge */
 .project-card__toggle.is-open:hover .project-card__toggle-chevron {
-  transform: rotate(180deg) translateY(3px);
+  transform: rotate(180deg) translateY(2px);
 }
 .project-card__toggle.is-open .project-card__toggle-chevron {
   transform: rotate(180deg);
