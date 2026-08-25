@@ -1047,7 +1047,7 @@ select:focus-visible,
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
-  grid-auto-rows: minmax(148px, auto);
+  grid-auto-rows: auto;
   text-align: left;
   max-width: 940px;
   margin: 0 auto;
@@ -1071,11 +1071,11 @@ select:focus-visible,
   border-color: var(--purple);
 }
 
-.abx-who { grid-column: 1 / -1; }
-.abx-vision,
-.abx-motto { grid-column: span 2; }
+/* Section A propos empilee : toutes les tuiles en pleine largeur */
+.abx-who,
 .abx-certs,
-.abx-time { grid-column: 1 / -1; }
+.abx-time,
+.abx-motto { grid-column: 1 / -1; }
 
 .abx-lbl {
   display: inline-flex;
@@ -1207,16 +1207,6 @@ select:focus-visible,
 }
 .abx-certs .abx-lbl { color: var(--purple); margin-bottom: 12px; position: relative; z-index: 1; }
 .abx-certs .abx-chips { margin-top: 0; position: relative; z-index: 1; }
-.abx-certs-deco {
-  position: absolute;
-  right: -12px;
-  bottom: -16px;
-  width: 96px;
-  height: 96px;
-  color: var(--purple);
-  opacity: 0.12;
-  pointer-events: none;
-}
 
 .abx-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
 .abx-chip {
