@@ -1301,11 +1301,7 @@ select:focus-visible,
   transition: color 0.2s ease;
 }
 .abx-parcours-cta:hover { color: var(--violet); }
-.abx-parcours-cta-arrow { width: 16px; height: 16px; flex-shrink: 0; transition: transform 0.25s ease; }
-.abx-parcours-cta:hover .abx-parcours-cta-arrow { transform: translateY(3px); }
-@media (prefers-reduced-motion: reduce) {
-  .abx-parcours-cta-arrow { transition: none; }
-}
+.abx-parcours-cta-arrow { width: 16px; height: 16px; flex-shrink: 0; }
 /* Produit teste sous chaque etape du parcours */
 .abx-tested {
   position: relative;
@@ -2231,16 +2227,8 @@ select:focus-visible,
   white-space: nowrap;
 }
 
-.repo-card__link-arrow {
-  transition: transform 0.25s ease;
-}
-
 .repo-card__link:hover {
   color: var(--violet);
-}
-
-.repo-card__link:hover .repo-card__link-arrow {
-  transform: translate(2px, -2px);
 }
 
 /* bouton 'Voir le detail' : meme style que Mes experiences, pas pleine largeur
@@ -2323,14 +2311,8 @@ select:focus-visible,
   text-decoration: none;
   transition: color 0.25s ease;
 }
-.exp-cta__btn svg {
-  transition: transform 0.25s ease;
-}
 .exp-cta__btn:hover {
   color: var(--violet);
-}
-.exp-cta__btn:hover svg {
-  transform: translateY(2px);
 }
 
 .project-card {
@@ -2660,14 +2642,8 @@ select:focus-visible,
   top: 1px;
   transition: transform 0.25s ease;
 }
-/* ferme : le chevron nudge vers le bas au survol (invite a ouvrir) */
-.project-card__toggle:hover .project-card__toggle-chevron {
-  transform: translateY(2px);
-}
-/* ouvert + survol : garde le retournement + petit nudge */
-.project-card__toggle.is-open:hover .project-card__toggle-chevron {
-  transform: rotate(180deg) translateY(2px);
-}
+/* pas de nudge au survol : le chevron reste aligne au texte.
+   L'affordance passe par la couleur (survol) et la rotation (ouverture) */
 .project-card__toggle.is-open .project-card__toggle-chevron {
   transform: rotate(180deg);
 }
@@ -3121,22 +3097,12 @@ select:focus-visible,
     border-color: var(--card-border);
     color: var(--text-muted);
   }
-  /* liens sobres : pas d'effet de survol / nudge sur tactile */
+  /* liens sobres : pas de changement de couleur au survol sur tactile */
   .project-card__toggle:hover,
   .abx-parcours-cta:hover,
   .exp-cta__btn:hover,
   .repo-card__link:hover {
     color: var(--purple);
-  }
-  .project-card__toggle:hover .project-card__toggle-chevron,
-  .project-card__toggle.is-open:hover .project-card__toggle-chevron,
-  .exp-cta__btn:hover svg,
-  .repo-card__link:hover .repo-card__link-arrow,
-  .abx-parcours-cta:hover .abx-parcours-cta-arrow {
-    transform: none;
-  }
-  .project-card__toggle.is-open:hover .project-card__toggle-chevron {
-    transform: rotate(180deg);
   }
 }
 
