@@ -1904,15 +1904,14 @@ select:focus-visible,
   margin: 0 auto 40px;
 }
 
+/* Aligne sur Mes experiences : colonne unique, cartes empilees pleine largeur */
 .lab__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 16px;
   text-align: left;
-}
-/* Tablette portrait : cartes projets empilees pleine largeur (evite le tassement en 2 colonnes) */
-@media (max-width: 1024px) {
-  .lab__grid { grid-template-columns: 1fr; }
+  max-width: 940px;
+  margin: 0 auto;
 }
 
 .repo-card {
@@ -1922,8 +1921,8 @@ select:focus-visible,
   flex-direction: column;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
-  border-radius: 16px;
-  padding: 28px 24px 24px;
+  border-radius: 20px;
+  padding: 26px 24px 24px;
   transition: box-shadow 0.25s ease, transform 0.2s ease, border-color 0.25s ease;
 }
 
@@ -2071,40 +2070,55 @@ select:focus-visible,
 }
 
 .repo-badge {
-  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 12.5px;
   font-weight: 600;
-  color: var(--purple);
+  color: var(--text-dark);
   background: var(--purple-light);
   border: 1px solid var(--card-border);
-  padding: 4px 10px;
-  border-radius: 6px;
+  padding: 5px 11px;
+  border-radius: 8px;
 }
+.repo-badge img,
+.repo-badge svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+/* chip avec logo/icone : padding gauche resserre pour equilibrer */
+.repo-badge:has(img),
+.repo-badge:has(svg) { padding-left: 8px; }
 
+/* Metriques en tuiles separees (meme modele que Mes experiences) */
 .repo-card__metrics {
-  display: flex;
-  gap: 0;
-  margin-bottom: 22px;
-  padding: 16px 20px;
-  background: var(--purple-light);
-  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
 }
 
 .repo-card__metric {
-  flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 3px;
-}
-.repo-card__metric + .repo-card__metric {
-  border-left: 1px solid var(--card-border);
-  padding-left: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 10px 14px;
 }
 
 .repo-card__metric-num {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   background: linear-gradient(120deg, var(--purple), var(--violet));
   -webkit-background-clip: text;
   background-clip: text;
@@ -2178,18 +2192,12 @@ select:focus-visible,
   color: var(--white);
 }
 
-.repo-card__metrics { position: relative; overflow: hidden; }
-.repo-card__metric { position: relative; z-index: 1; }
-.repo-card__metrics-deco {
-  position: absolute;
-  right: -10px;
-  bottom: -14px;
-  width: 66px;
-  height: 66px;
-  color: var(--purple);
-  opacity: 0.09;
-  pointer-events: none;
-}
+/* bouton 'Voir le detail' : meme style que Mes experiences, pas pleine largeur
+   (sinon il s'etire car .repo-card est en flex column) + espace sous le bouton */
+.repo-card__toggle.project-card__toggle { align-self: flex-start; margin-top: 2px; margin-bottom: 18px; }
+.repo-card__toggle.project-card__toggle.is-open { margin-bottom: 14px; }
+/* filigrane des metriques retire (les metriques sont desormais des tuiles separees) */
+.repo-card__metrics-deco { display: none; }
 
 @media (max-width: 640px) {
   .lab {
