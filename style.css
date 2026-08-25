@@ -1072,9 +1072,9 @@ select:focus-visible,
 }
 
 .abx-who { grid-column: 1 / -1; }
-.abx-certs,
 .abx-vision,
 .abx-motto { grid-column: span 2; }
+.abx-certs,
 .abx-time { grid-column: 1 / -1; }
 
 .abx-lbl {
