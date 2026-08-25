@@ -3413,12 +3413,12 @@ select:focus-visible,
 }
 .contact__channel-text { display: flex; flex-direction: column; gap: 1px; line-height: 1.3; min-width: 0; }
 .contact__channel-text strong { font-size: 14.5px; font-weight: 700; color: var(--text-dark); }
-.contact__channel-text small { font-size: 12.5px; color: var(--text-muted); }
+.contact__channel-text small { font-size: 12.5px; color: var(--text-dark); }
 .contact__channel-arrow { margin-left: auto; color: var(--purple); flex: none; }
 .contact__side-note {
   font-size: 13px;
   font-style: italic;
-  color: var(--text-muted);
+  color: var(--text-dark);
   margin: 0;
   padding-top: 20px;
 }
