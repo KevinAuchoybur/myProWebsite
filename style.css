@@ -1242,7 +1242,9 @@ select:focus-visible,
    -> tout reste aligne meme si un role passe sur 2 lignes */
 .abx-timeline li { display: grid; grid-template-rows: subgrid; grid-row: span 4; row-gap: 0; }
 .abx-year {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
   justify-self: start; /* chip qui epouse son texte (pas etiree par le subgrid) */
   font-size: 11.5px;
   font-weight: 700;
@@ -1254,8 +1256,54 @@ select:focus-visible,
   border-radius: 6px;
   margin-bottom: 8px;
 }
-.abx-role { font-size: 14px; font-weight: 700; color: var(--text-dark); }
-.abx-place { font-family: inherit; font-size: 11.5px; color: var(--text-muted); margin-top: 1px; }
+.abx-year-ic { width: 12px; height: 12px; flex-shrink: 0; }
+
+.abx-role {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.abx-role-ic { width: 15px; height: 15px; flex-shrink: 0; color: var(--purple); }
+
+.abx-place {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3px 14px;
+  font-family: inherit;
+  font-size: 11.5px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+.abx-org, .abx-loc { display: inline-flex; align-items: center; gap: 4px; }
+.abx-org svg, .abx-loc svg { width: 12px; height: 12px; flex-shrink: 0; color: var(--purple); opacity: 0.75; }
+
+/* CTA en pied de 'Mon parcours' vers Mes experiences (bouton anime a balayage) */
+/* CTA en pied de 'Mon parcours' : lien sobre + chevron qui nudge au survol */
+.abx-parcours-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: center; /* centre dans la tuile */
+  margin-top: 22px;
+  padding: 6px 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--purple);
+  text-decoration: none;
+  background: none;
+  border: none;
+  transition: color 0.2s ease;
+}
+.abx-parcours-cta:hover { color: var(--violet); }
+.abx-parcours-cta-arrow { width: 16px; height: 16px; flex-shrink: 0; transition: transform 0.25s ease; }
+.abx-parcours-cta:hover .abx-parcours-cta-arrow { transform: translateY(3px); }
+@media (prefers-reduced-motion: reduce) {
+  .abx-parcours-cta-arrow { transition: none; }
+}
 /* Produit teste sous chaque etape du parcours */
 .abx-tested {
   position: relative;
