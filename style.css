@@ -1255,6 +1255,15 @@ select:focus-visible,
 /* subgrid : annee / role / lieu / produit partagent les memes rails entre colonnes
    -> tout reste aligne meme si un role passe sur 2 lignes */
 .abx-timeline li { display: grid; grid-template-rows: subgrid; grid-row: span 5; row-gap: 0; }
+.abx-year-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-self: start;
+  margin-bottom: 8px; /* reprend l'espacement du chip annee vers la ligne du role */
+}
+.abx-year-row .abx-year { margin-bottom: 0; } /* sinon la marge decentre le badge */
 .abx-year {
   display: inline-flex;
   align-items: center;
