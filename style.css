@@ -3129,6 +3129,10 @@ select:focus-visible,
     transform: none;
     box-shadow: none;
   }
+  .btn-submit:hover {
+    background-position: right center;
+    color: var(--purple);
+  }
   .btn-linkedin-icon:hover,
   .btn-whatsapp-icon:hover,
   .btn-github-icon:hover {
@@ -3180,9 +3184,16 @@ select:focus-visible,
 
 .modal__success-text {
   font-size: 14px;
-  color: var(--text-muted);
+  color: var(--text-dark);
   line-height: 1.6;
   max-width: 300px;
+}
+/* Confirmation d'envoi : on retire l'encadre (la carte) pour que le message
+   ne colle pas aux bords de l'ecran, surtout en mobile */
+.contact__card:has(.modal__success.is-visible) {
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .modal__error {
