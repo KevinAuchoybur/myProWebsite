@@ -3178,7 +3178,7 @@ select:focus-visible,
     transform: none;
     box-shadow: none;
   }
-  .btn-submit:hover {
+  .contact__form .btn-submit:hover {
     background-position: right center;
     color: var(--purple);
   }
