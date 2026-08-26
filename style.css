@@ -2152,8 +2152,8 @@ select:focus-visible,
   width: 15px;
   height: 15px;
   background-color: var(--purple);
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m9 12 2 2 4-4'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m12 8 4 4-4 4'/%3E%3Cpath d='M8 12h8'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m12 8 4 4-4 4'/%3E%3Cpath d='M8 12h8'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 .repo-card__stack {
@@ -2624,13 +2624,13 @@ select:focus-visible,
 .project-card__activities li::before {
   content: '';
   position: absolute;
-  left: 3px;
-  top: 5px;
-  width: 6px;
-  height: 6px;
-  border-right: 2px solid var(--purple);
-  border-bottom: 2px solid var(--purple);
-  transform: rotate(-45deg);
+  left: 0;
+  top: 3px;
+  width: 15px;
+  height: 15px;
+  background: var(--purple);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m12 8 4 4-4 4'/%3E%3Cpath d='M8 12h8'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='m12 8 4 4-4 4'/%3E%3Cpath d='M8 12h8'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 /* Ligne "Outils & méthodologie" : badges au-dessus du résultat */
