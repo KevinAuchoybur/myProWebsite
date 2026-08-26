@@ -1408,7 +1408,7 @@
           // Affiche le message de succès en place du formulaire
           form.style.display = 'none';
           success.classList.add('is-visible');
-          // Réinitialise le formulaire après 2 s (le temps de voir la confirmation),
+          // Réinitialise le formulaire après 2,5 s (le temps de voir la confirmation),
           // puis ramène doucement le visiteur en haut (hero)
           setTimeout(() => {
             success.classList.remove('is-visible');
@@ -1418,7 +1418,7 @@
             const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             const hero = document.getElementById('home');
             if (hero) hero.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
-          }, 2000);
+          }, 2500);
         } else {
           errorBox.textContent = translations[currentLang]['modal.error'];
           errorBox.classList.add('is-visible');
