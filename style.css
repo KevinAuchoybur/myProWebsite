@@ -3985,6 +3985,12 @@ select:focus-visible,
   .contact__form {
     gap: 14px;
   }
+  /* iOS Safari zoome sur tout champ < 16px au focus (et reste zoome apres soumission).
+     On force 16px sur mobile pour eviter ce zoom, sans bloquer le zoom manuel de l'utilisateur. */
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+  }
   .stat {
     flex-direction: row;
     align-items: center;
