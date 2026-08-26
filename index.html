@@ -1408,12 +1408,16 @@
           // Affiche le message de succès en place du formulaire
           form.style.display = 'none';
           success.classList.add('is-visible');
-          // Réinitialise le formulaire après 6 secondes (laisse le temps de lire)
+          // Réinitialise le formulaire après 6 secondes (laisse le temps de lire),
+          // puis ramène doucement le visiteur en haut (hero)
           setTimeout(() => {
             success.classList.remove('is-visible');
             form.reset();
             newCaptcha();
             form.style.display = '';
+            const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const hero = document.getElementById('home');
+            if (hero) hero.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
           }, 6000);
         } else {
           errorBox.textContent = translations[currentLang]['modal.error'];
