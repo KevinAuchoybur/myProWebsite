@@ -2449,12 +2449,14 @@ select:focus-visible,
   color: var(--text-dark);
   margin: 0;
 }
-/* Badge 'En poste' : signale l'experience en cours */
-.project-card__name-row {
+/* Coin haut-droit des cartes Experiences : rôle (+ 'En poste' pour l'actuel), cote a cote */
+.project-card__meta {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 8px 10px;
+  gap: 8px;
+  flex: none;
 }
 /* Chip 'En poste' : meme forme que 'Tests au vert' (.repo-card__ci) */
 .exp-current {
@@ -2492,7 +2494,7 @@ select:focus-visible,
   gap: 6px;
 }
 .abx-year-row .exp-current__dot { width: 7px; height: 7px; }
-.project-card__name-row .exp-current { /* comme la chip Role (Mes experiences) */
+.project-card__meta .exp-current { /* comme la chip Role (Mes experiences) */
   font-size: 12px;
   padding: 5px 11px;
   border-radius: 8px;
