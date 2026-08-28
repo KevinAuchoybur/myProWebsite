@@ -1425,6 +1425,28 @@ select:focus-visible,
   margin: 0 auto;
 }
 .skills__bento .skx-chips { margin-top: auto; padding-top: 18px; }
+/* Titres des tuiles en style 'carte' (gras, noir, casse normale) comme Experiences & Projets,
+   icone violette conservee en accent */
+.skills__bento .abx-lbl {
+  font-size: 16.5px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  color: var(--text-dark);
+  gap: 9px;
+  margin-bottom: 12px;
+}
+.skills__bento .abx-lbl svg { width: 18px; height: 18px; color: var(--purple); }
+/* Barre de degrade en haut des tuiles, comme les cartes Experiences & Projets */
+.skills__bento .abx-tile::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--purple-blob, #a89bfb), var(--purple));
+}
 .skills__bento .abx-list {
   margin-top: 14px;
   padding-top: 14px;
