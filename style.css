@@ -1414,24 +1414,24 @@ select:focus-visible,
 }
 
 /* ===== Mes competences — grille BENTO ===== */
+/* 4 cartes en grille 2x2 : Tests fonctionnels | Tests automatises (rangee 1),
+   Suivi qualite | Methodologie (rangee 2). Cartes a hauteur egale, chips ancres en bas */
 .skills__bento {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
-  grid-auto-rows: minmax(138px, auto);
   text-align: left;
   max-width: 940px;
   margin: 0 auto;
 }
-.skx-flagship { grid-column: 1 / -1; }
-.skx-wide { grid-column: span 2; }
+.skills__bento .skx-chips { margin-top: auto; padding-top: 18px; }
 .skills__bento .abx-list {
   margin-top: 14px;
   padding-top: 14px;
   border-top: 1px solid var(--card-border);
 }
 .skills__bento .abx-list li { font-size: 14.5px; }
-.skx-list-2col { column-count: 2; column-gap: 30px; }
+.skx-list-2col { column-count: 1; }
 .skx-list-2col li { break-inside: avoid; }
 
 .skx-desc {
@@ -1511,7 +1511,7 @@ select:focus-visible,
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 14px;
+  margin-top: 16px;
   position: relative;
   z-index: 1;
 }
@@ -1527,21 +1527,17 @@ select:focus-visible,
   padding: 5px 11px 5px 8px;
   border-radius: 8px;
 }
-.skx-chip img {
+.skx-chip img,
+.skx-chip svg {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
   object-fit: contain;
 }
 
-@media (max-width: 780px) {
-  .skills__bento { grid-template-columns: repeat(2, 1fr); }
-  .skx-flagship { grid-column: span 2; grid-row: auto; }
-  .skx-wide { grid-column: span 2; }
-}
-@media (max-width: 460px) {
+@media (max-width: 860px) {
   .skills__bento { grid-template-columns: 1fr; }
-  .skx-flagship, .skx-wide, .skx-tools { grid-column: span 1; }
+  .skills__bento .skx-chips { margin-top: 16px; }
   .skx-list-2col { column-count: 1; }
 }
 
