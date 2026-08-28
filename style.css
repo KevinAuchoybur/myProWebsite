@@ -3188,6 +3188,11 @@ select:focus-visible,
   transform: translateY(-1px);
   box-shadow: 0 8px 20px rgba(40, 62, 175, 0.3);
 }
+/* Feedback d'appui (utile surtout au tactile : confirme que le tap est pris en compte) */
+.btn-hero-cv:active {
+  transform: scale(0.97);
+  box-shadow: none;
+}
 
 /* LinkedIn en icône seule */
 .btn-linkedin-icon,
@@ -3681,8 +3686,12 @@ select:focus-visible,
   font-family: inherit;
   cursor: pointer;
   letter-spacing: 0.01em;
-  transition: background-position 0.35s ease, color 0.25s ease;
+  transition: background-position 0.35s ease, color 0.25s ease, transform 0.12s ease;
   margin-top: 4px;
+}
+/* Feedback d'appui (utile surtout au tactile : confirme que le tap est pris en compte) */
+.btn-submit:active {
+  transform: scale(0.97);
 }
 
 .btn-submit:hover {
