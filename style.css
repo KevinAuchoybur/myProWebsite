@@ -217,17 +217,33 @@ body.modal-open {
   border-radius: 50%;
 }
 
+/* Repos : fond blanc, anneau + monogramme KA en degrade (sobre) */
 .navbar__logo .logo-bg {
-  fill: url(#kaNavGrad);
-  stroke: none;
+  fill: var(--surface);
+  stroke: url(#kaNavGrad);
+  stroke-width: 2;
+  transition: fill 0.25s ease;
 }
-
 .navbar__logo .logo-text {
-  fill: #ffffff;
+  fill: url(#kaNavGrad);
 }
 
 .navbar__brand:hover .navbar__logo {
   transform: scale(1.06);
+}
+/* Hover : on remplit -> fond degrade bleu-violet, KA blanc (comme loader/favicon) */
+.navbar__brand:hover .navbar__logo .logo-bg {
+  fill: url(#kaNavGrad);
+  stroke: none;
+}
+.navbar__brand:hover .navbar__logo .logo-text {
+  fill: #ffffff;
+}
+/* Tactile : pas d'effet de survol (garde l'etat par defaut : fond blanc, KA degrade) */
+@media (hover: none) {
+  .navbar__brand:hover .navbar__logo { transform: none; }
+  .navbar__brand:hover .navbar__logo .logo-bg { fill: var(--surface); stroke: url(#kaNavGrad); }
+  .navbar__brand:hover .navbar__logo .logo-text { fill: url(#kaNavGrad); }
 }
 
 .navbar__avatar {
@@ -2440,38 +2456,33 @@ select:focus-visible,
   flex-wrap: wrap;
   gap: 8px 10px;
 }
+/* Chip 'En poste' : meme forme que 'Tests au vert' (.repo-card__ci) */
 .exp-current {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 3px 9px;
-  font-size: 11.5px;
+  gap: 8px;
+  padding: 5px 12px;
+  font-size: 12.5px;
   font-weight: 700;
   color: #1a7f4b;
-  background: rgba(34, 160, 94, 0.10);
+  background: rgba(34, 160, 94, 0.12);
   border: 1px solid rgba(34, 160, 94, 0.28);
-  border-radius: 999px;
+  border-radius: 8px;
   white-space: nowrap;
 }
+/* point statique, comme le point de 'Tests au vert' (pas d'animation) */
 .exp-current__dot {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #22a05e;
   box-shadow: 0 0 0 3px rgba(34, 160, 94, 0.18);
-  animation: expCurrentPulse 2s ease-in-out infinite;
-}
-@keyframes expCurrentPulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 160, 94, 0.35); }
-  50% { box-shadow: 0 0 0 4px rgba(34, 160, 94, 0.10); }
+  flex: none;
 }
 [data-theme="dark"] .exp-current {
   color: #4ade80;
   background: rgba(74, 222, 128, 0.12);
   border-color: rgba(74, 222, 128, 0.30);
-}
-@media (prefers-reduced-motion: reduce) {
-  .exp-current__dot { animation: none; }
 }
 
 .project-card__client {
@@ -3812,6 +3823,14 @@ select:focus-visible,
   background: var(--purple);
   color: #ffffff;
   border-color: var(--purple);
+}
+/* Tactile : pas d'effet de survol sur le bouton retour en haut */
+@media (hover: none) {
+  .back-to-top:hover {
+    background: var(--surface);
+    color: var(--purple);
+    border-color: var(--border);
+  }
 }
 
 /* ===== RESPONSIVE ===== */
