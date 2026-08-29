@@ -933,7 +933,7 @@ select:focus-visible,
   border: none;
   box-shadow: 0 16px 34px rgba(40, 62, 175, 0.16);
   overflow: hidden;
-  background: #e5e7eb;
+  background: #241b3a; /* = fond aubergine de la photo -> pas de coin clair au clip des angles arrondis (clair + sombre) */
 }
 
 @media (prefers-reduced-motion: reduce) {
