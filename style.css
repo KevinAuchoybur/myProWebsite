@@ -2223,6 +2223,14 @@ select:focus-visible,
 /* chip avec logo/icone : padding gauche resserre pour equilibrer */
 .repo-badge:has(img),
 .repo-badge:has(svg) { padding-left: 8px; }
+/* Mobile : meme taille compacte que les chips Competences (.skx-chip) pour uniformiser */
+@media (max-width: 860px) {
+  .repo-badge { font-size: 11.5px; padding: 4px 8px; gap: 5px; }
+  .repo-badge:has(img),
+  .repo-badge:has(svg) { padding-left: 6px; }
+  .repo-badge img,
+  .repo-badge svg { width: 14px; height: 14px; }
+}
 
 /* Metriques en tuiles separees (meme modele que Mes experiences) */
 .repo-card__metrics {
