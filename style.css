@@ -4134,10 +4134,12 @@ select:focus-visible,
   .footer__brand {
     align-items: center;
   }
+  /* 4 liens en grille 2x2 -> pas de lien orphelin seul sur une ligne */
   .footer__links {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+    justify-items: center;
   }
 }
 
