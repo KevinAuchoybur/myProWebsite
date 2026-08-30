@@ -2792,6 +2792,10 @@ select:focus-visible,
   cursor: pointer;
   transition: color 0.2s ease;
 }
+/* ouvert : petit saut de ligne avant le 1er item (comme les cartes Projets) */
+.project-card__toggle.is-open {
+  margin-bottom: 14px;
+}
 .project-card__toggle:hover {
   color: var(--violet);
 }
