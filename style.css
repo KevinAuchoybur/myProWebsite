@@ -2336,6 +2336,15 @@ select:focus-visible,
   .lab {
     padding: 48px 20px 60px;
   }
+  /* chips outils en grille 2x2 (4 chips par carte) -> rythme regulier au lieu du wrap 2+1+1.
+     justify-items:start -> les chips epousent leur contenu (pills), comme les chips Experiences */
+  .repo-card__stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    justify-items: start;
+    align-items: start;
+  }
   /* footer en ligne : badge 'Tests au vert' a gauche, lien 'Consulter le code' a droite,
      sur la meme ligne (comme desktop) */
   .repo-card__footer {
