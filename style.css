@@ -2280,6 +2280,14 @@ select:focus-visible,
   padding-top: 18px;
   border-top: 1px solid var(--card-border);
 }
+/* groupe d'actions a droite : 'Consulter le rapport' + 'Consulter le code' */
+.repo-card__actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 20px;
+}
 
 .repo-card__ci {
   display: inline-flex;
@@ -2351,8 +2359,14 @@ select:focus-visible,
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
+    gap: 12px;
+    flex-wrap: nowrap;
+  }
+  /* badge a gauche (centre verticalement), les 2 boutons empiles a droite */
+  .repo-card__actions {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
   }
 }
 
