@@ -2198,7 +2198,7 @@ select:focus-visible,
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin: 4px 0 0;
+  margin: 4px 0 18px; /* marge basse : les chips ne collent plus le separateur du footer */
 }
 
 .repo-badge {
