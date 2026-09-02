@@ -50,7 +50,7 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Orbitron:wght@700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Orbitron:wght@700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -342,7 +342,7 @@
       </article>
 
       <article class="abx-tile skx-wide">
-        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span data-i18n="skills.g3.title"></span></span>
+        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg><span data-i18n="skills.g3.title"></span></span>
         <p class="skx-desc" data-i18n-html="skills.g3.desc"></p>
         <ul class="abx-list">
           <li data-i18n="skills.g3.s1"></li>
@@ -527,6 +527,19 @@
   <section class="lab" id="projects">
     <h2 class="lab__title"><span class="section-title__row"><svg class="section-title__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg><span data-i18n="lab.title"></span></span></h2>
     <p class="lab__desc" data-i18n="lab.desc"></p>
+    <div class="lab-run" id="labRun" aria-hidden="true">
+      <div class="lab-run__bar">
+        <span class="trl r"></span><span class="trl y"></span><span class="trl g"></span>
+        <span class="lab-run__title" data-i18n="lab.run.title"></span>
+      </div>
+      <div class="lab-run__body">
+        <div class="lrl show"><span class="lr-cmd" data-i18n="lab.run.cmd"></span></div>
+        <div class="lrl" data-run><span class="lr-tick">✓</span><span class="lr-repo">Kevinauchoybur.me</span><span class="lr-count">26</span><span class="lr-tag">cypress</span></div>
+        <div class="lrl" data-run><span class="lr-tick">✓</span><span class="lr-repo">AS Monaco FC</span><span class="lr-count">36</span><span class="lr-tag">playwright</span></div>
+        <div class="lrl" data-run><span class="lr-tick">✓</span><span class="lr-repo">Restful-Booker</span><span class="lr-count">5</span><span class="lr-tag">playwright</span></div>
+        <div class="lab-run__sum"><span class="lr-sum-main"><b>67 passed</b> · 0 failed · 3 repos</span><span class="lr-sum-sep"> · </span><span class="lr-ci"><span class="lr-ci-dot"></span>ci green</span></div>
+      </div>
+    </div>
     <div class="lab__grid">
 
       <!-- Projet : Portfolio Cypress (E2E, ce site) -->
@@ -871,6 +884,8 @@
         'exp.ctaLine':     'Ces expériences vous parlent ?',
         'lab.title':       'Mes projets',
         'lab.desc':        'Des projets personnels qui démontrent mes compétences par la pratique — code ouvert, tests automatisés.',
+        'lab.run.title':   'kevin@qa — projects',
+        'lab.run.cmd':     'npm run test — all projects',
         'lab.contextLabel': 'Contexte',
         'lab.scopeLabel':  'Périmètre testé',
         'lab.viewRepo':    'Code source',
@@ -1107,6 +1122,8 @@
         'exp.ctaLine':     'Do these experiences speak to you?',
         'lab.title':       'My projects',
         'lab.desc':        'Personal projects that back up my skills through practice — open code, automated tests.',
+        'lab.run.title':   'kevin@qa — projects',
+        'lab.run.cmd':     'npm run test — all projects',
         'lab.contextLabel': 'Context',
         'lab.scopeLabel':  'Tested scope',
         'lab.viewRepo':    'Source code',
@@ -1431,6 +1448,38 @@
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
       revealEls.forEach(el => revealObserver.observe(el));
+    })();
+
+    // ===== Bandeau test-runner (section Projets) : revele les ✓ au scroll =====
+    (function () {
+      const run = document.getElementById('labRun');
+      if (!run) return;
+      const lines = [...run.querySelectorAll('[data-run]')];
+      const sum = run.querySelector('.lab-run__sum');
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const play = () => {
+        if (reduce || !('IntersectionObserver' in window)) {
+          lines.forEach(l => l.classList.add('show', 'pass'));
+          if (sum) sum.classList.add('show');
+          return;
+        }
+        let i = 0;
+        const step = () => {
+          if (i < lines.length) {
+            const l = lines[i]; l.classList.add('show');
+            setTimeout(() => l.classList.add('pass'), 150);
+            i++; setTimeout(step, 280);
+          } else if (sum) {
+            setTimeout(() => sum.classList.add('show'), 160);
+          }
+        };
+        step();
+      };
+      if (reduce || !('IntersectionObserver' in window)) { play(); return; }
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { play(); obs.unobserve(e.target); } });
+      }, { threshold: 0.4 });
+      obs.observe(run);
     })();
 
     // ===== FORMULAIRE DE CONTACT (inline) =====
