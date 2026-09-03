@@ -164,6 +164,10 @@
         <span class="hero__name">Kevin Auchoybur</span>
         <span class="hero__role-line" data-i18n="hero.role"></span>
       </h1>
+      <p class="hero__subrole">
+        <svg class="hero__subrole-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+        <span data-i18n-html="hero.subrole"></span>
+      </p>
       <p class="hero__pitch" data-i18n-html="hero.pitch"></p>
       <ul class="hero__chips">
         <li class="hero__chip">
@@ -175,10 +179,6 @@
           <span data-i18n="hero.chip2"></span>
         </li>
       </ul>
-      <p class="hero__subrole">
-        <svg class="hero__subrole-check" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
-        <span data-i18n-html="hero.subrole"></span>
-      </p>
       <div class="hero__actions">
         <a id="heroDownloadCv" href="assets/cv-fr-KevinAuchoybur.pdf" target="_blank" rel="noopener" class="btn-hero-cv">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -273,8 +273,19 @@
         </a>
       </article>
 
+      <article class="abx-tile abx-projects">
+        <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg><span data-i18n="lab.title"></span></span>
+        <p class="abx-lead" data-i18n-html="about.projects.lead"></p>
+        <div class="abx-run" id="aboutRun"><span class="abx-run-seg"><b class="abx-run-total"></b> tests</span><span class="abx-run-sep">·</span><span class="abx-run-seg"><span class="abx-run-repos"></span> <span data-i18n="about.projects.repos"></span></span><span class="abx-run-sep">·</span><span class="abx-run-ci"><span class="abx-run-dot"></span><span data-i18n="about.projects.status"></span></span></div>
+        <a href="#projects" class="abx-parcours-cta">
+          <span data-i18n="about.projects.cta"></span>
+          <svg class="abx-parcours-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+      </article>
+
       <article class="abx-tile abx-certs">
         <span class="abx-lbl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg><span data-i18n="about.certifs.title"></span></span>
+        <p class="abx-lead" data-i18n-html="about.certifs.note"></p>
         <div class="abx-chips">
           <span class="abx-chip">ISTQB Foundation</span>
           <span class="abx-chip">ISTQB Agile</span>
@@ -534,10 +545,10 @@
       </div>
       <div class="lab-run__body">
         <div class="lrl show"><span class="lr-cmd" data-i18n="lab.run.cmd"></span></div>
-        <div class="lrl" data-run><span class="lr-tick">✓</span><span class="lr-repo">Kevinauchoybur.me</span><span class="lr-count">26</span><span class="lr-tag">cypress</span></div>
-        <div class="lrl" data-run><span class="lr-tick">✓</span><span class="lr-repo">AS Monaco FC</span><span class="lr-count">36</span><span class="lr-tag">playwright</span></div>
-        <div class="lrl" data-run><span class="lr-tick">✓</span><span class="lr-repo">Restful-Booker</span><span class="lr-count">5</span><span class="lr-tag">playwright</span></div>
-        <div class="lab-run__sum"><span class="lr-sum-main"><b>67 passed</b> · 0 failed · 3 repos</span><span class="lr-sum-sep"> · </span><span class="lr-ci"><span class="lr-ci-dot"></span>ci green</span></div>
+        <div class="lrl" data-run data-count="26"><span class="lr-tick">✓</span><span class="lr-repo">Kevinauchoybur.me</span><span class="lr-count"></span><span class="lr-tag">cypress</span></div>
+        <div class="lrl" data-run data-count="36"><span class="lr-tick">✓</span><span class="lr-repo">AS Monaco FC</span><span class="lr-count"></span><span class="lr-tag">playwright</span></div>
+        <div class="lrl" data-run data-count="5"><span class="lr-tick">✓</span><span class="lr-repo">Restful-Booker</span><span class="lr-count"></span><span class="lr-tag">playwright</span></div>
+        <div class="lab-run__sum"><span class="lr-sum-main"><b><span class="lr-total"></span> passed</b> · <span class="lr-failed"></span> failed · <span class="lr-repos"></span> repos</span><span class="lr-sum-sep"> · </span><span class="lr-ci"><span class="lr-ci-dot"></span>ci green</span></div>
       </div>
     </div>
     <div class="lab__grid">
@@ -815,9 +826,14 @@
         'about.vision.p2': 'Tester pour livrer des produits sur lesquels on peut compter.',
         'about.vision.title': 'Ma vision du métier',
         'about.certifs.title': 'Mes certifications',
+        'about.certifs.note':  'Filière <strong>ISTQB complète</strong>, renforcée par l\'<strong>automatisation A4Q</strong>.',
         'about.certifs.text':  'Mes certifications structurent ma pratique : la filière <strong>ISTQB</strong> (Fondation, Agile, Test Manager) m\'apporte une méthodologie rigoureuse, de la conception à la gestion des tests.<br /><br />La certification <strong>A4Q Selenium</strong> ancre mon savoir-faire en <span class="hl">automatisation</span> — une montée en compétence continue, gage de fiabilité.',
         'about.mottoLabel': 'Ma devise',
         'about.motto':     'Tester, c\'est anticiper là où l\'erreur n\'est pas permise.',
+        'about.projects.lead': 'Mon code, couvert par des <strong>tests automatisés</strong>.',
+        'about.projects.cta':  'Consulter mes projets',
+        'about.projects.repos': 'dépôts',
+        'about.projects.status': 'au vert',
         'about.statsIntro': 'Mes chiffres clés',
         'about.stat1':     'Années d\'expérience',
         'about.stat2':     'Certifications',
@@ -1053,9 +1069,14 @@
         'about.vision.p2': 'Testing to deliver products you can count on.',
         'about.vision.title': 'My vision of the job',
         'about.certifs.title': 'My certifications',
+        'about.certifs.note':  '<strong>Full ISTQB track</strong>, reinforced by <strong>A4Q automation</strong>.',
         'about.certifs.text':  'My certifications shape my practice: the <strong>ISTQB</strong> track (Foundation, Agile, Test Manager) gives me a rigorous methodology, from test design to test management.<br /><br />The <strong>A4Q Selenium</strong> certification grounds my expertise in <span class="hl">automation</span> — a continuous skill-building effort and a guarantee of reliability.',
         'about.mottoLabel': 'My motto',
         'about.motto':     'Testing means anticipating — where failure is not an option.',
+        'about.projects.lead': 'My code, backed by <strong>automated tests</strong>.',
+        'about.projects.cta':  'View my projects',
+        'about.projects.repos': 'repositories',
+        'about.projects.status': 'all green',
         'about.statsIntro': 'My key figures',
         'about.stat1':     'Years of experience',
         'about.stat2':     'Certifications',
@@ -1456,6 +1477,30 @@
       if (!run) return;
       const lines = [...run.querySelectorAll('[data-run]')];
       const sum = run.querySelector('.lab-run__sum');
+
+      // Source unique de verite : les compteurs viennent des data-count de chaque
+      // ligne. Le total, le nombre de repos et les failed se calculent tout seuls.
+      // Editer une ligne (ou en ajouter/retirer une) suffit : le resume suit.
+      (function () {
+        let total = 0, failed = 0;
+        lines.forEach(l => {
+          const c = parseInt(l.dataset.count || '0', 10);
+          const f = parseInt(l.dataset.failed || '0', 10);
+          total += c; failed += f;
+          const cell = l.querySelector('.lr-count');
+          if (cell) cell.textContent = c;
+        });
+        const set = (root, sel, val) => { const el = root.querySelector(sel); if (el) el.textContent = val; };
+        set(run, '.lr-total', total);
+        set(run, '.lr-failed', failed);
+        set(run, '.lr-repos', lines.length);
+        // Meme source pour la mini-ligne 'Mes projets' de la section A propos
+        const aboutRun = document.getElementById('aboutRun');
+        if (aboutRun) {
+          set(aboutRun, '.abx-run-total', total);
+          set(aboutRun, '.abx-run-repos', lines.length);
+        }
+      })();
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const play = () => {
         if (reduce || !('IntersectionObserver' in window)) {

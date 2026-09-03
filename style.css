@@ -648,10 +648,10 @@ section {
 }
 .hero__role-line {
   display: block;
-  font-size: 0.5em;
+  font-size: 0.56em;
   font-weight: 700;
-  color: var(--text-dark);
-  margin-top: 6px;
+  color: var(--purple);
+  margin-top: 8px;
 }
 /* DA 'green run' : signature mono sur la couche technique (labels + chips outils), meme contenu */
 .hero__greeting {
@@ -738,24 +738,36 @@ section {
   color: var(--purple);
 }
 
-/* Sous-ligne de positionnement : certification (badge credibilite) */
+/* Certification : vrai badge credibilite (pastille sceau), remonte sous le titre
+   pour former une unite rôle + preuve. */
 .hero__subrole {
   display: inline-flex;
   align-items: center;
   gap: 7px;
-  font-size: 14.5px;
-  font-weight: 500;
-  color: var(--text-muted);
-  margin: 0 0 22px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--purple);
+  background: var(--purple-light);
+  border: 1px solid rgba(30, 63, 196, 0.18);
+  padding: 6px 13px 6px 11px;
+  border-radius: 8px;
+  margin: 0 0 20px;
 }
 .hero__subrole strong {
-  color: var(--text-dark);
+  color: var(--purple);
   font-weight: 700;
 }
 .hero__subrole-check {
   color: var(--purple);
   flex-shrink: 0;
 }
+[data-theme="dark"] .hero__subrole {
+  color: var(--purple-light);
+  background: rgba(109, 40, 217, 0.18);
+  border-color: rgba(139, 92, 246, 0.35);
+}
+[data-theme="dark"] .hero__subrole strong { color: var(--purple-light); }
+[data-theme="dark"] .hero__subrole-check { color: var(--purple-light); }
 
 /* Devise / leitmotiv dans la section À propos */
 .about__motto {
@@ -1146,9 +1158,11 @@ select:focus-visible,
 
 /* Section A propos empilee : toutes les tuiles en pleine largeur */
 .abx-who,
-.abx-certs,
 .abx-time,
 .abx-motto { grid-column: 1 / -1; }
+/* Rangee 'credibilite' : projets testes + certifications cote a cote (mi-largeur) en desktop */
+.abx-projects,
+.abx-certs { grid-column: span 2; }
 
 .abx-lbl {
   display: inline-flex;
@@ -1264,12 +1278,10 @@ select:focus-visible,
 
 /* Tuile Certifications mise en valeur : fond teinte + chips qui ressortent */
 .abx-certs {
-  background: var(--purple-light);
-  border-color: rgba(30, 63, 196, 0.22);
-  box-shadow: 0 8px 26px rgba(40, 62, 175, 0.12);
   justify-content: flex-start;
 }
-.abx-certs::before {
+.abx-certs::before,
+.abx-projects::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1279,7 +1291,10 @@ select:focus-visible,
   background: linear-gradient(90deg, var(--purple), var(--violet));
 }
 .abx-certs .abx-lbl { color: var(--purple); margin-bottom: 12px; position: relative; z-index: 1; }
-.abx-certs .abx-chips { margin-top: 0; position: relative; z-index: 1; }
+/* Intro (lead uniforme) en haut + chips ancrees en bas -> comble le cote-a-cote, pied aligne sur 'Mes projets' */
+.abx-certs .abx-lead { margin: 0 0 14px; position: relative; z-index: 1; }
+.abx-certs .abx-chips { margin-top: 0; position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.abx-certs .abx-chip { text-align: center; }
 
 .abx-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
 .abx-chip {
@@ -1384,6 +1399,31 @@ select:focus-visible,
 }
 .abx-parcours-cta:hover { color: var(--violet); }
 .abx-parcours-cta-arrow { width: 16px; height: 16px; flex-shrink: 0; }
+
+/* Tuile 'Mes projets' du bento : mini-ligne de statut (memes chiffres que le terminal Projets).
+   Fond NEUTRE volontaire : le point vert + 'ci green' doivent ressortir, pas se confondre
+   avec un encadre vert. */
+.abx-run {
+  display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 13.5px; font-weight: 600; color: var(--text-dark);
+  background: rgba(30, 63, 196, 0.05); border: 1px solid rgba(30, 63, 196, 0.16);
+  border-radius: 10px; padding: 10px 14px; margin-bottom: 16px; align-self: flex-start;
+}
+/* Chaque stat (nombre + mot) regroupee et resserree ; seuls les separateurs '·' sont espaces */
+.abx-run-seg { display: inline-flex; align-items: baseline; gap: 4px; }
+.abx-run-sep { color: var(--text-muted); }
+/* Chiffres mis en avant : dégradé bleu-violet + plus gros, comme le nom du hero */
+.abx-run-total, .abx-run-repos {
+  font-weight: 800; font-size: 16px;
+  background: linear-gradient(120deg, var(--purple), var(--violet));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.abx-run-dot { width: 8px; height: 8px; border-radius: 50%; background: #22a05e; box-shadow: 0 0 0 3px rgba(34, 160, 94, 0.18); flex: none; }
+.abx-run-ci { color: #1a7f4b; font-weight: 700; display: inline-flex; align-items: center; gap: 6px; }
+[data-theme="dark"] .abx-run { background: rgba(139, 92, 246, 0.12); border-color: rgba(139, 92, 246, 0.28); }
+[data-theme="dark"] .abx-run-ci { color: #4ade80; }
+[data-theme="dark"] .abx-run-dot { background: #4ade80; box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.18); }
 
 /* Pont 'compétences -> mes projets' : reutilise .exp-cta (accroche + icone bulle),
    seul le lien a son propre style sobre avec chevron */
@@ -2084,11 +2124,13 @@ select:focus-visible,
 }
 .lab-run__bar { display: flex; align-items: center; gap: 8px; padding: 11px 15px; border-bottom: 1px solid #232841; }
 .trl { width: 10px; height: 10px; border-radius: 50%; }
-.trl.r { background: #ff5f57; } .trl.y { background: #febc2e; } .trl.g { background: #28c840; }
+/* Pastilles monochromes aux teintes de charte (violet -> bleu), au lieu du rouge/jaune/vert 'mac' :
+   pas de rouge decoratif, coherent avec 'tests au vert' + le lisere de marque en haut */
+.trl.r { background: #8b5cf6; } .trl.y { background: #6172ef; } .trl.g { background: #3f6df5; }
 .lab-run__title { margin-left: 8px; font-size: 11px; color: #7b81a6; }
 .lab-run__body { padding: 16px 18px 18px; font-size: 13px; line-height: 1.85; color: #e8eaf6; }
 .lr-cmd { color: #8a90b4; }
-.lr-cmd::before { content: "$ "; color: #4ade80; }
+.lr-cmd::before { content: "$ "; color: #7b81a6; }
 .lrl { display: flex; gap: 12px; align-items: center; opacity: 0; }
 .lrl.show { opacity: 1; }
 .lr-tick { color: #7b81a6; flex: none; transition: color .35s ease; }
@@ -2096,7 +2138,7 @@ select:focus-visible,
 .lr-repo { color: #e8eaf6; flex: 1; white-space: nowrap; }
 .lr-count { width: 2.5ch; text-align: right; color: #cdd0e6; flex: none; }
 .lr-tag { color: #7b81a6; white-space: nowrap; flex: none; width: 12ch; }
-.lr-tag::before { content: "# "; color: #a78bfa; }
+.lr-tag::before { content: "# "; color: #8b5cf6; }
 .lab-run__sum { margin-top: 12px; padding-top: 12px; border-top: 1px solid #232841; color: #8a90b4; opacity: 0; }
 .lab-run__sum.show { opacity: 1; }
 .lab-run__sum b { color: #4ade80; font-weight: 700; }
